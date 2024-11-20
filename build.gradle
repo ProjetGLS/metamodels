@@ -1,0 +1,13 @@
+/**
+ * @file    metamodels/build.gradle
+ * @author  Théo Bessel
+ * @brief   Gradle configuration
+ */
+
+java {
+    sourceSets.main.java.srcDirs = [ "src/" ]
+}
+
+tasks.register("dummy", SourceTask) {
+    println "Metamodels dummy task !"
+}
