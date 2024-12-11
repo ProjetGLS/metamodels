@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!--
+ - @file    metamodels/template-build.xml
+ - @author  Théo Bessel
+ - @brief   Template for the build.xml file of a metamodel project
+-->
 <project name="${project.model.name}_project" default="${project.model.name}_generateCode">
   <description>Generate Java Code from Ecore model.</description>
   <target name="${project.model.name}_generateCode" description="description">

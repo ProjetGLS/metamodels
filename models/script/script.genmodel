@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/Metamodels/target/script/./src/."
+    modelPluginID="script" modelName="Script" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="5.0" copyrightFields="false">
+  <foreignModel>../../../metamodels/models/script/script.ecore</foreignModel>
+  <genPackages prefix="script" basePackage="script" disposableProviderFactory="true"
+      ecorePackage="script.ecore#/">
+    <genClasses ecoreClass="script.ecore#//Script">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//Script/ScriptElement"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//Script/OperationElement"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="script.ecore#//ScriptElement"/>
+    <genClasses ecoreClass="script.ecore#//Input">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Input/Name"/>
+    </genClasses>
+    <genClasses ecoreClass="script.ecore#//Output"/>
+    <genClasses ecoreClass="script.ecore#//Operation">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//Operation/operand"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//Operation/opType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Operation/Name"/>
+    </genClasses>
+    <genClasses ecoreClass="script.ecore#//Constante">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Constante/Value"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="script.ecore#//OperationTypeElement"/>
+    <genClasses ecoreClass="script.ecore#//OperationType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//OperationType/nbOperands"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//OperationType/name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

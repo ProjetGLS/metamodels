@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+ - @file    metamodels/.project-template
+ - @author  Théo Bessel
+ - @brief   Template for the .project file of a metamodel project
+-->
 <projectDescription>
 	<name>${project.model.name}</name>
 	<comment></comment>
