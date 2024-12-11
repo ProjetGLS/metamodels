@@ -4,10 +4,89 @@
  * @brief   Gradle configuration
  */
 
+import org.gradle.api.tasks.options.Option;
+import groovy.text.XmlTemplateEngine
+
+class EMFCodeGenTask extends DefaultTask {
+    @InputDirectory
+    final DirectoryProperty inputDir = project.objects.directoryProperty();
+
+    @OutputDirectory
+    final DirectoryProperty outputDir = project.objects.directoryProperty();
+
+    @Input
+    public String model;
+
+    @Option(option = "model", description = "Configures the model from which to generate code.")
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    EMFCodeGenTask() {
+        inputDir.set(project.file("models"))
+        outputDir.set(project.file("target"))
+    }
+
+    @TaskAction
+    void generate() {
+        // Generate the `model` folder into /target
+        project.exec {
+            workingDir "."
+            commandLine "mkdir", "-p", "target/" + model
+        }
+
+        project.exec {
+            workingDir "."
+            commandLine "touch", "target/" + model + "/.project"
+        }
+
+        project.exec {
+            workingDir "."
+            commandLine "touch", "target/" + model + "/build.xml"
+        }
+
+        def binding = [
+            project: [
+                model: [
+                    name: model,
+                    path: project.file("models/" + model).getPath()
+                ],
+                target: [
+                    path: project.file("target/" + model).getPath()
+                ]
+            ]
+        ]
+
+        // Generate the .project file into /target/${model}
+        project.file("target/" + model + "/.project").text = new XmlTemplateEngine().createTemplate(project.file(".project-template").text).make(binding).toString()
+
+        // Generate the build.xml file into /target/${model}
+        project.file("target/" + model + "/build.xml").text = new XmlTemplateEngine().createTemplate(project.file("template-build.xml").text).make(binding).toString()
+
+        // Generate the java code from the ecore model
+        project.exec {
+            workingDir "."
+            commandLine "eclipse",
+                "-noSplash",
+                "-data", project.file("..").getPath(),
+                "-application", "org.eclipse.ant.core.antRunner",
+                "-buildfile", project.file("target/" + model + "/build.xml").getPath()
+        }
+    }
+}
+
 java {
     sourceSets.main.java.srcDirs = [ "src/" ]
 }
 
-tasks.register("dummy", SourceTask) {
+tasks.register("dummy", DefaultTask) {
     println "Metamodels dummy task !"
+}
+
+tasks.register("generate", EMFCodeGenTask) {
+    println "Metamodels generate task !"
 }
