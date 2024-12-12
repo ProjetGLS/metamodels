@@ -2,6 +2,7 @@
  */
 package script.script;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -12,36 +13,34 @@ package script.script;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link script.script.Output#getExpression <em>Expression</em>}</li>
+ *   <li>{@link script.script.Output#getInternalOutput <em>Internal Output</em>}</li>
  * </ul>
  *
  * @see script.script.scriptPackage#getOutput()
  * @model
  * @generated
  */
-public interface Output extends Variable {
+public interface Output extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Expression</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link script.script.Operation#getOutputs <em>Outputs</em>}'.
+	 * Returns the value of the '<em><b>Internal Output</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Expression</em>' reference.
-	 * @see #setExpression(Operation)
-	 * @see script.script.scriptPackage#getOutput_Expression()
-	 * @see script.script.Operation#getOutputs
-	 * @model opposite="outputs"
+	 * @return the value of the '<em>Internal Output</em>' reference.
+	 * @see #setInternalOutput(InternalOutput)
+	 * @see script.script.scriptPackage#getOutput_InternalOutput()
+	 * @model required="true"
 	 * @generated
 	 */
-	Operation getExpression();
+	InternalOutput getInternalOutput();
 
 	/**
-	 * Sets the value of the '{@link script.script.Output#getExpression <em>Expression</em>}' reference.
+	 * Sets the value of the '{@link script.script.Output#getInternalOutput <em>Internal Output</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Expression</em>' reference.
-	 * @see #getExpression()
+	 * @param value the new value of the '<em>Internal Output</em>' reference.
+	 * @see #getInternalOutput()
 	 * @generated
 	 */
-	void setExpression(Operation value);
+	void setInternalOutput(InternalOutput value);
 
 } // Output

@@ -4,6 +4,7 @@ package script.script.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -11,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -31,7 +33,7 @@ import script.script.scriptPackage;
  * </p>
  * <ul>
  *   <li>{@link script.script.impl.ScriptImpl#getInputs <em>Inputs</em>}</li>
- *   <li>{@link script.script.impl.ScriptImpl#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link script.script.impl.ScriptImpl#getOutput <em>Output</em>}</li>
  *   <li>{@link script.script.impl.ScriptImpl#getOperations <em>Operations</em>}</li>
  * </ul>
  *
@@ -49,14 +51,14 @@ public class ScriptImpl extends EObjectImpl implements Script {
 	protected EList<Input> inputs;
 
 	/**
-	 * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' containment reference list.
+	 * The cached value of the '{@link #getOutput() <em>Output</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOutputs()
+	 * @see #getOutput()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Output> outputs;
+	protected Output output;
 
 	/**
 	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
@@ -104,11 +106,42 @@ public class ScriptImpl extends EObjectImpl implements Script {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Output> getOutputs() {
-		if (outputs == null) {
-			outputs = new EObjectContainmentEList<Output>(Output.class, this, scriptPackage.SCRIPT__OUTPUTS);
+	public Output getOutput() {
+		return output;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOutput(Output newOutput, NotificationChain msgs) {
+		Output oldOutput = output;
+		output = newOutput;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, scriptPackage.SCRIPT__OUTPUT, oldOutput, newOutput);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return outputs;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setOutput(Output newOutput) {
+		if (newOutput != output) {
+			NotificationChain msgs = null;
+			if (output != null)
+				msgs = ((InternalEObject)output).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - scriptPackage.SCRIPT__OUTPUT, null, msgs);
+			if (newOutput != null)
+				msgs = ((InternalEObject)newOutput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - scriptPackage.SCRIPT__OUTPUT, null, msgs);
+			msgs = basicSetOutput(newOutput, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.SCRIPT__OUTPUT, newOutput, newOutput));
 	}
 
 	/**
@@ -133,8 +166,8 @@ public class ScriptImpl extends EObjectImpl implements Script {
 		switch (featureID) {
 			case scriptPackage.SCRIPT__INPUTS:
 				return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
-			case scriptPackage.SCRIPT__OUTPUTS:
-				return ((InternalEList<?>)getOutputs()).basicRemove(otherEnd, msgs);
+			case scriptPackage.SCRIPT__OUTPUT:
+				return basicSetOutput(null, msgs);
 			case scriptPackage.SCRIPT__OPERATIONS:
 				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
 		}
@@ -151,8 +184,8 @@ public class ScriptImpl extends EObjectImpl implements Script {
 		switch (featureID) {
 			case scriptPackage.SCRIPT__INPUTS:
 				return getInputs();
-			case scriptPackage.SCRIPT__OUTPUTS:
-				return getOutputs();
+			case scriptPackage.SCRIPT__OUTPUT:
+				return getOutput();
 			case scriptPackage.SCRIPT__OPERATIONS:
 				return getOperations();
 		}
@@ -172,9 +205,8 @@ public class ScriptImpl extends EObjectImpl implements Script {
 				getInputs().clear();
 				getInputs().addAll((Collection<? extends Input>)newValue);
 				return;
-			case scriptPackage.SCRIPT__OUTPUTS:
-				getOutputs().clear();
-				getOutputs().addAll((Collection<? extends Output>)newValue);
+			case scriptPackage.SCRIPT__OUTPUT:
+				setOutput((Output)newValue);
 				return;
 			case scriptPackage.SCRIPT__OPERATIONS:
 				getOperations().clear();
@@ -195,8 +227,8 @@ public class ScriptImpl extends EObjectImpl implements Script {
 			case scriptPackage.SCRIPT__INPUTS:
 				getInputs().clear();
 				return;
-			case scriptPackage.SCRIPT__OUTPUTS:
-				getOutputs().clear();
+			case scriptPackage.SCRIPT__OUTPUT:
+				setOutput((Output)null);
 				return;
 			case scriptPackage.SCRIPT__OPERATIONS:
 				getOperations().clear();
@@ -215,8 +247,8 @@ public class ScriptImpl extends EObjectImpl implements Script {
 		switch (featureID) {
 			case scriptPackage.SCRIPT__INPUTS:
 				return inputs != null && !inputs.isEmpty();
-			case scriptPackage.SCRIPT__OUTPUTS:
-				return outputs != null && !outputs.isEmpty();
+			case scriptPackage.SCRIPT__OUTPUT:
+				return output != null;
 			case scriptPackage.SCRIPT__OPERATIONS:
 				return operations != null && !operations.isEmpty();
 		}

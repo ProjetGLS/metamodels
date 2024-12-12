@@ -29,7 +29,7 @@ public interface Variable extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see script.script.scriptPackage#getVariable_Name()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getName();
@@ -51,7 +51,7 @@ public interface Variable extends EObject {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(float)
 	 * @see script.script.scriptPackage#getVariable_Value()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	float getValue();

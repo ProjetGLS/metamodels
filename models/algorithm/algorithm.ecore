@@ -10,19 +10,18 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Input">
     <eStructuralFeatures xsi:type="ecore:EReference" name="column" upperBound="-1"
-        eType="ecore:EClass http://www.meta_excel.org/table/table.ecore#//Column"/>
+        eType="ecore:EClass ../table/table.ecore#//Column"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="algorithm" lowerBound="1"
         eType="#//Algorithm" eOpposite="#//Algorithm/inputs"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="script" upperBound="-1"
-        eType="ecore:EClass http://www.meta_excel.org/script/script.ecore#//Input"/>
+        eType="ecore:EClass ../script/script.ecore#//Input"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Output">
     <eStructuralFeatures xsi:type="ecore:EReference" name="column" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass http://www.meta_excel.org/table/table.ecore#//Column"
-        eOpposite="http://www.meta_excel.org/table/table.ecore#//Column/derivateFrom"/>
+        upperBound="-1" eType="ecore:EClass ../table/table.ecore#//Column" eOpposite="../table/table.ecore#//Column/derivateFrom"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="algorithm" lowerBound="1"
         eType="#//Algorithm" eOpposite="#//Algorithm/output"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="script" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass http://www.meta_excel.org/script/script.ecore#//Output"/>
+        upperBound="-1" eType="ecore:EClass ../script/script.ecore#//Output"/>
   </eClassifiers>
 </ecore:EPackage>

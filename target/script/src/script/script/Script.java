@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link script.script.Script#getInputs <em>Inputs</em>}</li>
- *   <li>{@link script.script.Script#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link script.script.Script#getOutput <em>Output</em>}</li>
  *   <li>{@link script.script.Script#getOperations <em>Operations</em>}</li>
  * </ul>
  *
@@ -38,16 +38,26 @@ public interface Script extends EObject {
 	EList<Input> getInputs();
 
 	/**
-	 * Returns the value of the '<em><b>Outputs</b></em>' containment reference list.
-	 * The list contents are of type {@link script.script.Output}.
+	 * Returns the value of the '<em><b>Output</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Outputs</em>' containment reference list.
-	 * @see script.script.scriptPackage#getScript_Outputs()
+	 * @return the value of the '<em>Output</em>' containment reference.
+	 * @see #setOutput(Output)
+	 * @see script.script.scriptPackage#getScript_Output()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Output> getOutputs();
+	Output getOutput();
+
+	/**
+	 * Sets the value of the '{@link script.script.Script#getOutput <em>Output</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Output</em>' containment reference.
+	 * @see #getOutput()
+	 * @generated
+	 */
+	void setOutput(Output value);
 
 	/**
 	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
@@ -56,7 +66,7 @@ public interface Script extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Operations</em>' containment reference list.
 	 * @see script.script.scriptPackage#getScript_Operations()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<Operation> getOperations();

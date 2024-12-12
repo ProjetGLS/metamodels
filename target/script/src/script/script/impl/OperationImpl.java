@@ -5,7 +5,6 @@ package script.script.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -16,12 +15,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
+import script.script.InternalInput;
+import script.script.InternalOutput;
 import script.script.Operation;
-import script.script.Output;
-import script.script.Variable;
 import script.script.scriptPackage;
 
 /**
@@ -33,8 +30,10 @@ import script.script.scriptPackage;
  * </p>
  * <ul>
  *   <li>{@link script.script.impl.OperationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link script.script.impl.OperationImpl#getArity <em>Arity</em>}</li>
+ *   <li>{@link script.script.impl.OperationImpl#isInfix <em>Infix</em>}</li>
  *   <li>{@link script.script.impl.OperationImpl#getInputs <em>Inputs</em>}</li>
- *   <li>{@link script.script.impl.OperationImpl#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link script.script.impl.OperationImpl#getOutput <em>Output</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,6 +60,46 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getArity() <em>Arity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getArity()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ARITY_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getArity() <em>Arity</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getArity()
+	 * @generated
+	 * @ordered
+	 */
+	protected int arity = ARITY_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isInfix() <em>Infix</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isInfix()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean INFIX_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isInfix() <em>Infix</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isInfix()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean infix = INFIX_EDEFAULT;
+
+	/**
 	 * The cached value of the '{@link #getInputs() <em>Inputs</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -68,17 +107,17 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Variable> inputs;
+	protected EList<InternalInput> inputs;
 
 	/**
-	 * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' reference list.
+	 * The cached value of the '{@link #getOutput() <em>Output</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOutputs()
+	 * @see #getOutput()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Output> outputs;
+	protected InternalOutput output;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -125,9 +164,51 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Variable> getInputs() {
+	public int getArity() {
+		return arity;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setArity(int newArity) {
+		int oldArity = arity;
+		arity = newArity;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.OPERATION__ARITY, oldArity, arity));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isInfix() {
+		return infix;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInfix(boolean newInfix) {
+		boolean oldInfix = infix;
+		infix = newInfix;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.OPERATION__INFIX, oldInfix, infix));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<InternalInput> getInputs() {
 		if (inputs == null) {
-			inputs = new EObjectResolvingEList<Variable>(Variable.class, this, scriptPackage.OPERATION__INPUTS);
+			inputs = new EObjectResolvingEList<InternalInput>(InternalInput.class, this, scriptPackage.OPERATION__INPUTS);
 		}
 		return inputs;
 	}
@@ -137,11 +218,16 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Output> getOutputs() {
-		if (outputs == null) {
-			outputs = new EObjectWithInverseResolvingEList<Output>(Output.class, this, scriptPackage.OPERATION__OUTPUTS, scriptPackage.OUTPUT__EXPRESSION);
+	public InternalOutput getOutput() {
+		if (output != null && output.eIsProxy()) {
+			InternalEObject oldOutput = (InternalEObject)output;
+			output = (InternalOutput)eResolveProxy(oldOutput);
+			if (output != oldOutput) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, scriptPackage.OPERATION__OUTPUT, oldOutput, output));
+			}
 		}
-		return outputs;
+		return output;
 	}
 
 	/**
@@ -149,14 +235,8 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case scriptPackage.OPERATION__OUTPUTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutputs()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
+	public InternalOutput basicGetOutput() {
+		return output;
 	}
 
 	/**
@@ -164,13 +244,11 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case scriptPackage.OPERATION__OUTPUTS:
-				return ((InternalEList<?>)getOutputs()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+	public void setOutput(InternalOutput newOutput) {
+		InternalOutput oldOutput = output;
+		output = newOutput;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.OPERATION__OUTPUT, oldOutput, output));
 	}
 
 	/**
@@ -183,10 +261,15 @@ public class OperationImpl extends EObjectImpl implements Operation {
 		switch (featureID) {
 			case scriptPackage.OPERATION__NAME:
 				return getName();
+			case scriptPackage.OPERATION__ARITY:
+				return getArity();
+			case scriptPackage.OPERATION__INFIX:
+				return isInfix();
 			case scriptPackage.OPERATION__INPUTS:
 				return getInputs();
-			case scriptPackage.OPERATION__OUTPUTS:
-				return getOutputs();
+			case scriptPackage.OPERATION__OUTPUT:
+				if (resolve) return getOutput();
+				return basicGetOutput();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -203,13 +286,18 @@ public class OperationImpl extends EObjectImpl implements Operation {
 			case scriptPackage.OPERATION__NAME:
 				setName((String)newValue);
 				return;
+			case scriptPackage.OPERATION__ARITY:
+				setArity((Integer)newValue);
+				return;
+			case scriptPackage.OPERATION__INFIX:
+				setInfix((Boolean)newValue);
+				return;
 			case scriptPackage.OPERATION__INPUTS:
 				getInputs().clear();
-				getInputs().addAll((Collection<? extends Variable>)newValue);
+				getInputs().addAll((Collection<? extends InternalInput>)newValue);
 				return;
-			case scriptPackage.OPERATION__OUTPUTS:
-				getOutputs().clear();
-				getOutputs().addAll((Collection<? extends Output>)newValue);
+			case scriptPackage.OPERATION__OUTPUT:
+				setOutput((InternalOutput)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -226,11 +314,17 @@ public class OperationImpl extends EObjectImpl implements Operation {
 			case scriptPackage.OPERATION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case scriptPackage.OPERATION__ARITY:
+				setArity(ARITY_EDEFAULT);
+				return;
+			case scriptPackage.OPERATION__INFIX:
+				setInfix(INFIX_EDEFAULT);
+				return;
 			case scriptPackage.OPERATION__INPUTS:
 				getInputs().clear();
 				return;
-			case scriptPackage.OPERATION__OUTPUTS:
-				getOutputs().clear();
+			case scriptPackage.OPERATION__OUTPUT:
+				setOutput((InternalOutput)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -246,10 +340,14 @@ public class OperationImpl extends EObjectImpl implements Operation {
 		switch (featureID) {
 			case scriptPackage.OPERATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case scriptPackage.OPERATION__ARITY:
+				return arity != ARITY_EDEFAULT;
+			case scriptPackage.OPERATION__INFIX:
+				return infix != INFIX_EDEFAULT;
 			case scriptPackage.OPERATION__INPUTS:
 				return inputs != null && !inputs.isEmpty();
-			case scriptPackage.OPERATION__OUTPUTS:
-				return outputs != null && !outputs.isEmpty();
+			case scriptPackage.OPERATION__OUTPUT:
+				return output != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -266,6 +364,10 @@ public class OperationImpl extends EObjectImpl implements Operation {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", arity: ");
+		result.append(arity);
+		result.append(", infix: ");
+		result.append(infix);
 		result.append(')');
 		return result.toString();
 	}

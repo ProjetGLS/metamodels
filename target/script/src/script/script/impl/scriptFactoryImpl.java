@@ -57,10 +57,13 @@ public class scriptFactoryImpl extends EFactoryImpl implements scriptFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case scriptPackage.SCRIPT: return createScript();
+			case scriptPackage.OPERATION: return createOperation();
 			case scriptPackage.INPUT: return createInput();
 			case scriptPackage.OUTPUT: return createOutput();
-			case scriptPackage.OPERATION: return createOperation();
 			case scriptPackage.VARIABLE: return createVariable();
+			case scriptPackage.INTERNAL_INPUT: return createInternalInput();
+			case scriptPackage.INTERNAL_OUTPUT: return createInternalOutput();
+			case scriptPackage.CONSTANT: return createConstant();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -74,6 +77,16 @@ public class scriptFactoryImpl extends EFactoryImpl implements scriptFactory {
 	public Script createScript() {
 		ScriptImpl script = new ScriptImpl();
 		return script;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Operation createOperation() {
+		OperationImpl operation = new OperationImpl();
+		return operation;
 	}
 
 	/**
@@ -101,9 +114,9 @@ public class scriptFactoryImpl extends EFactoryImpl implements scriptFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Operation createOperation() {
-		OperationImpl operation = new OperationImpl();
-		return operation;
+	public Variable createVariable() {
+		VariableImpl variable = new VariableImpl();
+		return variable;
 	}
 
 	/**
@@ -111,9 +124,29 @@ public class scriptFactoryImpl extends EFactoryImpl implements scriptFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Variable createVariable() {
-		VariableImpl variable = new VariableImpl();
-		return variable;
+	public InternalInput createInternalInput() {
+		InternalInputImpl internalInput = new InternalInputImpl();
+		return internalInput;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InternalOutput createInternalOutput() {
+		InternalOutputImpl internalOutput = new InternalOutputImpl();
+		return internalOutput;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Constant createConstant() {
+		ConstantImpl constant = new ConstantImpl();
+		return constant;
 	}
 
 	/**

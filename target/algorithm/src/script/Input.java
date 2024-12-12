@@ -1,0 +1,17 @@
+/**
+ */
+package script;
+
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Input</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ *
+ * @see script.ScriptPackage#getInput()
+ * @model
+ * @generated
+ */
+public interface Input extends Variable {
+} // Input

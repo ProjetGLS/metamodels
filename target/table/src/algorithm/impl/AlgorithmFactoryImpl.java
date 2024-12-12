@@ -1,0 +1,117 @@
+/**
+ */
+package algorithm.impl;
+
+import algorithm.*;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EPackage;
+
+import org.eclipse.emf.ecore.impl.EFactoryImpl;
+
+import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model <b>Factory</b>.
+ * <!-- end-user-doc -->
+ * @generated
+ */
+public class AlgorithmFactoryImpl extends EFactoryImpl implements AlgorithmFactory {
+	/**
+	 * Creates the default factory implementation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static AlgorithmFactory init() {
+		try {
+			AlgorithmFactory theAlgorithmFactory = (AlgorithmFactory)EPackage.Registry.INSTANCE.getEFactory(AlgorithmPackage.eNS_URI);
+			if (theAlgorithmFactory != null) {
+				return theAlgorithmFactory;
+			}
+		}
+		catch (Exception exception) {
+			EcorePlugin.INSTANCE.log(exception);
+		}
+		return new AlgorithmFactoryImpl();
+	}
+
+	/**
+	 * Creates an instance of the factory.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AlgorithmFactoryImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EObject create(EClass eClass) {
+		switch (eClass.getClassifierID()) {
+			case AlgorithmPackage.ALGORITHM: return createAlgorithm();
+			case AlgorithmPackage.INPUT: return createInput();
+			case AlgorithmPackage.OUTPUT: return createOutput();
+			default:
+				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Algorithm createAlgorithm() {
+		AlgorithmImpl algorithm = new AlgorithmImpl();
+		return algorithm;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Input createInput() {
+		InputImpl input = new InputImpl();
+		return input;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Output createOutput() {
+		OutputImpl output = new OutputImpl();
+		return output;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public AlgorithmPackage getAlgorithmPackage() {
+		return (AlgorithmPackage)getEPackage();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @deprecated
+	 * @generated
+	 */
+	@Deprecated
+	public static AlgorithmPackage getPackage() {
+		return AlgorithmPackage.eINSTANCE;
+	}
+
+} //AlgorithmFactoryImpl

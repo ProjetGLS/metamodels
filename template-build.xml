@@ -18,7 +18,7 @@
       generateEditorProject="false"
       generateTestsProject="false"
 
-      reconcileGenModel="overwrite"
+      reconcileGenModel="keep"
     >
       <arg line="-package http://www.meta_excel.org/${project.model.name} ${project.model.name} ${project.model.name}"/>
     </emf.Ecore2Java>

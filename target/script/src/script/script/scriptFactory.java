@@ -31,6 +31,15 @@ public interface scriptFactory extends EFactory {
 	Script createScript();
 
 	/**
+	 * Returns a new object of class '<em>Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Operation</em>'.
+	 * @generated
+	 */
+	Operation createOperation();
+
+	/**
 	 * Returns a new object of class '<em>Input</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,15 +58,6 @@ public interface scriptFactory extends EFactory {
 	Output createOutput();
 
 	/**
-	 * Returns a new object of class '<em>Operation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Operation</em>'.
-	 * @generated
-	 */
-	Operation createOperation();
-
-	/**
 	 * Returns a new object of class '<em>Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,6 +65,33 @@ public interface scriptFactory extends EFactory {
 	 * @generated
 	 */
 	Variable createVariable();
+
+	/**
+	 * Returns a new object of class '<em>Internal Input</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Internal Input</em>'.
+	 * @generated
+	 */
+	InternalInput createInternalInput();
+
+	/**
+	 * Returns a new object of class '<em>Internal Output</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Internal Output</em>'.
+	 * @generated
+	 */
+	InternalOutput createInternalOutput();
+
+	/**
+	 * Returns a new object of class '<em>Constant</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Constant</em>'.
+	 * @generated
+	 */
+	Constant createConstant();
 
 	/**
 	 * Returns the package supported by this factory.

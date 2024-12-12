@@ -75,13 +75,13 @@ public interface scriptPackage extends EPackage {
 	int SCRIPT__INPUTS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Outputs</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Output</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT__OUTPUTS = 1;
+	int SCRIPT__OUTPUT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
@@ -100,6 +100,70 @@ public interface scriptPackage extends EPackage {
 	 * @ordered
 	 */
 	int SCRIPT_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link script.script.impl.OperationImpl <em>Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see script.script.impl.OperationImpl
+	 * @see script.script.impl.scriptPackageImpl#getOperation()
+	 * @generated
+	 */
+	int OPERATION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Arity</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__ARITY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Infix</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__INFIX = 2;
+
+	/**
+	 * The feature id for the '<em><b>Inputs</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__INPUTS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Output</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__OUTPUT = 4;
+
+	/**
+	 * The number of structural features of the '<em>Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link script.script.impl.VariableImpl <em>Variable</em>}' class.
@@ -146,7 +210,7 @@ public interface scriptPackage extends EPackage {
 	 * @see script.script.impl.scriptPackageImpl#getInput()
 	 * @generated
 	 */
-	int INPUT = 1;
+	int INPUT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -183,34 +247,16 @@ public interface scriptPackage extends EPackage {
 	 * @see script.script.impl.scriptPackageImpl#getOutput()
 	 * @generated
 	 */
-	int OUTPUT = 2;
+	int OUTPUT = 3;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Internal Output</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT__NAME = VARIABLE__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTPUT__VALUE = VARIABLE__VALUE;
-
-	/**
-	 * The feature id for the '<em><b>Expression</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTPUT__EXPRESSION = VARIABLE_FEATURE_COUNT + 0;
+	int OUTPUT__INTERNAL_OUTPUT = 0;
 
 	/**
 	 * The number of structural features of the '<em>Output</em>' class.
@@ -219,17 +265,45 @@ public interface scriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OUTPUT_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
+	int OUTPUT_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link script.script.impl.OperationImpl <em>Operation</em>}' class.
+	 * The meta object id for the '{@link script.script.impl.InternalInputImpl <em>Internal Input</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see script.script.impl.OperationImpl
-	 * @see script.script.impl.scriptPackageImpl#getOperation()
+	 * @see script.script.impl.InternalInputImpl
+	 * @see script.script.impl.scriptPackageImpl#getInternalInput()
 	 * @generated
 	 */
-	int OPERATION = 3;
+	int INTERNAL_INPUT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Variable</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_INPUT__VARIABLE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Internal Input</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERNAL_INPUT_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link script.script.impl.InternalOutputImpl <em>Internal Output</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see script.script.impl.InternalOutputImpl
+	 * @see script.script.impl.scriptPackageImpl#getInternalOutput()
+	 * @generated
+	 */
+	int INTERNAL_OUTPUT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -238,34 +312,62 @@ public interface scriptPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__NAME = 0;
+	int INTERNAL_OUTPUT__NAME = VARIABLE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Inputs</b></em>' reference list.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__INPUTS = 1;
+	int INTERNAL_OUTPUT__VALUE = VARIABLE__VALUE;
 
 	/**
-	 * The feature id for the '<em><b>Outputs</b></em>' reference list.
+	 * The number of structural features of the '<em>Internal Output</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION__OUTPUTS = 2;
+	int INTERNAL_OUTPUT_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Operation</em>' class.
+	 * The meta object id for the '{@link script.script.impl.ConstantImpl <em>Constant</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see script.script.impl.ConstantImpl
+	 * @see script.script.impl.scriptPackageImpl#getConstant()
+	 * @generated
+	 */
+	int CONSTANT = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATION_FEATURE_COUNT = 3;
+	int CONSTANT__NAME = VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANT__VALUE = VARIABLE__VALUE;
+
+	/**
+	 * The number of structural features of the '<em>Constant</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONSTANT_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 0;
 
 
 	/**
@@ -290,15 +392,15 @@ public interface scriptPackage extends EPackage {
 	EReference getScript_Inputs();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link script.script.Script#getOutputs <em>Outputs</em>}'.
+	 * Returns the meta object for the containment reference '{@link script.script.Script#getOutput <em>Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Outputs</em>'.
-	 * @see script.script.Script#getOutputs()
+	 * @return the meta object for the containment reference '<em>Output</em>'.
+	 * @see script.script.Script#getOutput()
 	 * @see #getScript()
 	 * @generated
 	 */
-	EReference getScript_Outputs();
+	EReference getScript_Output();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link script.script.Script#getOperations <em>Operations</em>}'.
@@ -310,37 +412,6 @@ public interface scriptPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getScript_Operations();
-
-	/**
-	 * Returns the meta object for class '{@link script.script.Input <em>Input</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Input</em>'.
-	 * @see script.script.Input
-	 * @generated
-	 */
-	EClass getInput();
-
-	/**
-	 * Returns the meta object for class '{@link script.script.Output <em>Output</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Output</em>'.
-	 * @see script.script.Output
-	 * @generated
-	 */
-	EClass getOutput();
-
-	/**
-	 * Returns the meta object for the reference '{@link script.script.Output#getExpression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Expression</em>'.
-	 * @see script.script.Output#getExpression()
-	 * @see #getOutput()
-	 * @generated
-	 */
-	EReference getOutput_Expression();
 
 	/**
 	 * Returns the meta object for class '{@link script.script.Operation <em>Operation</em>}'.
@@ -364,6 +435,28 @@ public interface scriptPackage extends EPackage {
 	EAttribute getOperation_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link script.script.Operation#getArity <em>Arity</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Arity</em>'.
+	 * @see script.script.Operation#getArity()
+	 * @see #getOperation()
+	 * @generated
+	 */
+	EAttribute getOperation_Arity();
+
+	/**
+	 * Returns the meta object for the attribute '{@link script.script.Operation#isInfix <em>Infix</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Infix</em>'.
+	 * @see script.script.Operation#isInfix()
+	 * @see #getOperation()
+	 * @generated
+	 */
+	EAttribute getOperation_Infix();
+
+	/**
 	 * Returns the meta object for the reference list '{@link script.script.Operation#getInputs <em>Inputs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -375,15 +468,46 @@ public interface scriptPackage extends EPackage {
 	EReference getOperation_Inputs();
 
 	/**
-	 * Returns the meta object for the reference list '{@link script.script.Operation#getOutputs <em>Outputs</em>}'.
+	 * Returns the meta object for the reference '{@link script.script.Operation#getOutput <em>Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Outputs</em>'.
-	 * @see script.script.Operation#getOutputs()
+	 * @return the meta object for the reference '<em>Output</em>'.
+	 * @see script.script.Operation#getOutput()
 	 * @see #getOperation()
 	 * @generated
 	 */
-	EReference getOperation_Outputs();
+	EReference getOperation_Output();
+
+	/**
+	 * Returns the meta object for class '{@link script.script.Input <em>Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Input</em>'.
+	 * @see script.script.Input
+	 * @generated
+	 */
+	EClass getInput();
+
+	/**
+	 * Returns the meta object for class '{@link script.script.Output <em>Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Output</em>'.
+	 * @see script.script.Output
+	 * @generated
+	 */
+	EClass getOutput();
+
+	/**
+	 * Returns the meta object for the reference '{@link script.script.Output#getInternalOutput <em>Internal Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Internal Output</em>'.
+	 * @see script.script.Output#getInternalOutput()
+	 * @see #getOutput()
+	 * @generated
+	 */
+	EReference getOutput_InternalOutput();
 
 	/**
 	 * Returns the meta object for class '{@link script.script.Variable <em>Variable</em>}'.
@@ -416,6 +540,47 @@ public interface scriptPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getVariable_Value();
+
+	/**
+	 * Returns the meta object for class '{@link script.script.InternalInput <em>Internal Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Internal Input</em>'.
+	 * @see script.script.InternalInput
+	 * @generated
+	 */
+	EClass getInternalInput();
+
+	/**
+	 * Returns the meta object for the reference '{@link script.script.InternalInput#getVariable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Variable</em>'.
+	 * @see script.script.InternalInput#getVariable()
+	 * @see #getInternalInput()
+	 * @generated
+	 */
+	EReference getInternalInput_Variable();
+
+	/**
+	 * Returns the meta object for class '{@link script.script.InternalOutput <em>Internal Output</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Internal Output</em>'.
+	 * @see script.script.InternalOutput
+	 * @generated
+	 */
+	EClass getInternalOutput();
+
+	/**
+	 * Returns the meta object for class '{@link script.script.Constant <em>Constant</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Constant</em>'.
+	 * @see script.script.Constant
+	 * @generated
+	 */
+	EClass getConstant();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -458,12 +623,12 @@ public interface scriptPackage extends EPackage {
 		EReference SCRIPT__INPUTS = eINSTANCE.getScript_Inputs();
 
 		/**
-		 * The meta object literal for the '<em><b>Outputs</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Output</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCRIPT__OUTPUTS = eINSTANCE.getScript_Outputs();
+		EReference SCRIPT__OUTPUT = eINSTANCE.getScript_Output();
 
 		/**
 		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
@@ -472,6 +637,56 @@ public interface scriptPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SCRIPT__OPERATIONS = eINSTANCE.getScript_Operations();
+
+		/**
+		 * The meta object literal for the '{@link script.script.impl.OperationImpl <em>Operation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see script.script.impl.OperationImpl
+		 * @see script.script.impl.scriptPackageImpl#getOperation()
+		 * @generated
+		 */
+		EClass OPERATION = eINSTANCE.getOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATION__NAME = eINSTANCE.getOperation_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Arity</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATION__ARITY = eINSTANCE.getOperation_Arity();
+
+		/**
+		 * The meta object literal for the '<em><b>Infix</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATION__INFIX = eINSTANCE.getOperation_Infix();
+
+		/**
+		 * The meta object literal for the '<em><b>Inputs</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATION__INPUTS = eINSTANCE.getOperation_Inputs();
+
+		/**
+		 * The meta object literal for the '<em><b>Output</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OPERATION__OUTPUT = eINSTANCE.getOperation_Output();
 
 		/**
 		 * The meta object literal for the '{@link script.script.impl.InputImpl <em>Input</em>}' class.
@@ -494,46 +709,12 @@ public interface scriptPackage extends EPackage {
 		EClass OUTPUT = eINSTANCE.getOutput();
 
 		/**
-		 * The meta object literal for the '<em><b>Expression</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Internal Output</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference OUTPUT__EXPRESSION = eINSTANCE.getOutput_Expression();
-
-		/**
-		 * The meta object literal for the '{@link script.script.impl.OperationImpl <em>Operation</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see script.script.impl.OperationImpl
-		 * @see script.script.impl.scriptPackageImpl#getOperation()
-		 * @generated
-		 */
-		EClass OPERATION = eINSTANCE.getOperation();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute OPERATION__NAME = eINSTANCE.getOperation_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Inputs</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION__INPUTS = eINSTANCE.getOperation_Inputs();
-
-		/**
-		 * The meta object literal for the '<em><b>Outputs</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference OPERATION__OUTPUTS = eINSTANCE.getOperation_Outputs();
+		EReference OUTPUT__INTERNAL_OUTPUT = eINSTANCE.getOutput_InternalOutput();
 
 		/**
 		 * The meta object literal for the '{@link script.script.impl.VariableImpl <em>Variable</em>}' class.
@@ -560,6 +741,44 @@ public interface scriptPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VARIABLE__VALUE = eINSTANCE.getVariable_Value();
+
+		/**
+		 * The meta object literal for the '{@link script.script.impl.InternalInputImpl <em>Internal Input</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see script.script.impl.InternalInputImpl
+		 * @see script.script.impl.scriptPackageImpl#getInternalInput()
+		 * @generated
+		 */
+		EClass INTERNAL_INPUT = eINSTANCE.getInternalInput();
+
+		/**
+		 * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INTERNAL_INPUT__VARIABLE = eINSTANCE.getInternalInput_Variable();
+
+		/**
+		 * The meta object literal for the '{@link script.script.impl.InternalOutputImpl <em>Internal Output</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see script.script.impl.InternalOutputImpl
+		 * @see script.script.impl.scriptPackageImpl#getInternalOutput()
+		 * @generated
+		 */
+		EClass INTERNAL_OUTPUT = eINSTANCE.getInternalOutput();
+
+		/**
+		 * The meta object literal for the '{@link script.script.impl.ConstantImpl <em>Constant</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see script.script.impl.ConstantImpl
+		 * @see script.script.impl.scriptPackageImpl#getConstant()
+		 * @generated
+		 */
+		EClass CONSTANT = eINSTANCE.getConstant();
 
 	}
 
