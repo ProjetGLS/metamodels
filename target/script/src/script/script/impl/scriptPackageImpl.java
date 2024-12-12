@@ -9,14 +9,11 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import script.script.Constante;
 import script.script.Input;
 import script.script.Operation;
-import script.script.OperationType;
-import script.script.OperationTypeElement;
 import script.script.Output;
 import script.script.Script;
-import script.script.ScriptElement;
+import script.script.Variable;
 import script.script.scriptFactory;
 import script.script.scriptPackage;
 
@@ -33,13 +30,6 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	 * @generated
 	 */
 	private EClass scriptEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass scriptElementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -67,21 +57,7 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass constanteEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass operationTypeElementEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass operationTypeEClass = null;
+	private EClass variableEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -157,7 +133,7 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScript_ScriptElement() {
+	public EReference getScript_Inputs() {
 		return (EReference)scriptEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -166,7 +142,7 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getScript_OperationElement() {
+	public EReference getScript_Outputs() {
 		return (EReference)scriptEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -175,8 +151,8 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getScriptElement() {
-		return scriptElementEClass;
+	public EReference getScript_Operations() {
+		return (EReference)scriptEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -193,8 +169,8 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInput_Name() {
-		return (EAttribute)inputEClass.getEStructuralFeatures().get(0);
+	public EClass getOutput() {
+		return outputEClass;
 	}
 
 	/**
@@ -202,8 +178,8 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getOutput() {
-		return outputEClass;
+	public EReference getOutput_Expression() {
+		return (EReference)outputEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -220,8 +196,8 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOperation_Operand() {
-		return (EReference)operationEClass.getEStructuralFeatures().get(0);
+	public EAttribute getOperation_Name() {
+		return (EAttribute)operationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -229,7 +205,7 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getOperation_OpType() {
+	public EReference getOperation_Inputs() {
 		return (EReference)operationEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -238,8 +214,8 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getOperation_Name() {
-		return (EAttribute)operationEClass.getEStructuralFeatures().get(2);
+	public EReference getOperation_Outputs() {
+		return (EReference)operationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -247,8 +223,8 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getConstante() {
-		return constanteEClass;
+	public EClass getVariable() {
+		return variableEClass;
 	}
 
 	/**
@@ -256,8 +232,8 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getConstante_Value() {
-		return (EAttribute)constanteEClass.getEStructuralFeatures().get(0);
+	public EAttribute getVariable_Name() {
+		return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -265,35 +241,8 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getOperationTypeElement() {
-		return operationTypeElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getOperationType() {
-		return operationTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOperationType_NbOperands() {
-		return (EAttribute)operationTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getOperationType_Name() {
-		return (EAttribute)operationTypeEClass.getEStructuralFeatures().get(1);
+	public EAttribute getVariable_Value() {
+		return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -325,29 +274,23 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 
 		// Create classes and their features
 		scriptEClass = createEClass(SCRIPT);
-		createEReference(scriptEClass, SCRIPT__SCRIPT_ELEMENT);
-		createEReference(scriptEClass, SCRIPT__OPERATION_ELEMENT);
-
-		scriptElementEClass = createEClass(SCRIPT_ELEMENT);
+		createEReference(scriptEClass, SCRIPT__INPUTS);
+		createEReference(scriptEClass, SCRIPT__OUTPUTS);
+		createEReference(scriptEClass, SCRIPT__OPERATIONS);
 
 		inputEClass = createEClass(INPUT);
-		createEAttribute(inputEClass, INPUT__NAME);
 
 		outputEClass = createEClass(OUTPUT);
+		createEReference(outputEClass, OUTPUT__EXPRESSION);
 
 		operationEClass = createEClass(OPERATION);
-		createEReference(operationEClass, OPERATION__OPERAND);
-		createEReference(operationEClass, OPERATION__OP_TYPE);
 		createEAttribute(operationEClass, OPERATION__NAME);
+		createEReference(operationEClass, OPERATION__INPUTS);
+		createEReference(operationEClass, OPERATION__OUTPUTS);
 
-		constanteEClass = createEClass(CONSTANTE);
-		createEAttribute(constanteEClass, CONSTANTE__VALUE);
-
-		operationTypeElementEClass = createEClass(OPERATION_TYPE_ELEMENT);
-
-		operationTypeEClass = createEClass(OPERATION_TYPE);
-		createEAttribute(operationTypeEClass, OPERATION_TYPE__NB_OPERANDS);
-		createEAttribute(operationTypeEClass, OPERATION_TYPE__NAME);
+		variableEClass = createEClass(VARIABLE);
+		createEAttribute(variableEClass, VARIABLE__NAME);
+		createEAttribute(variableEClass, VARIABLE__VALUE);
 	}
 
 	/**
@@ -378,37 +321,28 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		inputEClass.getESuperTypes().add(this.getScriptElement());
-		outputEClass.getESuperTypes().add(this.getScriptElement());
-		operationEClass.getESuperTypes().add(this.getScriptElement());
-		constanteEClass.getESuperTypes().add(this.getScriptElement());
-		operationTypeEClass.getESuperTypes().add(this.getOperationTypeElement());
+		inputEClass.getESuperTypes().add(this.getVariable());
+		outputEClass.getESuperTypes().add(this.getVariable());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(scriptEClass, Script.class, "Script", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getScript_ScriptElement(), this.getScriptElement(), null, "ScriptElement", null, 2, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getScript_OperationElement(), this.getOperationTypeElement(), null, "OperationElement", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(scriptElementEClass, ScriptElement.class, "ScriptElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getScript_Inputs(), this.getInput(), null, "inputs", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScript_Outputs(), this.getOutput(), null, "outputs", null, 1, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getScript_Operations(), this.getOperation(), null, "operations", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(inputEClass, Input.class, "Input", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInput_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(outputEClass, Output.class, "Output", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOutput_Expression(), this.getOperation(), this.getOperation_Outputs(), "expression", null, 0, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOperation_Operand(), this.getScriptElement(), null, "operand", null, 0, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperation_OpType(), this.getOperationTypeElement(), null, "opType", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOperation_Name(), ecorePackage.getEString(), "Name", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperation_Name(), ecorePackage.getEString(), "name", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperation_Inputs(), this.getVariable(), null, "inputs", null, 0, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperation_Outputs(), this.getOutput(), this.getOutput_Expression(), "outputs", null, 1, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(constanteEClass, Constante.class, "Constante", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getConstante_Value(), ecorePackage.getEFloat(), "Value", null, 0, 1, Constante.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(operationTypeElementEClass, OperationTypeElement.class, "OperationTypeElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(operationTypeEClass, OperationType.class, "OperationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOperationType_NbOperands(), ecorePackage.getEInt(), "nbOperands", null, 1, 1, OperationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOperationType_Name(), ecorePackage.getEString(), "name", null, 1, 1, OperationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariable_Value(), ecorePackage.getEFloat(), "value", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

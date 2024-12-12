@@ -72,50 +72,29 @@ public class scriptSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case scriptPackage.SCRIPT_ELEMENT: {
-				ScriptElement scriptElement = (ScriptElement)theEObject;
-				T result = caseScriptElement(scriptElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case scriptPackage.INPUT: {
 				Input input = (Input)theEObject;
 				T result = caseInput(input);
-				if (result == null) result = caseScriptElement(input);
+				if (result == null) result = caseVariable(input);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case scriptPackage.OUTPUT: {
 				Output output = (Output)theEObject;
 				T result = caseOutput(output);
-				if (result == null) result = caseScriptElement(output);
+				if (result == null) result = caseVariable(output);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case scriptPackage.OPERATION: {
 				Operation operation = (Operation)theEObject;
 				T result = caseOperation(operation);
-				if (result == null) result = caseScriptElement(operation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case scriptPackage.CONSTANTE: {
-				Constante constante = (Constante)theEObject;
-				T result = caseConstante(constante);
-				if (result == null) result = caseScriptElement(constante);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case scriptPackage.OPERATION_TYPE_ELEMENT: {
-				OperationTypeElement operationTypeElement = (OperationTypeElement)theEObject;
-				T result = caseOperationTypeElement(operationTypeElement);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case scriptPackage.OPERATION_TYPE: {
-				OperationType operationType = (OperationType)theEObject;
-				T result = caseOperationType(operationType);
-				if (result == null) result = caseOperationTypeElement(operationType);
+			case scriptPackage.VARIABLE: {
+				Variable variable = (Variable)theEObject;
+				T result = caseVariable(variable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -135,21 +114,6 @@ public class scriptSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseScript(Script object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Script Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Script Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseScriptElement(ScriptElement object) {
 		return null;
 	}
 
@@ -199,47 +163,17 @@ public class scriptSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Constante</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Constante</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConstante(Constante object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Operation Type Element</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Operation Type Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOperationTypeElement(OperationTypeElement object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Operation Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Operation Type</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseOperationType(OperationType object) {
+	public T caseVariable(Variable object) {
 		return null;
 	}
 

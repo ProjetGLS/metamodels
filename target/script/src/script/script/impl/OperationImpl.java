@@ -5,6 +5,7 @@ package script.script.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -12,12 +13,15 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import script.script.Operation;
-import script.script.OperationTypeElement;
-import script.script.ScriptElement;
+import script.script.Output;
+import script.script.Variable;
 import script.script.scriptPackage;
 
 /**
@@ -28,34 +32,14 @@ import script.script.scriptPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link script.script.impl.OperationImpl#getOperand <em>Operand</em>}</li>
- *   <li>{@link script.script.impl.OperationImpl#getOpType <em>Op Type</em>}</li>
  *   <li>{@link script.script.impl.OperationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link script.script.impl.OperationImpl#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link script.script.impl.OperationImpl#getOutputs <em>Outputs</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class OperationImpl extends ScriptElementImpl implements Operation {
-	/**
-	 * The cached value of the '{@link #getOperand() <em>Operand</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOperand()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<ScriptElement> operand;
-
-	/**
-	 * The cached value of the '{@link #getOpType() <em>Op Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOpType()
-	 * @generated
-	 * @ordered
-	 */
-	protected OperationTypeElement opType;
-
+public class OperationImpl extends EObjectImpl implements Operation {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -77,6 +61,26 @@ public class OperationImpl extends ScriptElementImpl implements Operation {
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getInputs() <em>Inputs</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInputs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Variable> inputs;
+
+	/**
+	 * The cached value of the '{@link #getOutputs() <em>Outputs</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutputs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Output> outputs;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -93,56 +97,6 @@ public class OperationImpl extends ScriptElementImpl implements Operation {
 	@Override
 	protected EClass eStaticClass() {
 		return scriptPackage.Literals.OPERATION;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<ScriptElement> getOperand() {
-		if (operand == null) {
-			operand = new EObjectResolvingEList<ScriptElement>(ScriptElement.class, this, scriptPackage.OPERATION__OPERAND);
-		}
-		return operand;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OperationTypeElement getOpType() {
-		if (opType != null && opType.eIsProxy()) {
-			InternalEObject oldOpType = (InternalEObject)opType;
-			opType = (OperationTypeElement)eResolveProxy(oldOpType);
-			if (opType != oldOpType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, scriptPackage.OPERATION__OP_TYPE, oldOpType, opType));
-			}
-		}
-		return opType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OperationTypeElement basicGetOpType() {
-		return opType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setOpType(OperationTypeElement newOpType) {
-		OperationTypeElement oldOpType = opType;
-		opType = newOpType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.OPERATION__OP_TYPE, oldOpType, opType));
 	}
 
 	/**
@@ -171,16 +125,68 @@ public class OperationImpl extends ScriptElementImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Variable> getInputs() {
+		if (inputs == null) {
+			inputs = new EObjectResolvingEList<Variable>(Variable.class, this, scriptPackage.OPERATION__INPUTS);
+		}
+		return inputs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Output> getOutputs() {
+		if (outputs == null) {
+			outputs = new EObjectWithInverseResolvingEList<Output>(Output.class, this, scriptPackage.OPERATION__OUTPUTS, scriptPackage.OUTPUT__EXPRESSION);
+		}
+		return outputs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case scriptPackage.OPERATION__OUTPUTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutputs()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case scriptPackage.OPERATION__OUTPUTS:
+				return ((InternalEList<?>)getOutputs()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case scriptPackage.OPERATION__OPERAND:
-				return getOperand();
-			case scriptPackage.OPERATION__OP_TYPE:
-				if (resolve) return getOpType();
-				return basicGetOpType();
 			case scriptPackage.OPERATION__NAME:
 				return getName();
+			case scriptPackage.OPERATION__INPUTS:
+				return getInputs();
+			case scriptPackage.OPERATION__OUTPUTS:
+				return getOutputs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -194,15 +200,16 @@ public class OperationImpl extends ScriptElementImpl implements Operation {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case scriptPackage.OPERATION__OPERAND:
-				getOperand().clear();
-				getOperand().addAll((Collection<? extends ScriptElement>)newValue);
-				return;
-			case scriptPackage.OPERATION__OP_TYPE:
-				setOpType((OperationTypeElement)newValue);
-				return;
 			case scriptPackage.OPERATION__NAME:
 				setName((String)newValue);
+				return;
+			case scriptPackage.OPERATION__INPUTS:
+				getInputs().clear();
+				getInputs().addAll((Collection<? extends Variable>)newValue);
+				return;
+			case scriptPackage.OPERATION__OUTPUTS:
+				getOutputs().clear();
+				getOutputs().addAll((Collection<? extends Output>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -216,14 +223,14 @@ public class OperationImpl extends ScriptElementImpl implements Operation {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case scriptPackage.OPERATION__OPERAND:
-				getOperand().clear();
-				return;
-			case scriptPackage.OPERATION__OP_TYPE:
-				setOpType((OperationTypeElement)null);
-				return;
 			case scriptPackage.OPERATION__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case scriptPackage.OPERATION__INPUTS:
+				getInputs().clear();
+				return;
+			case scriptPackage.OPERATION__OUTPUTS:
+				getOutputs().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -237,12 +244,12 @@ public class OperationImpl extends ScriptElementImpl implements Operation {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case scriptPackage.OPERATION__OPERAND:
-				return operand != null && !operand.isEmpty();
-			case scriptPackage.OPERATION__OP_TYPE:
-				return opType != null;
 			case scriptPackage.OPERATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case scriptPackage.OPERATION__INPUTS:
+				return inputs != null && !inputs.isEmpty();
+			case scriptPackage.OPERATION__OUTPUTS:
+				return outputs != null && !outputs.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -257,7 +264,7 @@ public class OperationImpl extends ScriptElementImpl implements Operation {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (Name: ");
+		result.append(" (name: ");
 		result.append(name);
 		result.append(')');
 		return result.toString();

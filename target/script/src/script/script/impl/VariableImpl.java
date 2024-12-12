@@ -7,45 +7,26 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import script.script.OperationType;
+import script.script.Variable;
 import script.script.scriptPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Operation Type</b></em>'.
+ * An implementation of the model object '<em><b>Variable</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link script.script.impl.OperationTypeImpl#getNbOperands <em>Nb Operands</em>}</li>
- *   <li>{@link script.script.impl.OperationTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link script.script.impl.VariableImpl#getName <em>Name</em>}</li>
+ *   <li>{@link script.script.impl.VariableImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class OperationTypeImpl extends OperationTypeElementImpl implements OperationType {
-	/**
-	 * The default value of the '{@link #getNbOperands() <em>Nb Operands</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNbOperands()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int NB_OPERANDS_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getNbOperands() <em>Nb Operands</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getNbOperands()
-	 * @generated
-	 * @ordered
-	 */
-	protected int nbOperands = NB_OPERANDS_EDEFAULT;
-
+public class VariableImpl extends EObjectImpl implements Variable {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -67,11 +48,31 @@ public class OperationTypeImpl extends OperationTypeElementImpl implements Opera
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final float VALUE_EDEFAULT = 0.0F;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected float value = VALUE_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OperationTypeImpl() {
+	protected VariableImpl() {
 		super();
 	}
 
@@ -82,28 +83,7 @@ public class OperationTypeImpl extends OperationTypeElementImpl implements Opera
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return scriptPackage.Literals.OPERATION_TYPE;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int getNbOperands() {
-		return nbOperands;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setNbOperands(int newNbOperands) {
-		int oldNbOperands = nbOperands;
-		nbOperands = newNbOperands;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.OPERATION_TYPE__NB_OPERANDS, oldNbOperands, nbOperands));
+		return scriptPackage.Literals.VARIABLE;
 	}
 
 	/**
@@ -124,7 +104,28 @@ public class OperationTypeImpl extends OperationTypeElementImpl implements Opera
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.OPERATION_TYPE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.VARIABLE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public float getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValue(float newValue) {
+		float oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.VARIABLE__VALUE, oldValue, value));
 	}
 
 	/**
@@ -135,10 +136,10 @@ public class OperationTypeImpl extends OperationTypeElementImpl implements Opera
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case scriptPackage.OPERATION_TYPE__NB_OPERANDS:
-				return getNbOperands();
-			case scriptPackage.OPERATION_TYPE__NAME:
+			case scriptPackage.VARIABLE__NAME:
 				return getName();
+			case scriptPackage.VARIABLE__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -151,11 +152,11 @@ public class OperationTypeImpl extends OperationTypeElementImpl implements Opera
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case scriptPackage.OPERATION_TYPE__NB_OPERANDS:
-				setNbOperands((Integer)newValue);
-				return;
-			case scriptPackage.OPERATION_TYPE__NAME:
+			case scriptPackage.VARIABLE__NAME:
 				setName((String)newValue);
+				return;
+			case scriptPackage.VARIABLE__VALUE:
+				setValue((Float)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -169,11 +170,11 @@ public class OperationTypeImpl extends OperationTypeElementImpl implements Opera
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case scriptPackage.OPERATION_TYPE__NB_OPERANDS:
-				setNbOperands(NB_OPERANDS_EDEFAULT);
-				return;
-			case scriptPackage.OPERATION_TYPE__NAME:
+			case scriptPackage.VARIABLE__NAME:
 				setName(NAME_EDEFAULT);
+				return;
+			case scriptPackage.VARIABLE__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -187,10 +188,10 @@ public class OperationTypeImpl extends OperationTypeElementImpl implements Opera
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case scriptPackage.OPERATION_TYPE__NB_OPERANDS:
-				return nbOperands != NB_OPERANDS_EDEFAULT;
-			case scriptPackage.OPERATION_TYPE__NAME:
+			case scriptPackage.VARIABLE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case scriptPackage.VARIABLE__VALUE:
+				return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -205,12 +206,12 @@ public class OperationTypeImpl extends OperationTypeElementImpl implements Opera
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (nbOperands: ");
-		result.append(nbOperands);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
+		result.append(", value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}
 
-} //OperationTypeImpl
+} //VariableImpl

@@ -6,24 +6,18 @@
   <foreignModel>../../../metamodels/models/table/table.ecore</foreignModel>
   <genPackages prefix="table" basePackage="table" disposableProviderFactory="true"
       ecorePackage="table.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="table.ecore#//Typr">
-      <genEnumLiterals ecoreEnumLiteral="table.ecore#//Typr/integer"/>
-      <genEnumLiterals ecoreEnumLiteral="table.ecore#//Typr/operation"/>
-      <genEnumLiterals ecoreEnumLiteral="table.ecore#//Typr/boolean"/>
-      <genEnumLiterals ecoreEnumLiteral="table.ecore#//Typr/float"/>
-      <genEnumLiterals ecoreEnumLiteral="table.ecore#//Typr/primaryKey"/>
-      <genEnumLiterals ecoreEnumLiteral="table.ecore#//Typr/reference"/>
-    </genEnums>
     <genClasses ecoreClass="table.ecore#//Table">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute table.ecore#//Table/Name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference table.ecore#//Table/column"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference table.ecore#//Table/identColumn"/>
     </genClasses>
     <genClasses ecoreClass="table.ecore#//Column">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute table.ecore#//Column/indice"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute table.ecore#//Column/uid"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference table.ecore#//Column/table"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute table.ecore#//Column/contraintes"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute table.ecore#//Column/Type"/>
-      <genOperations ecoreOperation="table.ecore#//Column/Column"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute table.ecore#//Column/constraints"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference table.ecore#//Column/references"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference table.ecore#//Column/derivateFrom"/>
     </genClasses>
+    <genClasses ecoreClass="table.ecore#//IdentColumn"/>
   </genPackages>
 </genmodel:GenModel>

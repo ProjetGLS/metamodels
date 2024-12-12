@@ -58,22 +58,13 @@ public interface scriptFactory extends EFactory {
 	Operation createOperation();
 
 	/**
-	 * Returns a new object of class '<em>Constante</em>'.
+	 * Returns a new object of class '<em>Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Constante</em>'.
+	 * @return a new object of class '<em>Variable</em>'.
 	 * @generated
 	 */
-	Constante createConstante();
-
-	/**
-	 * Returns a new object of class '<em>Operation Type</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Operation Type</em>'.
-	 * @generated
-	 */
-	OperationType createOperationType();
+	Variable createVariable();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -15,8 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link script.script.Script#getScriptElement <em>Script Element</em>}</li>
- *   <li>{@link script.script.Script#getOperationElement <em>Operation Element</em>}</li>
+ *   <li>{@link script.script.Script#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link script.script.Script#getOutputs <em>Outputs</em>}</li>
+ *   <li>{@link script.script.Script#getOperations <em>Operations</em>}</li>
  * </ul>
  *
  * @see script.script.scriptPackage#getScript()
@@ -25,27 +26,39 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Script extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Script Element</b></em>' containment reference list.
-	 * The list contents are of type {@link script.script.ScriptElement}.
+	 * Returns the value of the '<em><b>Inputs</b></em>' containment reference list.
+	 * The list contents are of type {@link script.script.Input}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Script Element</em>' containment reference list.
-	 * @see script.script.scriptPackage#getScript_ScriptElement()
-	 * @model containment="true" lower="2"
-	 * @generated
-	 */
-	EList<ScriptElement> getScriptElement();
-
-	/**
-	 * Returns the value of the '<em><b>Operation Element</b></em>' containment reference list.
-	 * The list contents are of type {@link script.script.OperationTypeElement}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Operation Element</em>' containment reference list.
-	 * @see script.script.scriptPackage#getScript_OperationElement()
+	 * @return the value of the '<em>Inputs</em>' containment reference list.
+	 * @see script.script.scriptPackage#getScript_Inputs()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<OperationTypeElement> getOperationElement();
+	EList<Input> getInputs();
+
+	/**
+	 * Returns the value of the '<em><b>Outputs</b></em>' containment reference list.
+	 * The list contents are of type {@link script.script.Output}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outputs</em>' containment reference list.
+	 * @see script.script.scriptPackage#getScript_Outputs()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	EList<Output> getOutputs();
+
+	/**
+	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
+	 * The list contents are of type {@link script.script.Operation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operations</em>' containment reference list.
+	 * @see script.script.scriptPackage#getScript_Operations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Operation> getOperations();
 
 } // Script

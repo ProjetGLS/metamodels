@@ -60,8 +60,7 @@ public class scriptFactoryImpl extends EFactoryImpl implements scriptFactory {
 			case scriptPackage.INPUT: return createInput();
 			case scriptPackage.OUTPUT: return createOutput();
 			case scriptPackage.OPERATION: return createOperation();
-			case scriptPackage.CONSTANTE: return createConstante();
-			case scriptPackage.OPERATION_TYPE: return createOperationType();
+			case scriptPackage.VARIABLE: return createVariable();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -112,19 +111,9 @@ public class scriptFactoryImpl extends EFactoryImpl implements scriptFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Constante createConstante() {
-		ConstanteImpl constante = new ConstanteImpl();
-		return constante;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public OperationType createOperationType() {
-		OperationTypeImpl operationType = new OperationTypeImpl();
-		return operationType;
+	public Variable createVariable() {
+		VariableImpl variable = new VariableImpl();
+		return variable;
 	}
 
 	/**

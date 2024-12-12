@@ -2,30 +2,27 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="script" nsURI="http://www.meta_excel.org/script" nsPrefix="script">
   <eClassifiers xsi:type="ecore:EClass" name="Script">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ScriptElement" lowerBound="2"
-        upperBound="-1" eType="#//ScriptElement" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="OperationElement" upperBound="-1"
-        eType="#//OperationTypeElement" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
+        eType="#//Input" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" lowerBound="1"
+        upperBound="-1" eType="#//Output" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+        eType="#//Operation" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ScriptElement" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Input" eSuperTypes="#//ScriptElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Input" eSuperTypes="#//Variable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Output" eSuperTypes="#//Variable">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Operation"
+        eOpposite="#//Operation/outputs"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Output" eSuperTypes="#//ScriptElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Operation" eSuperTypes="#//ScriptElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operand" upperBound="-1"
-        eType="#//ScriptElement"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="opType" lowerBound="1"
-        eType="#//OperationTypeElement"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Constante" eSuperTypes="#//ScriptElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OperationTypeElement" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OperationType" eSuperTypes="#//OperationTypeElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nbOperands" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Operation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
+        eType="#//Variable"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outputs" lowerBound="1"
+        upperBound="-1" eType="#//Output" eOpposite="#//Output/expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
   </eClassifiers>
 </ecore:EPackage>

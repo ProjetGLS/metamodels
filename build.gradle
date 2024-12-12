@@ -5,7 +5,7 @@
  */
 
 import org.gradle.api.tasks.options.Option;
-import groovy.text.XmlTemplateEngine
+import groovy.text.XmlTemplateEngine;
 
 class EMFCodeGenTask extends DefaultTask {
     @InputDirectory

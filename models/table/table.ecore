@@ -3,25 +3,21 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="table" nsURI="http://www.meta_excel.org/table" nsPrefix="table">
   <eClassifiers xsi:type="ecore:EClass" name="Table">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="column" lowerBound="1"
-        upperBound="-1" eType="#//Column" containment="true" eOpposite="#//Column/table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="column" upperBound="-1"
+        eType="#//Column" containment="true" eOpposite="#//Column/table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="identColumn" lowerBound="1"
+        eType="#//IdentColumn"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Column">
-    <eOperations name="Column" lowerBound="1" eType="#//Column"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="indice" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="uid" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        iD="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="table" lowerBound="1" eType="#//Table"
         eOpposite="#//Table/column"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="contraintes" upperBound="-1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Type" lowerBound="1" eType="#//Typr"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraints" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="references" eType="#//Column"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="derivateFrom" eType="ecore:EClass http://www.meta_excel.org/algorithm/algorithm.ecore#//Output"
+        eOpposite="http://www.meta_excel.org/algorithm/algorithm.ecore#//Output/column"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Typr">
-    <eLiterals name="integer"/>
-    <eLiterals name="operation" value="1"/>
-    <eLiterals name="boolean" value="2"/>
-    <eLiterals name="float" value="3"/>
-    <eLiterals name="primaryKey" value="4"/>
-    <eLiterals name="reference" value="5" literal="reference"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdentColumn" eSuperTypes="#//Column"/>
 </ecore:EPackage>

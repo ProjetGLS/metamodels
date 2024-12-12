@@ -72,10 +72,6 @@ public class scriptAdapterFactory extends AdapterFactoryImpl {
 				return createScriptAdapter();
 			}
 			@Override
-			public Adapter caseScriptElement(ScriptElement object) {
-				return createScriptElementAdapter();
-			}
-			@Override
 			public Adapter caseInput(Input object) {
 				return createInputAdapter();
 			}
@@ -88,16 +84,8 @@ public class scriptAdapterFactory extends AdapterFactoryImpl {
 				return createOperationAdapter();
 			}
 			@Override
-			public Adapter caseConstante(Constante object) {
-				return createConstanteAdapter();
-			}
-			@Override
-			public Adapter caseOperationTypeElement(OperationTypeElement object) {
-				return createOperationTypeElementAdapter();
-			}
-			@Override
-			public Adapter caseOperationType(OperationType object) {
-				return createOperationTypeAdapter();
+			public Adapter caseVariable(Variable object) {
+				return createVariableAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -130,20 +118,6 @@ public class scriptAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createScriptAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link script.script.ScriptElement <em>Script Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see script.script.ScriptElement
-	 * @generated
-	 */
-	public Adapter createScriptElementAdapter() {
 		return null;
 	}
 
@@ -190,44 +164,16 @@ public class scriptAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link script.script.Constante <em>Constante</em>}'.
+	 * Creates a new adapter for an object of class '{@link script.script.Variable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see script.script.Constante
+	 * @see script.script.Variable
 	 * @generated
 	 */
-	public Adapter createConstanteAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link script.script.OperationTypeElement <em>Operation Type Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see script.script.OperationTypeElement
-	 * @generated
-	 */
-	public Adapter createOperationTypeElementAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link script.script.OperationType <em>Operation Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see script.script.OperationType
-	 * @generated
-	 */
-	public Adapter createOperationTypeAdapter() {
+	public Adapter createVariableAdapter() {
 		return null;
 	}
 
