@@ -3,7 +3,7 @@
     Generate Java Code from Ecore model.
   </description>
   <target name='algorithm_generateCode' description='description'>
-    <emf.Ecore2Java model='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/models/algorithm/algorithm.ecore' genModel='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/models/algorithm/algorithm.genmodel' modelProject='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/target/algorithm' modelProjectFragmentPath='src' generateModelProject='true' generateEditProject='false' generateEditorProject='false' generateTestsProject='false' reconcileGenModel='keep'>
+    <emf.Ecore2Java model='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/models/algorithm/algorithm.ecore' genModel='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/models/algorithm/algorithm.genmodel' modelProject='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/target/algorithm' modelProjectFragmentPath='src' generateModelProject='true' generateEditProject='false' generateEditorProject='false' generateTestsProject='false' reconcileGenModel='overwrite'>
       <arg line='-package http://www.meta_excel.org/algorithm algorithm algorithm'/>
     </emf.Ecore2Java>
   </target>

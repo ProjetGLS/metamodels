@@ -93,13 +93,22 @@ public interface ScriptPackage extends EPackage {
 	int SCRIPT__OPERATIONS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Constants</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SCRIPT__CONSTANTS = 3;
+
+	/**
 	 * The number of structural features of the '<em>Script</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCRIPT_FEATURE_COUNT = 3;
+	int SCRIPT_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link script.impl.OperationImpl <em>Operation</em>}' class.
@@ -139,7 +148,7 @@ public interface ScriptPackage extends EPackage {
 	int OPERATION__INFIX = 2;
 
 	/**
-	 * The feature id for the '<em><b>Inputs</b></em>' reference list.
+	 * The feature id for the '<em><b>Inputs</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -148,7 +157,7 @@ public interface ScriptPackage extends EPackage {
 	int OPERATION__INPUTS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Output</b></em>' reference.
+	 * The feature id for the '<em><b>Output</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -414,6 +423,17 @@ public interface ScriptPackage extends EPackage {
 	EReference getScript_Operations();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link script.Script#getConstants <em>Constants</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Constants</em>'.
+	 * @see script.Script#getConstants()
+	 * @see #getScript()
+	 * @generated
+	 */
+	EReference getScript_Constants();
+
+	/**
 	 * Returns the meta object for class '{@link script.Operation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -457,10 +477,10 @@ public interface ScriptPackage extends EPackage {
 	EAttribute getOperation_Infix();
 
 	/**
-	 * Returns the meta object for the reference list '{@link script.Operation#getInputs <em>Inputs</em>}'.
+	 * Returns the meta object for the containment reference list '{@link script.Operation#getInputs <em>Inputs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Inputs</em>'.
+	 * @return the meta object for the containment reference list '<em>Inputs</em>'.
 	 * @see script.Operation#getInputs()
 	 * @see #getOperation()
 	 * @generated
@@ -468,10 +488,10 @@ public interface ScriptPackage extends EPackage {
 	EReference getOperation_Inputs();
 
 	/**
-	 * Returns the meta object for the reference '{@link script.Operation#getOutput <em>Output</em>}'.
+	 * Returns the meta object for the containment reference '{@link script.Operation#getOutput <em>Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Output</em>'.
+	 * @return the meta object for the containment reference '<em>Output</em>'.
 	 * @see script.Operation#getOutput()
 	 * @see #getOperation()
 	 * @generated
@@ -639,6 +659,14 @@ public interface ScriptPackage extends EPackage {
 		EReference SCRIPT__OPERATIONS = eINSTANCE.getScript_Operations();
 
 		/**
+		 * The meta object literal for the '<em><b>Constants</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SCRIPT__CONSTANTS = eINSTANCE.getScript_Constants();
+
+		/**
 		 * The meta object literal for the '{@link script.impl.OperationImpl <em>Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -673,7 +701,7 @@ public interface ScriptPackage extends EPackage {
 		EAttribute OPERATION__INFIX = eINSTANCE.getOperation_Infix();
 
 		/**
-		 * The meta object literal for the '<em><b>Inputs</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Inputs</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -681,7 +709,7 @@ public interface ScriptPackage extends EPackage {
 		EReference OPERATION__INPUTS = eINSTANCE.getOperation_Inputs();
 
 		/**
-		 * The meta object literal for the '<em><b>Output</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Output</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import script.Constant;
 import script.Input;
 import script.Operation;
 import script.Output;
@@ -35,6 +36,7 @@ import script.ScriptPackage;
  *   <li>{@link script.impl.ScriptImpl#getInputs <em>Inputs</em>}</li>
  *   <li>{@link script.impl.ScriptImpl#getOutput <em>Output</em>}</li>
  *   <li>{@link script.impl.ScriptImpl#getOperations <em>Operations</em>}</li>
+ *   <li>{@link script.impl.ScriptImpl#getConstants <em>Constants</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,6 +71,16 @@ public class ScriptImpl extends EObjectImpl implements Script {
 	 * @ordered
 	 */
 	protected EList<Operation> operations;
+
+	/**
+	 * The cached value of the '{@link #getConstants() <em>Constants</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConstants()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Constant> constants;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -161,6 +173,18 @@ public class ScriptImpl extends EObjectImpl implements Script {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Constant> getConstants() {
+		if (constants == null) {
+			constants = new EObjectContainmentEList<Constant>(Constant.class, this, ScriptPackage.SCRIPT__CONSTANTS);
+		}
+		return constants;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -170,6 +194,8 @@ public class ScriptImpl extends EObjectImpl implements Script {
 				return basicSetOutput(null, msgs);
 			case ScriptPackage.SCRIPT__OPERATIONS:
 				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
+			case ScriptPackage.SCRIPT__CONSTANTS:
+				return ((InternalEList<?>)getConstants()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -188,6 +214,8 @@ public class ScriptImpl extends EObjectImpl implements Script {
 				return getOutput();
 			case ScriptPackage.SCRIPT__OPERATIONS:
 				return getOperations();
+			case ScriptPackage.SCRIPT__CONSTANTS:
+				return getConstants();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,6 +240,10 @@ public class ScriptImpl extends EObjectImpl implements Script {
 				getOperations().clear();
 				getOperations().addAll((Collection<? extends Operation>)newValue);
 				return;
+			case ScriptPackage.SCRIPT__CONSTANTS:
+				getConstants().clear();
+				getConstants().addAll((Collection<? extends Constant>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -233,6 +265,9 @@ public class ScriptImpl extends EObjectImpl implements Script {
 			case ScriptPackage.SCRIPT__OPERATIONS:
 				getOperations().clear();
 				return;
+			case ScriptPackage.SCRIPT__CONSTANTS:
+				getConstants().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -251,6 +286,8 @@ public class ScriptImpl extends EObjectImpl implements Script {
 				return output != null;
 			case ScriptPackage.SCRIPT__OPERATIONS:
 				return operations != null && !operations.isEmpty();
+			case ScriptPackage.SCRIPT__CONSTANTS:
+				return constants != null && !constants.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

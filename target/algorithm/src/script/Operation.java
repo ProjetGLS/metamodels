@@ -94,34 +94,34 @@ public interface Operation extends EObject {
 	void setInfix(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>Inputs</b></em>' reference list.
+	 * Returns the value of the '<em><b>Inputs</b></em>' containment reference list.
 	 * The list contents are of type {@link script.InternalInput}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Inputs</em>' reference list.
+	 * @return the value of the '<em>Inputs</em>' containment reference list.
 	 * @see script.ScriptPackage#getOperation_Inputs()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<InternalInput> getInputs();
 
 	/**
-	 * Returns the value of the '<em><b>Output</b></em>' reference.
+	 * Returns the value of the '<em><b>Output</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Output</em>' reference.
+	 * @return the value of the '<em>Output</em>' containment reference.
 	 * @see #setOutput(InternalOutput)
 	 * @see script.ScriptPackage#getOperation_Output()
-	 * @model required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	InternalOutput getOutput();
 
 	/**
-	 * Sets the value of the '{@link script.Operation#getOutput <em>Output</em>}' reference.
+	 * Sets the value of the '{@link script.Operation#getOutput <em>Output</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Output</em>' reference.
+	 * @param value the new value of the '<em>Output</em>' containment reference.
 	 * @see #getOutput()
 	 * @generated
 	 */

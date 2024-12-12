@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link script.script.Script#getInputs <em>Inputs</em>}</li>
  *   <li>{@link script.script.Script#getOutput <em>Output</em>}</li>
  *   <li>{@link script.script.Script#getOperations <em>Operations</em>}</li>
+ *   <li>{@link script.script.Script#getConstants <em>Constants</em>}</li>
  * </ul>
  *
  * @see script.script.scriptPackage#getScript()
@@ -70,5 +71,17 @@ public interface Script extends EObject {
 	 * @generated
 	 */
 	EList<Operation> getOperations();
+
+	/**
+	 * Returns the value of the '<em><b>Constants</b></em>' containment reference list.
+	 * The list contents are of type {@link script.script.Constant}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Constants</em>' containment reference list.
+	 * @see script.script.scriptPackage#getScript_Constants()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Constant> getConstants();
 
 } // Script

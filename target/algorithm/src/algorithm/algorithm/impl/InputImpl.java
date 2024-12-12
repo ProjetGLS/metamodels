@@ -6,12 +6,8 @@ import algorithm.algorithm.Algorithm;
 import algorithm.algorithm.Input;
 import algorithm.algorithm.algorithmPackage;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -19,7 +15,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import table.Column;
@@ -41,24 +36,24 @@ import table.Column;
  */
 public class InputImpl extends EObjectImpl implements Input {
 	/**
-	 * The cached value of the '{@link #getColumn() <em>Column</em>}' reference list.
+	 * The cached value of the '{@link #getColumn() <em>Column</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getColumn()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Column> column;
+	protected Column column;
 
 	/**
-	 * The cached value of the '{@link #getScript() <em>Script</em>}' reference list.
+	 * The cached value of the '{@link #getScript() <em>Script</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getScript()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<script.Input> script;
+	protected script.Input script;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,11 +79,37 @@ public class InputImpl extends EObjectImpl implements Input {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Column> getColumn() {
-		if (column == null) {
-			column = new EObjectResolvingEList<Column>(Column.class, this, algorithmPackage.INPUT__COLUMN);
+	public Column getColumn() {
+		if (column != null && column.eIsProxy()) {
+			InternalEObject oldColumn = (InternalEObject)column;
+			column = (Column)eResolveProxy(oldColumn);
+			if (column != oldColumn) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, algorithmPackage.INPUT__COLUMN, oldColumn, column));
+			}
 		}
 		return column;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Column basicGetColumn() {
+		return column;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setColumn(Column newColumn) {
+		Column oldColumn = column;
+		column = newColumn;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, algorithmPackage.INPUT__COLUMN, oldColumn, column));
 	}
 
 	/**
@@ -137,11 +158,37 @@ public class InputImpl extends EObjectImpl implements Input {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<script.Input> getScript() {
-		if (script == null) {
-			script = new EObjectResolvingEList<script.Input>(script.Input.class, this, algorithmPackage.INPUT__SCRIPT);
+	public script.Input getScript() {
+		if (script != null && script.eIsProxy()) {
+			InternalEObject oldScript = (InternalEObject)script;
+			script = (script.Input)eResolveProxy(oldScript);
+			if (script != oldScript) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, algorithmPackage.INPUT__SCRIPT, oldScript, script));
+			}
 		}
 		return script;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public script.Input basicGetScript() {
+		return script;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setScript(script.Input newScript) {
+		script.Input oldScript = script;
+		script = newScript;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, algorithmPackage.INPUT__SCRIPT, oldScript, script));
 	}
 
 	/**
@@ -197,11 +244,13 @@ public class InputImpl extends EObjectImpl implements Input {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case algorithmPackage.INPUT__COLUMN:
-				return getColumn();
+				if (resolve) return getColumn();
+				return basicGetColumn();
 			case algorithmPackage.INPUT__ALGORITHM:
 				return getAlgorithm();
 			case algorithmPackage.INPUT__SCRIPT:
-				return getScript();
+				if (resolve) return getScript();
+				return basicGetScript();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -211,20 +260,17 @@ public class InputImpl extends EObjectImpl implements Input {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case algorithmPackage.INPUT__COLUMN:
-				getColumn().clear();
-				getColumn().addAll((Collection<? extends Column>)newValue);
+				setColumn((Column)newValue);
 				return;
 			case algorithmPackage.INPUT__ALGORITHM:
 				setAlgorithm((Algorithm)newValue);
 				return;
 			case algorithmPackage.INPUT__SCRIPT:
-				getScript().clear();
-				getScript().addAll((Collection<? extends script.Input>)newValue);
+				setScript((script.Input)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,13 +285,13 @@ public class InputImpl extends EObjectImpl implements Input {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case algorithmPackage.INPUT__COLUMN:
-				getColumn().clear();
+				setColumn((Column)null);
 				return;
 			case algorithmPackage.INPUT__ALGORITHM:
 				setAlgorithm((Algorithm)null);
 				return;
 			case algorithmPackage.INPUT__SCRIPT:
-				getScript().clear();
+				setScript((script.Input)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -260,11 +306,11 @@ public class InputImpl extends EObjectImpl implements Input {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case algorithmPackage.INPUT__COLUMN:
-				return column != null && !column.isEmpty();
+				return column != null;
 			case algorithmPackage.INPUT__ALGORITHM:
 				return getAlgorithm() != null;
 			case algorithmPackage.INPUT__SCRIPT:
-				return script != null && !script.isEmpty();
+				return script != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -6,12 +6,8 @@ import algorithm.algorithm.Algorithm;
 import algorithm.algorithm.Output;
 import algorithm.algorithm.algorithmPackage;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -19,10 +15,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 import table.Column;
 import table.TablePackage;
@@ -44,24 +37,24 @@ import table.TablePackage;
  */
 public class OutputImpl extends EObjectImpl implements Output {
 	/**
-	 * The cached value of the '{@link #getColumn() <em>Column</em>}' reference list.
+	 * The cached value of the '{@link #getColumn() <em>Column</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getColumn()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Column> column;
+	protected Column column;
 
 	/**
-	 * The cached value of the '{@link #getScript() <em>Script</em>}' reference list.
+	 * The cached value of the '{@link #getScript() <em>Script</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getScript()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<script.Output> script;
+	protected script.Output script;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -87,11 +80,59 @@ public class OutputImpl extends EObjectImpl implements Output {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Column> getColumn() {
-		if (column == null) {
-			column = new EObjectWithInverseResolvingEList<Column>(Column.class, this, algorithmPackage.OUTPUT__COLUMN, TablePackage.COLUMN__DERIVATE_FROM);
+	public Column getColumn() {
+		if (column != null && column.eIsProxy()) {
+			InternalEObject oldColumn = (InternalEObject)column;
+			column = (Column)eResolveProxy(oldColumn);
+			if (column != oldColumn) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, algorithmPackage.OUTPUT__COLUMN, oldColumn, column));
+			}
 		}
 		return column;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Column basicGetColumn() {
+		return column;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetColumn(Column newColumn, NotificationChain msgs) {
+		Column oldColumn = column;
+		column = newColumn;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, algorithmPackage.OUTPUT__COLUMN, oldColumn, newColumn);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setColumn(Column newColumn) {
+		if (newColumn != column) {
+			NotificationChain msgs = null;
+			if (column != null)
+				msgs = ((InternalEObject)column).eInverseRemove(this, TablePackage.COLUMN__DERIVATE_FROM, Column.class, msgs);
+			if (newColumn != null)
+				msgs = ((InternalEObject)newColumn).eInverseAdd(this, TablePackage.COLUMN__DERIVATE_FROM, Column.class, msgs);
+			msgs = basicSetColumn(newColumn, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, algorithmPackage.OUTPUT__COLUMN, newColumn, newColumn));
 	}
 
 	/**
@@ -140,9 +181,14 @@ public class OutputImpl extends EObjectImpl implements Output {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<script.Output> getScript() {
-		if (script == null) {
-			script = new EObjectResolvingEList<script.Output>(script.Output.class, this, algorithmPackage.OUTPUT__SCRIPT);
+	public script.Output getScript() {
+		if (script != null && script.eIsProxy()) {
+			InternalEObject oldScript = (InternalEObject)script;
+			script = (script.Output)eResolveProxy(oldScript);
+			if (script != oldScript) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, algorithmPackage.OUTPUT__SCRIPT, oldScript, script));
+			}
 		}
 		return script;
 	}
@@ -152,12 +198,34 @@ public class OutputImpl extends EObjectImpl implements Output {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
+	public script.Output basicGetScript() {
+		return script;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setScript(script.Output newScript) {
+		script.Output oldScript = script;
+		script = newScript;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, algorithmPackage.OUTPUT__SCRIPT, oldScript, script));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case algorithmPackage.OUTPUT__COLUMN:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getColumn()).basicAdd(otherEnd, msgs);
+				if (column != null)
+					msgs = ((InternalEObject)column).eInverseRemove(this, TablePackage.COLUMN__DERIVATE_FROM, Column.class, msgs);
+				return basicSetColumn((Column)otherEnd, msgs);
 			case algorithmPackage.OUTPUT__ALGORITHM:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
@@ -175,7 +243,7 @@ public class OutputImpl extends EObjectImpl implements Output {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case algorithmPackage.OUTPUT__COLUMN:
-				return ((InternalEList<?>)getColumn()).basicRemove(otherEnd, msgs);
+				return basicSetColumn(null, msgs);
 			case algorithmPackage.OUTPUT__ALGORITHM:
 				return basicSetAlgorithm(null, msgs);
 		}
@@ -205,11 +273,13 @@ public class OutputImpl extends EObjectImpl implements Output {
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case algorithmPackage.OUTPUT__COLUMN:
-				return getColumn();
+				if (resolve) return getColumn();
+				return basicGetColumn();
 			case algorithmPackage.OUTPUT__ALGORITHM:
 				return getAlgorithm();
 			case algorithmPackage.OUTPUT__SCRIPT:
-				return getScript();
+				if (resolve) return getScript();
+				return basicGetScript();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -219,20 +289,17 @@ public class OutputImpl extends EObjectImpl implements Output {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case algorithmPackage.OUTPUT__COLUMN:
-				getColumn().clear();
-				getColumn().addAll((Collection<? extends Column>)newValue);
+				setColumn((Column)newValue);
 				return;
 			case algorithmPackage.OUTPUT__ALGORITHM:
 				setAlgorithm((Algorithm)newValue);
 				return;
 			case algorithmPackage.OUTPUT__SCRIPT:
-				getScript().clear();
-				getScript().addAll((Collection<? extends script.Output>)newValue);
+				setScript((script.Output)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -247,13 +314,13 @@ public class OutputImpl extends EObjectImpl implements Output {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case algorithmPackage.OUTPUT__COLUMN:
-				getColumn().clear();
+				setColumn((Column)null);
 				return;
 			case algorithmPackage.OUTPUT__ALGORITHM:
 				setAlgorithm((Algorithm)null);
 				return;
 			case algorithmPackage.OUTPUT__SCRIPT:
-				getScript().clear();
+				setScript((script.Output)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -268,11 +335,11 @@ public class OutputImpl extends EObjectImpl implements Output {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case algorithmPackage.OUTPUT__COLUMN:
-				return column != null && !column.isEmpty();
+				return column != null;
 			case algorithmPackage.OUTPUT__ALGORITHM:
 				return getAlgorithm() != null;
 			case algorithmPackage.OUTPUT__SCRIPT:
-				return script != null && !script.isEmpty();
+				return script != null;
 		}
 		return super.eIsSet(featureID);
 	}

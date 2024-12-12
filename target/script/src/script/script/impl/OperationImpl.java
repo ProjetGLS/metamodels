@@ -5,6 +5,7 @@ package script.script.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -14,7 +15,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import script.script.InternalInput;
 import script.script.InternalOutput;
@@ -100,7 +102,7 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	protected boolean infix = INFIX_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getInputs() <em>Inputs</em>}' reference list.
+	 * The cached value of the '{@link #getInputs() <em>Inputs</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getInputs()
@@ -110,7 +112,7 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	protected EList<InternalInput> inputs;
 
 	/**
-	 * The cached value of the '{@link #getOutput() <em>Output</em>}' reference.
+	 * The cached value of the '{@link #getOutput() <em>Output</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getOutput()
@@ -208,7 +210,7 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	 */
 	public EList<InternalInput> getInputs() {
 		if (inputs == null) {
-			inputs = new EObjectResolvingEList<InternalInput>(InternalInput.class, this, scriptPackage.OPERATION__INPUTS);
+			inputs = new EObjectContainmentEList<InternalInput>(InternalInput.class, this, scriptPackage.OPERATION__INPUTS);
 		}
 		return inputs;
 	}
@@ -219,14 +221,6 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	 * @generated
 	 */
 	public InternalOutput getOutput() {
-		if (output != null && output.eIsProxy()) {
-			InternalEObject oldOutput = (InternalEObject)output;
-			output = (InternalOutput)eResolveProxy(oldOutput);
-			if (output != oldOutput) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, scriptPackage.OPERATION__OUTPUT, oldOutput, output));
-			}
-		}
 		return output;
 	}
 
@@ -235,8 +229,14 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InternalOutput basicGetOutput() {
-		return output;
+	public NotificationChain basicSetOutput(InternalOutput newOutput, NotificationChain msgs) {
+		InternalOutput oldOutput = output;
+		output = newOutput;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, scriptPackage.OPERATION__OUTPUT, oldOutput, newOutput);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -245,10 +245,33 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	 * @generated
 	 */
 	public void setOutput(InternalOutput newOutput) {
-		InternalOutput oldOutput = output;
-		output = newOutput;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.OPERATION__OUTPUT, oldOutput, output));
+		if (newOutput != output) {
+			NotificationChain msgs = null;
+			if (output != null)
+				msgs = ((InternalEObject)output).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - scriptPackage.OPERATION__OUTPUT, null, msgs);
+			if (newOutput != null)
+				msgs = ((InternalEObject)newOutput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - scriptPackage.OPERATION__OUTPUT, null, msgs);
+			msgs = basicSetOutput(newOutput, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.OPERATION__OUTPUT, newOutput, newOutput));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case scriptPackage.OPERATION__INPUTS:
+				return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
+			case scriptPackage.OPERATION__OUTPUT:
+				return basicSetOutput(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -268,8 +291,7 @@ public class OperationImpl extends EObjectImpl implements Operation {
 			case scriptPackage.OPERATION__INPUTS:
 				return getInputs();
 			case scriptPackage.OPERATION__OUTPUT:
-				if (resolve) return getOutput();
-				return basicGetOutput();
+				return getOutput();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

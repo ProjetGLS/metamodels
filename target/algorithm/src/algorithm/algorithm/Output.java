@@ -2,8 +2,6 @@
  */
 package algorithm.algorithm;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 import table.Column;
@@ -28,18 +26,28 @@ import table.Column;
  */
 public interface Output extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Column</b></em>' reference list.
-	 * The list contents are of type {@link table.Column}.
+	 * Returns the value of the '<em><b>Column</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link table.Column#getDerivateFrom <em>Derivate From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Column</em>' reference list.
+	 * @return the value of the '<em>Column</em>' reference.
+	 * @see #setColumn(Column)
 	 * @see algorithm.algorithm.algorithmPackage#getOutput_Column()
 	 * @see table.Column#getDerivateFrom
 	 * @model opposite="derivateFrom" required="true"
 	 * @generated
 	 */
-	EList<Column> getColumn();
+	Column getColumn();
+
+	/**
+	 * Sets the value of the '{@link algorithm.algorithm.Output#getColumn <em>Column</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Column</em>' reference.
+	 * @see #getColumn()
+	 * @generated
+	 */
+	void setColumn(Column value);
 
 	/**
 	 * Returns the value of the '<em><b>Algorithm</b></em>' container reference.
@@ -66,15 +74,25 @@ public interface Output extends EObject {
 	void setAlgorithm(Algorithm value);
 
 	/**
-	 * Returns the value of the '<em><b>Script</b></em>' reference list.
-	 * The list contents are of type {@link script.Output}.
+	 * Returns the value of the '<em><b>Script</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Script</em>' reference list.
+	 * @return the value of the '<em>Script</em>' reference.
+	 * @see #setScript(script.Output)
 	 * @see algorithm.algorithm.algorithmPackage#getOutput_Script()
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<script.Output> getScript();
+	script.Output getScript();
+
+	/**
+	 * Sets the value of the '{@link algorithm.algorithm.Output#getScript <em>Script</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Script</em>' reference.
+	 * @see #getScript()
+	 * @generated
+	 */
+	void setScript(script.Output value);
 
 } // Output

@@ -42,13 +42,14 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../script/script.ecore#//Script/inputs"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../script/script.ecore#//Script/output"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../script/script.ecore#//Script/operations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../script/script.ecore#//Script/constants"/>
     </genClasses>
     <genClasses ecoreClass="../script/script.ecore#//Operation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../script/script.ecore#//Operation/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../script/script.ecore#//Operation/arity"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../script/script.ecore#//Operation/infix"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../script/script.ecore#//Operation/inputs"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../script/script.ecore#//Operation/output"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../script/script.ecore#//Operation/inputs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../script/script.ecore#//Operation/output"/>
     </genClasses>
     <genClasses ecoreClass="../script/script.ecore#//Input"/>
     <genClasses ecoreClass="../script/script.ecore#//Output">

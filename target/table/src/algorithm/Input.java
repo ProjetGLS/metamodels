@@ -2,8 +2,6 @@
  */
 package algorithm;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 import table.table.Column;
@@ -28,16 +26,26 @@ import table.table.Column;
  */
 public interface Input extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Column</b></em>' reference list.
-	 * The list contents are of type {@link table.table.Column}.
+	 * Returns the value of the '<em><b>Column</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Column</em>' reference list.
+	 * @return the value of the '<em>Column</em>' reference.
+	 * @see #setColumn(Column)
 	 * @see algorithm.AlgorithmPackage#getInput_Column()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<Column> getColumn();
+	Column getColumn();
+
+	/**
+	 * Sets the value of the '{@link algorithm.Input#getColumn <em>Column</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Column</em>' reference.
+	 * @see #getColumn()
+	 * @generated
+	 */
+	void setColumn(Column value);
 
 	/**
 	 * Returns the value of the '<em><b>Algorithm</b></em>' container reference.
@@ -64,15 +72,25 @@ public interface Input extends EObject {
 	void setAlgorithm(Algorithm value);
 
 	/**
-	 * Returns the value of the '<em><b>Script</b></em>' reference list.
-	 * The list contents are of type {@link script.script.Input}.
+	 * Returns the value of the '<em><b>Script</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Script</em>' reference list.
+	 * @return the value of the '<em>Script</em>' reference.
+	 * @see #setScript(script.script.Input)
 	 * @see algorithm.AlgorithmPackage#getInput_Script()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<script.script.Input> getScript();
+	script.script.Input getScript();
+
+	/**
+	 * Sets the value of the '{@link algorithm.Input#getScript <em>Script</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Script</em>' reference.
+	 * @see #getScript()
+	 * @generated
+	 */
+	void setScript(script.script.Input value);
 
 } // Input

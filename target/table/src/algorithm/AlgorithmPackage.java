@@ -112,7 +112,7 @@ public interface AlgorithmPackage extends EPackage {
 	int INPUT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Column</b></em>' reference list.
+	 * The feature id for the '<em><b>Column</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -130,7 +130,7 @@ public interface AlgorithmPackage extends EPackage {
 	int INPUT__ALGORITHM = 1;
 
 	/**
-	 * The feature id for the '<em><b>Script</b></em>' reference list.
+	 * The feature id for the '<em><b>Script</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -158,7 +158,7 @@ public interface AlgorithmPackage extends EPackage {
 	int OUTPUT = 2;
 
 	/**
-	 * The feature id for the '<em><b>Column</b></em>' reference list.
+	 * The feature id for the '<em><b>Column</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -176,7 +176,7 @@ public interface AlgorithmPackage extends EPackage {
 	int OUTPUT__ALGORITHM = 1;
 
 	/**
-	 * The feature id for the '<em><b>Script</b></em>' reference list.
+	 * The feature id for the '<em><b>Script</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -248,10 +248,10 @@ public interface AlgorithmPackage extends EPackage {
 	EClass getInput();
 
 	/**
-	 * Returns the meta object for the reference list '{@link algorithm.Input#getColumn <em>Column</em>}'.
+	 * Returns the meta object for the reference '{@link algorithm.Input#getColumn <em>Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Column</em>'.
+	 * @return the meta object for the reference '<em>Column</em>'.
 	 * @see algorithm.Input#getColumn()
 	 * @see #getInput()
 	 * @generated
@@ -270,10 +270,10 @@ public interface AlgorithmPackage extends EPackage {
 	EReference getInput_Algorithm();
 
 	/**
-	 * Returns the meta object for the reference list '{@link algorithm.Input#getScript <em>Script</em>}'.
+	 * Returns the meta object for the reference '{@link algorithm.Input#getScript <em>Script</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Script</em>'.
+	 * @return the meta object for the reference '<em>Script</em>'.
 	 * @see algorithm.Input#getScript()
 	 * @see #getInput()
 	 * @generated
@@ -291,10 +291,10 @@ public interface AlgorithmPackage extends EPackage {
 	EClass getOutput();
 
 	/**
-	 * Returns the meta object for the reference list '{@link algorithm.Output#getColumn <em>Column</em>}'.
+	 * Returns the meta object for the reference '{@link algorithm.Output#getColumn <em>Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Column</em>'.
+	 * @return the meta object for the reference '<em>Column</em>'.
 	 * @see algorithm.Output#getColumn()
 	 * @see #getOutput()
 	 * @generated
@@ -313,10 +313,10 @@ public interface AlgorithmPackage extends EPackage {
 	EReference getOutput_Algorithm();
 
 	/**
-	 * Returns the meta object for the reference list '{@link algorithm.Output#getScript <em>Script</em>}'.
+	 * Returns the meta object for the reference '{@link algorithm.Output#getScript <em>Script</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Script</em>'.
+	 * @return the meta object for the reference '<em>Script</em>'.
 	 * @see algorithm.Output#getScript()
 	 * @see #getOutput()
 	 * @generated
@@ -390,7 +390,7 @@ public interface AlgorithmPackage extends EPackage {
 		EClass INPUT = eINSTANCE.getInput();
 
 		/**
-		 * The meta object literal for the '<em><b>Column</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Column</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -406,7 +406,7 @@ public interface AlgorithmPackage extends EPackage {
 		EReference INPUT__ALGORITHM = eINSTANCE.getInput_Algorithm();
 
 		/**
-		 * The meta object literal for the '<em><b>Script</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Script</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -424,7 +424,7 @@ public interface AlgorithmPackage extends EPackage {
 		EClass OUTPUT = eINSTANCE.getOutput();
 
 		/**
-		 * The meta object literal for the '<em><b>Column</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Column</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -440,7 +440,7 @@ public interface AlgorithmPackage extends EPackage {
 		EReference OUTPUT__ALGORITHM = eINSTANCE.getOutput_Algorithm();
 
 		/**
-		 * The meta object literal for the '<em><b>Script</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Script</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
