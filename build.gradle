@@ -88,9 +88,9 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.eclipse.emf:org.eclipse.emf.common:2.21.0'
-    implementation 'org.eclipse.emf:org.eclipse.emf.ecore:2.21.0'
-    //implementation 'org.eclipse.emf:org.eclipse.emf.ecore.xmi:2.21.0'
+    implementation "org.eclipse.emf:org.eclipse.emf.common:2.40.0";
+    implementation "org.eclipse.emf:org.eclipse.emf.ecore:2.38.0";
+    implementation "org.eclipse.emf:org.eclipse.emf.ecore.xmi:2.38.0";
 }
 
 sourceSets {
@@ -103,6 +103,8 @@ sourceSets {
         }
     }
 }
+
+mainClassName = "src.script.valid.ValidateScript"
 
 tasks.register("dummy", DefaultTask) {
     println "Metamodels dummy task !"
