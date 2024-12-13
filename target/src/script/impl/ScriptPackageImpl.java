@@ -1,9 +1,7 @@
 /**
  */
-package script.impl;
+package src.script.impl;
 
-import algorithm.AlgorithmPackage;
-import algorithm.impl.AlgorithmPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
@@ -11,18 +9,24 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import script.Constant;
-import script.Input;
-import script.InternalInput;
-import script.InternalOutput;
-import script.Operation;
-import script.Output;
-import script.Script;
-import script.ScriptFactory;
-import script.ScriptPackage;
-import script.Variable;
-import table.TablePackage;
-import table.impl.TablePackageImpl;
+import src.algorithm.algorithmPackage;
+
+import src.algorithm.impl.algorithmPackageImpl;
+
+import src.script.Constant;
+import src.script.Input;
+import src.script.InternalInput;
+import src.script.InternalOutput;
+import src.script.Operation;
+import src.script.Output;
+import src.script.Script;
+import src.script.Variable;
+import src.script.scriptFactory;
+import src.script.scriptPackage;
+
+import src.table.impl.tablePackageImpl;
+
+import src.table.tablePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -30,7 +34,7 @@ import table.impl.TablePackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
+public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -98,12 +102,12 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see script.ScriptPackage#eNS_URI
+	 * @see src.script.scriptPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private ScriptPackageImpl() {
-		super(eNS_URI, ScriptFactory.eINSTANCE);
+	private scriptPackageImpl() {
+		super(eNS_URI, scriptFactory.eINSTANCE);
 	}
 	/**
 	 * <!-- begin-user-doc -->
@@ -115,7 +119,7 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link ScriptPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link scriptPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -124,37 +128,37 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static ScriptPackage init() {
-		if (isInited) return (ScriptPackage)EPackage.Registry.INSTANCE.getEPackage(ScriptPackage.eNS_URI);
+	public static scriptPackage init() {
+		if (isInited) return (scriptPackage)EPackage.Registry.INSTANCE.getEPackage(scriptPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredScriptPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		ScriptPackageImpl theScriptPackage = registeredScriptPackage instanceof ScriptPackageImpl ? (ScriptPackageImpl)registeredScriptPackage : new ScriptPackageImpl();
+		Object registeredscriptPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		scriptPackageImpl thescriptPackage = registeredscriptPackage instanceof scriptPackageImpl ? (scriptPackageImpl)registeredscriptPackage : new scriptPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AlgorithmPackage.eNS_URI);
-		AlgorithmPackageImpl theAlgorithmPackage = (AlgorithmPackageImpl)(registeredPackage instanceof AlgorithmPackageImpl ? registeredPackage : AlgorithmPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TablePackage.eNS_URI);
-		TablePackageImpl theTablePackage = (TablePackageImpl)(registeredPackage instanceof TablePackageImpl ? registeredPackage : TablePackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(algorithmPackage.eNS_URI);
+		algorithmPackageImpl thealgorithmPackage = (algorithmPackageImpl)(registeredPackage instanceof algorithmPackageImpl ? registeredPackage : algorithmPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(tablePackage.eNS_URI);
+		tablePackageImpl thetablePackage = (tablePackageImpl)(registeredPackage instanceof tablePackageImpl ? registeredPackage : tablePackage.eINSTANCE);
 
 		// Create package meta-data objects
-		theScriptPackage.createPackageContents();
-		theAlgorithmPackage.createPackageContents();
-		theTablePackage.createPackageContents();
+		thescriptPackage.createPackageContents();
+		thealgorithmPackage.createPackageContents();
+		thetablePackage.createPackageContents();
 
 		// Initialize created meta-data
-		theScriptPackage.initializePackageContents();
-		theAlgorithmPackage.initializePackageContents();
-		theTablePackage.initializePackageContents();
+		thescriptPackage.initializePackageContents();
+		thealgorithmPackage.initializePackageContents();
+		thetablePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theScriptPackage.freeze();
+		thescriptPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(ScriptPackage.eNS_URI, theScriptPackage);
-		return theScriptPackage;
+		EPackage.Registry.INSTANCE.put(scriptPackage.eNS_URI, thescriptPackage);
+		return thescriptPackage;
 	}
 
 	/**
@@ -351,8 +355,8 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ScriptFactory getScriptFactory() {
-		return (ScriptFactory)getEFactoryInstance();
+	public scriptFactory getscriptFactory() {
+		return (scriptFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -470,4 +474,4 @@ public class ScriptPackageImpl extends EPackageImpl implements ScriptPackage {
 		createResource(eNS_URI);
 	}
 
-} //ScriptPackageImpl
+} //scriptPackageImpl

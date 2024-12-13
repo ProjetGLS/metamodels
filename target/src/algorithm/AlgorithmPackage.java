@@ -1,6 +1,6 @@
 /**
  */
-package algorithm;
+package src.algorithm;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see algorithm.AlgorithmFactory
+ * @see src.algorithm.algorithmFactory
  * @model kind="package"
  * @generated
  */
-public interface AlgorithmPackage extends EPackage {
+public interface algorithmPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -53,14 +53,14 @@ public interface AlgorithmPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	AlgorithmPackage eINSTANCE = algorithm.impl.AlgorithmPackageImpl.init();
+	algorithmPackage eINSTANCE = src.algorithm.impl.algorithmPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link algorithm.impl.AlgorithmImpl <em>Algorithm</em>}' class.
+	 * The meta object id for the '{@link src.algorithm.impl.AlgorithmImpl <em>Algorithm</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see algorithm.impl.AlgorithmImpl
-	 * @see algorithm.impl.AlgorithmPackageImpl#getAlgorithm()
+	 * @see src.algorithm.impl.AlgorithmImpl
+	 * @see src.algorithm.impl.algorithmPackageImpl#getAlgorithm()
 	 * @generated
 	 */
 	int ALGORITHM = 0;
@@ -102,11 +102,11 @@ public interface AlgorithmPackage extends EPackage {
 	int ALGORITHM_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link algorithm.impl.InputImpl <em>Input</em>}' class.
+	 * The meta object id for the '{@link src.algorithm.impl.InputImpl <em>Input</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see algorithm.impl.InputImpl
-	 * @see algorithm.impl.AlgorithmPackageImpl#getInput()
+	 * @see src.algorithm.impl.InputImpl
+	 * @see src.algorithm.impl.algorithmPackageImpl#getInput()
 	 * @generated
 	 */
 	int INPUT = 1;
@@ -148,11 +148,11 @@ public interface AlgorithmPackage extends EPackage {
 	int INPUT_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link algorithm.impl.OutputImpl <em>Output</em>}' class.
+	 * The meta object id for the '{@link src.algorithm.impl.OutputImpl <em>Output</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see algorithm.impl.OutputImpl
-	 * @see algorithm.impl.AlgorithmPackageImpl#getOutput()
+	 * @see src.algorithm.impl.OutputImpl
+	 * @see src.algorithm.impl.algorithmPackageImpl#getOutput()
 	 * @generated
 	 */
 	int OUTPUT = 2;
@@ -195,129 +195,129 @@ public interface AlgorithmPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link algorithm.Algorithm <em>Algorithm</em>}'.
+	 * Returns the meta object for class '{@link src.algorithm.Algorithm <em>Algorithm</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Algorithm</em>'.
-	 * @see algorithm.Algorithm
+	 * @see src.algorithm.Algorithm
 	 * @generated
 	 */
 	EClass getAlgorithm();
 
 	/**
-	 * Returns the meta object for the attribute '{@link algorithm.Algorithm#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link src.algorithm.Algorithm#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see algorithm.Algorithm#getName()
+	 * @see src.algorithm.Algorithm#getName()
 	 * @see #getAlgorithm()
 	 * @generated
 	 */
 	EAttribute getAlgorithm_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link algorithm.Algorithm#getInputs <em>Inputs</em>}'.
+	 * Returns the meta object for the containment reference list '{@link src.algorithm.Algorithm#getInputs <em>Inputs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Inputs</em>'.
-	 * @see algorithm.Algorithm#getInputs()
+	 * @see src.algorithm.Algorithm#getInputs()
 	 * @see #getAlgorithm()
 	 * @generated
 	 */
 	EReference getAlgorithm_Inputs();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link algorithm.Algorithm#getOutput <em>Output</em>}'.
+	 * Returns the meta object for the containment reference '{@link src.algorithm.Algorithm#getOutput <em>Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Output</em>'.
-	 * @see algorithm.Algorithm#getOutput()
+	 * @see src.algorithm.Algorithm#getOutput()
 	 * @see #getAlgorithm()
 	 * @generated
 	 */
 	EReference getAlgorithm_Output();
 
 	/**
-	 * Returns the meta object for class '{@link algorithm.Input <em>Input</em>}'.
+	 * Returns the meta object for class '{@link src.algorithm.Input <em>Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Input</em>'.
-	 * @see algorithm.Input
+	 * @see src.algorithm.Input
 	 * @generated
 	 */
 	EClass getInput();
 
 	/**
-	 * Returns the meta object for the reference '{@link algorithm.Input#getColumn <em>Column</em>}'.
+	 * Returns the meta object for the reference '{@link src.algorithm.Input#getColumn <em>Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Column</em>'.
-	 * @see algorithm.Input#getColumn()
+	 * @see src.algorithm.Input#getColumn()
 	 * @see #getInput()
 	 * @generated
 	 */
 	EReference getInput_Column();
 
 	/**
-	 * Returns the meta object for the container reference '{@link algorithm.Input#getAlgorithm <em>Algorithm</em>}'.
+	 * Returns the meta object for the container reference '{@link src.algorithm.Input#getAlgorithm <em>Algorithm</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the container reference '<em>Algorithm</em>'.
-	 * @see algorithm.Input#getAlgorithm()
+	 * @see src.algorithm.Input#getAlgorithm()
 	 * @see #getInput()
 	 * @generated
 	 */
 	EReference getInput_Algorithm();
 
 	/**
-	 * Returns the meta object for the reference '{@link algorithm.Input#getScript <em>Script</em>}'.
+	 * Returns the meta object for the reference '{@link src.algorithm.Input#getScript <em>Script</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Script</em>'.
-	 * @see algorithm.Input#getScript()
+	 * @see src.algorithm.Input#getScript()
 	 * @see #getInput()
 	 * @generated
 	 */
 	EReference getInput_Script();
 
 	/**
-	 * Returns the meta object for class '{@link algorithm.Output <em>Output</em>}'.
+	 * Returns the meta object for class '{@link src.algorithm.Output <em>Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Output</em>'.
-	 * @see algorithm.Output
+	 * @see src.algorithm.Output
 	 * @generated
 	 */
 	EClass getOutput();
 
 	/**
-	 * Returns the meta object for the reference '{@link algorithm.Output#getColumn <em>Column</em>}'.
+	 * Returns the meta object for the reference '{@link src.algorithm.Output#getColumn <em>Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Column</em>'.
-	 * @see algorithm.Output#getColumn()
+	 * @see src.algorithm.Output#getColumn()
 	 * @see #getOutput()
 	 * @generated
 	 */
 	EReference getOutput_Column();
 
 	/**
-	 * Returns the meta object for the container reference '{@link algorithm.Output#getAlgorithm <em>Algorithm</em>}'.
+	 * Returns the meta object for the container reference '{@link src.algorithm.Output#getAlgorithm <em>Algorithm</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the container reference '<em>Algorithm</em>'.
-	 * @see algorithm.Output#getAlgorithm()
+	 * @see src.algorithm.Output#getAlgorithm()
 	 * @see #getOutput()
 	 * @generated
 	 */
 	EReference getOutput_Algorithm();
 
 	/**
-	 * Returns the meta object for the reference '{@link algorithm.Output#getScript <em>Script</em>}'.
+	 * Returns the meta object for the reference '{@link src.algorithm.Output#getScript <em>Script</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Script</em>'.
-	 * @see algorithm.Output#getScript()
+	 * @see src.algorithm.Output#getScript()
 	 * @see #getOutput()
 	 * @generated
 	 */
@@ -330,7 +330,7 @@ public interface AlgorithmPackage extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	AlgorithmFactory getAlgorithmFactory();
+	algorithmFactory getalgorithmFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -346,11 +346,11 @@ public interface AlgorithmPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link algorithm.impl.AlgorithmImpl <em>Algorithm</em>}' class.
+		 * The meta object literal for the '{@link src.algorithm.impl.AlgorithmImpl <em>Algorithm</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see algorithm.impl.AlgorithmImpl
-		 * @see algorithm.impl.AlgorithmPackageImpl#getAlgorithm()
+		 * @see src.algorithm.impl.AlgorithmImpl
+		 * @see src.algorithm.impl.algorithmPackageImpl#getAlgorithm()
 		 * @generated
 		 */
 		EClass ALGORITHM = eINSTANCE.getAlgorithm();
@@ -380,11 +380,11 @@ public interface AlgorithmPackage extends EPackage {
 		EReference ALGORITHM__OUTPUT = eINSTANCE.getAlgorithm_Output();
 
 		/**
-		 * The meta object literal for the '{@link algorithm.impl.InputImpl <em>Input</em>}' class.
+		 * The meta object literal for the '{@link src.algorithm.impl.InputImpl <em>Input</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see algorithm.impl.InputImpl
-		 * @see algorithm.impl.AlgorithmPackageImpl#getInput()
+		 * @see src.algorithm.impl.InputImpl
+		 * @see src.algorithm.impl.algorithmPackageImpl#getInput()
 		 * @generated
 		 */
 		EClass INPUT = eINSTANCE.getInput();
@@ -414,11 +414,11 @@ public interface AlgorithmPackage extends EPackage {
 		EReference INPUT__SCRIPT = eINSTANCE.getInput_Script();
 
 		/**
-		 * The meta object literal for the '{@link algorithm.impl.OutputImpl <em>Output</em>}' class.
+		 * The meta object literal for the '{@link src.algorithm.impl.OutputImpl <em>Output</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see algorithm.impl.OutputImpl
-		 * @see algorithm.impl.AlgorithmPackageImpl#getOutput()
+		 * @see src.algorithm.impl.OutputImpl
+		 * @see src.algorithm.impl.algorithmPackageImpl#getOutput()
 		 * @generated
 		 */
 		EClass OUTPUT = eINSTANCE.getOutput();
@@ -449,4 +449,4 @@ public interface AlgorithmPackage extends EPackage {
 
 	}
 
-} //AlgorithmPackage
+} //algorithmPackage

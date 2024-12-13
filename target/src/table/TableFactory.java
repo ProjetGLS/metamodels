@@ -1,6 +1,6 @@
 /**
  */
-package table;
+package src.table;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -9,17 +9,17 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see table.TablePackage
+ * @see src.table.tablePackage
  * @generated
  */
-public interface TableFactory extends EFactory {
+public interface tableFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	TableFactory eINSTANCE = table.impl.TableFactoryImpl.init();
+	tableFactory eINSTANCE = src.table.impl.tableFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Table</em>'.
@@ -55,6 +55,6 @@ public interface TableFactory extends EFactory {
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
-	TablePackage getTablePackage();
+	tablePackage gettablePackage();
 
-} //TableFactory
+} //tableFactory

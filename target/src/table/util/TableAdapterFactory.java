@@ -1,6 +1,6 @@
 /**
  */
-package table.util;
+package src.table.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -9,24 +9,24 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import table.*;
+import src.table.*;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see table.TablePackage
+ * @see src.table.tablePackage
  * @generated
  */
-public class TableAdapterFactory extends AdapterFactoryImpl {
+public class tableAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static TablePackage modelPackage;
+	protected static tablePackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -34,9 +34,9 @@ public class TableAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TableAdapterFactory() {
+	public tableAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = TablePackage.eINSTANCE;
+			modelPackage = tablePackage.eINSTANCE;
 		}
 	}
 
@@ -65,8 +65,8 @@ public class TableAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TableSwitch<Adapter> modelSwitch =
-		new TableSwitch<Adapter>() {
+	protected tableSwitch<Adapter> modelSwitch =
+		new tableSwitch<Adapter>() {
 			@Override
 			public Adapter caseTable(Table object) {
 				return createTableAdapter();
@@ -100,13 +100,13 @@ public class TableAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link table.Table <em>Table</em>}'.
+	 * Creates a new adapter for an object of class '{@link src.table.Table <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see table.Table
+	 * @see src.table.Table
 	 * @generated
 	 */
 	public Adapter createTableAdapter() {
@@ -114,13 +114,13 @@ public class TableAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link table.Column <em>Column</em>}'.
+	 * Creates a new adapter for an object of class '{@link src.table.Column <em>Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see table.Column
+	 * @see src.table.Column
 	 * @generated
 	 */
 	public Adapter createColumnAdapter() {
@@ -128,13 +128,13 @@ public class TableAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link table.IdentColumn <em>Ident Column</em>}'.
+	 * Creates a new adapter for an object of class '{@link src.table.IdentColumn <em>Ident Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see table.IdentColumn
+	 * @see src.table.IdentColumn
 	 * @generated
 	 */
 	public Adapter createIdentColumnAdapter() {
@@ -153,4 +153,4 @@ public class TableAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //TableAdapterFactory
+} //tableAdapterFactory

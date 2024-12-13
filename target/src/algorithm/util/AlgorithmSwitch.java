@@ -1,13 +1,13 @@
 /**
  */
-package algorithm.util;
-
-import algorithm.*;
+package src.algorithm.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
+
+import src.algorithm.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,17 +19,17 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see algorithm.AlgorithmPackage
+ * @see src.algorithm.algorithmPackage
  * @generated
  */
-public class AlgorithmSwitch<T> extends Switch<T> {
+public class algorithmSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static AlgorithmPackage modelPackage;
+	protected static algorithmPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -37,9 +37,9 @@ public class AlgorithmSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AlgorithmSwitch() {
+	public algorithmSwitch() {
 		if (modelPackage == null) {
-			modelPackage = AlgorithmPackage.eINSTANCE;
+			modelPackage = algorithmPackage.eINSTANCE;
 		}
 	}
 
@@ -66,19 +66,19 @@ public class AlgorithmSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case AlgorithmPackage.ALGORITHM: {
+			case algorithmPackage.ALGORITHM: {
 				Algorithm algorithm = (Algorithm)theEObject;
 				T result = caseAlgorithm(algorithm);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AlgorithmPackage.INPUT: {
+			case algorithmPackage.INPUT: {
 				Input input = (Input)theEObject;
 				T result = caseInput(input);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case AlgorithmPackage.OUTPUT: {
+			case algorithmPackage.OUTPUT: {
 				Output output = (Output)theEObject;
 				T result = caseOutput(output);
 				if (result == null) result = defaultCase(theEObject);
@@ -149,4 +149,4 @@ public class AlgorithmSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //AlgorithmSwitch
+} //algorithmSwitch

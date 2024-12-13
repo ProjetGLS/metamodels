@@ -1,8 +1,6 @@
 /**
  */
-package algorithm.util;
-
-import algorithm.*;
+package src.algorithm.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -11,22 +9,24 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import src.algorithm.*;
+
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see algorithm.AlgorithmPackage
+ * @see src.algorithm.algorithmPackage
  * @generated
  */
-public class AlgorithmAdapterFactory extends AdapterFactoryImpl {
+public class algorithmAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static AlgorithmPackage modelPackage;
+	protected static algorithmPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -34,9 +34,9 @@ public class AlgorithmAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AlgorithmAdapterFactory() {
+	public algorithmAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = AlgorithmPackage.eINSTANCE;
+			modelPackage = algorithmPackage.eINSTANCE;
 		}
 	}
 
@@ -65,8 +65,8 @@ public class AlgorithmAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected AlgorithmSwitch<Adapter> modelSwitch =
-		new AlgorithmSwitch<Adapter>() {
+	protected algorithmSwitch<Adapter> modelSwitch =
+		new algorithmSwitch<Adapter>() {
 			@Override
 			public Adapter caseAlgorithm(Algorithm object) {
 				return createAlgorithmAdapter();
@@ -100,13 +100,13 @@ public class AlgorithmAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link algorithm.Algorithm <em>Algorithm</em>}'.
+	 * Creates a new adapter for an object of class '{@link src.algorithm.Algorithm <em>Algorithm</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see algorithm.Algorithm
+	 * @see src.algorithm.Algorithm
 	 * @generated
 	 */
 	public Adapter createAlgorithmAdapter() {
@@ -114,13 +114,13 @@ public class AlgorithmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link algorithm.Input <em>Input</em>}'.
+	 * Creates a new adapter for an object of class '{@link src.algorithm.Input <em>Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see algorithm.Input
+	 * @see src.algorithm.Input
 	 * @generated
 	 */
 	public Adapter createInputAdapter() {
@@ -128,13 +128,13 @@ public class AlgorithmAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link algorithm.Output <em>Output</em>}'.
+	 * Creates a new adapter for an object of class '{@link src.algorithm.Output <em>Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see algorithm.Output
+	 * @see src.algorithm.Output
 	 * @generated
 	 */
 	public Adapter createOutputAdapter() {
@@ -153,4 +153,4 @@ public class AlgorithmAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //AlgorithmAdapterFactory
+} //algorithmAdapterFactory

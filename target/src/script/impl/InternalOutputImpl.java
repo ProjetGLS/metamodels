@@ -1,11 +1,11 @@
 /**
  */
-package script.impl;
+package src.script.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import script.InternalOutput;
-import script.ScriptPackage;
+import src.script.InternalOutput;
+import src.script.scriptPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class InternalOutputImpl extends VariableImpl implements InternalOutput {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ScriptPackage.Literals.INTERNAL_OUTPUT;
+		return scriptPackage.Literals.INTERNAL_OUTPUT;
 	}
 
 } //InternalOutputImpl

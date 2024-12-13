@@ -1,6 +1,6 @@
 /**
  */
-package script.impl;
+package src.script.impl;
 
 import java.util.Collection;
 
@@ -18,10 +18,10 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import script.InternalInput;
-import script.InternalOutput;
-import script.Operation;
-import script.ScriptPackage;
+import src.script.InternalInput;
+import src.script.InternalOutput;
+import src.script.Operation;
+import src.script.scriptPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,11 +31,11 @@ import script.ScriptPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link script.impl.OperationImpl#getName <em>Name</em>}</li>
- *   <li>{@link script.impl.OperationImpl#getArity <em>Arity</em>}</li>
- *   <li>{@link script.impl.OperationImpl#isInfix <em>Infix</em>}</li>
- *   <li>{@link script.impl.OperationImpl#getInputs <em>Inputs</em>}</li>
- *   <li>{@link script.impl.OperationImpl#getOutput <em>Output</em>}</li>
+ *   <li>{@link src.script.impl.OperationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link src.script.impl.OperationImpl#getArity <em>Arity</em>}</li>
+ *   <li>{@link src.script.impl.OperationImpl#isInfix <em>Infix</em>}</li>
+ *   <li>{@link src.script.impl.OperationImpl#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link src.script.impl.OperationImpl#getOutput <em>Output</em>}</li>
  * </ul>
  *
  * @generated
@@ -137,7 +137,7 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ScriptPackage.Literals.OPERATION;
+		return scriptPackage.Literals.OPERATION;
 	}
 
 	/**
@@ -158,7 +158,7 @@ public class OperationImpl extends EObjectImpl implements Operation {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.OPERATION__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.OPERATION__NAME, oldName, name));
 	}
 
 	/**
@@ -179,7 +179,7 @@ public class OperationImpl extends EObjectImpl implements Operation {
 		int oldArity = arity;
 		arity = newArity;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.OPERATION__ARITY, oldArity, arity));
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.OPERATION__ARITY, oldArity, arity));
 	}
 
 	/**
@@ -200,7 +200,7 @@ public class OperationImpl extends EObjectImpl implements Operation {
 		boolean oldInfix = infix;
 		infix = newInfix;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.OPERATION__INFIX, oldInfix, infix));
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.OPERATION__INFIX, oldInfix, infix));
 	}
 
 	/**
@@ -210,7 +210,7 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	 */
 	public EList<InternalInput> getInputs() {
 		if (inputs == null) {
-			inputs = new EObjectContainmentEList<InternalInput>(InternalInput.class, this, ScriptPackage.OPERATION__INPUTS);
+			inputs = new EObjectContainmentEList<InternalInput>(InternalInput.class, this, scriptPackage.OPERATION__INPUTS);
 		}
 		return inputs;
 	}
@@ -233,7 +233,7 @@ public class OperationImpl extends EObjectImpl implements Operation {
 		InternalOutput oldOutput = output;
 		output = newOutput;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScriptPackage.OPERATION__OUTPUT, oldOutput, newOutput);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, scriptPackage.OPERATION__OUTPUT, oldOutput, newOutput);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -248,14 +248,14 @@ public class OperationImpl extends EObjectImpl implements Operation {
 		if (newOutput != output) {
 			NotificationChain msgs = null;
 			if (output != null)
-				msgs = ((InternalEObject)output).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScriptPackage.OPERATION__OUTPUT, null, msgs);
+				msgs = ((InternalEObject)output).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - scriptPackage.OPERATION__OUTPUT, null, msgs);
 			if (newOutput != null)
-				msgs = ((InternalEObject)newOutput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScriptPackage.OPERATION__OUTPUT, null, msgs);
+				msgs = ((InternalEObject)newOutput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - scriptPackage.OPERATION__OUTPUT, null, msgs);
 			msgs = basicSetOutput(newOutput, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.OPERATION__OUTPUT, newOutput, newOutput));
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.OPERATION__OUTPUT, newOutput, newOutput));
 	}
 
 	/**
@@ -266,9 +266,9 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ScriptPackage.OPERATION__INPUTS:
+			case scriptPackage.OPERATION__INPUTS:
 				return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
-			case ScriptPackage.OPERATION__OUTPUT:
+			case scriptPackage.OPERATION__OUTPUT:
 				return basicSetOutput(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -282,15 +282,15 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScriptPackage.OPERATION__NAME:
+			case scriptPackage.OPERATION__NAME:
 				return getName();
-			case ScriptPackage.OPERATION__ARITY:
+			case scriptPackage.OPERATION__ARITY:
 				return getArity();
-			case ScriptPackage.OPERATION__INFIX:
+			case scriptPackage.OPERATION__INFIX:
 				return isInfix();
-			case ScriptPackage.OPERATION__INPUTS:
+			case scriptPackage.OPERATION__INPUTS:
 				return getInputs();
-			case ScriptPackage.OPERATION__OUTPUT:
+			case scriptPackage.OPERATION__OUTPUT:
 				return getOutput();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -305,20 +305,20 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScriptPackage.OPERATION__NAME:
+			case scriptPackage.OPERATION__NAME:
 				setName((String)newValue);
 				return;
-			case ScriptPackage.OPERATION__ARITY:
+			case scriptPackage.OPERATION__ARITY:
 				setArity((Integer)newValue);
 				return;
-			case ScriptPackage.OPERATION__INFIX:
+			case scriptPackage.OPERATION__INFIX:
 				setInfix((Boolean)newValue);
 				return;
-			case ScriptPackage.OPERATION__INPUTS:
+			case scriptPackage.OPERATION__INPUTS:
 				getInputs().clear();
 				getInputs().addAll((Collection<? extends InternalInput>)newValue);
 				return;
-			case ScriptPackage.OPERATION__OUTPUT:
+			case scriptPackage.OPERATION__OUTPUT:
 				setOutput((InternalOutput)newValue);
 				return;
 		}
@@ -333,19 +333,19 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.OPERATION__NAME:
+			case scriptPackage.OPERATION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ScriptPackage.OPERATION__ARITY:
+			case scriptPackage.OPERATION__ARITY:
 				setArity(ARITY_EDEFAULT);
 				return;
-			case ScriptPackage.OPERATION__INFIX:
+			case scriptPackage.OPERATION__INFIX:
 				setInfix(INFIX_EDEFAULT);
 				return;
-			case ScriptPackage.OPERATION__INPUTS:
+			case scriptPackage.OPERATION__INPUTS:
 				getInputs().clear();
 				return;
-			case ScriptPackage.OPERATION__OUTPUT:
+			case scriptPackage.OPERATION__OUTPUT:
 				setOutput((InternalOutput)null);
 				return;
 		}
@@ -360,15 +360,15 @@ public class OperationImpl extends EObjectImpl implements Operation {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.OPERATION__NAME:
+			case scriptPackage.OPERATION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ScriptPackage.OPERATION__ARITY:
+			case scriptPackage.OPERATION__ARITY:
 				return arity != ARITY_EDEFAULT;
-			case ScriptPackage.OPERATION__INFIX:
+			case scriptPackage.OPERATION__INFIX:
 				return infix != INFIX_EDEFAULT;
-			case ScriptPackage.OPERATION__INPUTS:
+			case scriptPackage.OPERATION__INPUTS:
 				return inputs != null && !inputs.isEmpty();
-			case ScriptPackage.OPERATION__OUTPUT:
+			case scriptPackage.OPERATION__OUTPUT:
 				return output != null;
 		}
 		return super.eIsSet(featureID);

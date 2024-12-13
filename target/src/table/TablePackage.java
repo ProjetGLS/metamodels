@@ -1,6 +1,6 @@
 /**
  */
-package table;
+package src.table;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see table.TableFactory
+ * @see src.table.tableFactory
  * @model kind="package"
  * @generated
  */
-public interface TablePackage extends EPackage {
+public interface tablePackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
@@ -53,14 +53,14 @@ public interface TablePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	TablePackage eINSTANCE = table.impl.TablePackageImpl.init();
+	tablePackage eINSTANCE = src.table.impl.tablePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link table.impl.TableImpl <em>Table</em>}' class.
+	 * The meta object id for the '{@link src.table.impl.TableImpl <em>Table</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see table.impl.TableImpl
-	 * @see table.impl.TablePackageImpl#getTable()
+	 * @see src.table.impl.TableImpl
+	 * @see src.table.impl.tablePackageImpl#getTable()
 	 * @generated
 	 */
 	int TABLE = 0;
@@ -102,11 +102,11 @@ public interface TablePackage extends EPackage {
 	int TABLE_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link table.impl.ColumnImpl <em>Column</em>}' class.
+	 * The meta object id for the '{@link src.table.impl.ColumnImpl <em>Column</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see table.impl.ColumnImpl
-	 * @see table.impl.TablePackageImpl#getColumn()
+	 * @see src.table.impl.ColumnImpl
+	 * @see src.table.impl.tablePackageImpl#getColumn()
 	 * @generated
 	 */
 	int COLUMN = 1;
@@ -166,11 +166,11 @@ public interface TablePackage extends EPackage {
 	int COLUMN_FEATURE_COUNT = 5;
 
 	/**
-	 * The meta object id for the '{@link table.impl.IdentColumnImpl <em>Ident Column</em>}' class.
+	 * The meta object id for the '{@link src.table.impl.IdentColumnImpl <em>Ident Column</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see table.impl.IdentColumnImpl
-	 * @see table.impl.TablePackageImpl#getIdentColumn()
+	 * @see src.table.impl.IdentColumnImpl
+	 * @see src.table.impl.tablePackageImpl#getIdentColumn()
 	 * @generated
 	 */
 	int IDENT_COLUMN = 2;
@@ -231,119 +231,119 @@ public interface TablePackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link table.Table <em>Table</em>}'.
+	 * Returns the meta object for class '{@link src.table.Table <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Table</em>'.
-	 * @see table.Table
+	 * @see src.table.Table
 	 * @generated
 	 */
 	EClass getTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link table.Table#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link src.table.Table#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see table.Table#getName()
+	 * @see src.table.Table#getName()
 	 * @see #getTable()
 	 * @generated
 	 */
 	EAttribute getTable_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link table.Table#getColumn <em>Column</em>}'.
+	 * Returns the meta object for the containment reference list '{@link src.table.Table#getColumn <em>Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Column</em>'.
-	 * @see table.Table#getColumn()
+	 * @see src.table.Table#getColumn()
 	 * @see #getTable()
 	 * @generated
 	 */
 	EReference getTable_Column();
 
 	/**
-	 * Returns the meta object for the reference '{@link table.Table#getIdentColumn <em>Ident Column</em>}'.
+	 * Returns the meta object for the reference '{@link src.table.Table#getIdentColumn <em>Ident Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Ident Column</em>'.
-	 * @see table.Table#getIdentColumn()
+	 * @see src.table.Table#getIdentColumn()
 	 * @see #getTable()
 	 * @generated
 	 */
 	EReference getTable_IdentColumn();
 
 	/**
-	 * Returns the meta object for class '{@link table.Column <em>Column</em>}'.
+	 * Returns the meta object for class '{@link src.table.Column <em>Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Column</em>'.
-	 * @see table.Column
+	 * @see src.table.Column
 	 * @generated
 	 */
 	EClass getColumn();
 
 	/**
-	 * Returns the meta object for the attribute '{@link table.Column#getUid <em>Uid</em>}'.
+	 * Returns the meta object for the attribute '{@link src.table.Column#getUid <em>Uid</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Uid</em>'.
-	 * @see table.Column#getUid()
+	 * @see src.table.Column#getUid()
 	 * @see #getColumn()
 	 * @generated
 	 */
 	EAttribute getColumn_Uid();
 
 	/**
-	 * Returns the meta object for the container reference '{@link table.Column#getTable <em>Table</em>}'.
+	 * Returns the meta object for the container reference '{@link src.table.Column#getTable <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the container reference '<em>Table</em>'.
-	 * @see table.Column#getTable()
+	 * @see src.table.Column#getTable()
 	 * @see #getColumn()
 	 * @generated
 	 */
 	EReference getColumn_Table();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link table.Column#getConstraints <em>Constraints</em>}'.
+	 * Returns the meta object for the attribute list '{@link src.table.Column#getConstraints <em>Constraints</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute list '<em>Constraints</em>'.
-	 * @see table.Column#getConstraints()
+	 * @see src.table.Column#getConstraints()
 	 * @see #getColumn()
 	 * @generated
 	 */
 	EAttribute getColumn_Constraints();
 
 	/**
-	 * Returns the meta object for the reference '{@link table.Column#getReferences <em>References</em>}'.
+	 * Returns the meta object for the reference '{@link src.table.Column#getReferences <em>References</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>References</em>'.
-	 * @see table.Column#getReferences()
+	 * @see src.table.Column#getReferences()
 	 * @see #getColumn()
 	 * @generated
 	 */
 	EReference getColumn_References();
 
 	/**
-	 * Returns the meta object for the reference '{@link table.Column#getDerivateFrom <em>Derivate From</em>}'.
+	 * Returns the meta object for the reference '{@link src.table.Column#getDerivateFrom <em>Derivate From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Derivate From</em>'.
-	 * @see table.Column#getDerivateFrom()
+	 * @see src.table.Column#getDerivateFrom()
 	 * @see #getColumn()
 	 * @generated
 	 */
 	EReference getColumn_DerivateFrom();
 
 	/**
-	 * Returns the meta object for class '{@link table.IdentColumn <em>Ident Column</em>}'.
+	 * Returns the meta object for class '{@link src.table.IdentColumn <em>Ident Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Ident Column</em>'.
-	 * @see table.IdentColumn
+	 * @see src.table.IdentColumn
 	 * @generated
 	 */
 	EClass getIdentColumn();
@@ -355,7 +355,7 @@ public interface TablePackage extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	TableFactory getTableFactory();
+	tableFactory gettableFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -371,11 +371,11 @@ public interface TablePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link table.impl.TableImpl <em>Table</em>}' class.
+		 * The meta object literal for the '{@link src.table.impl.TableImpl <em>Table</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see table.impl.TableImpl
-		 * @see table.impl.TablePackageImpl#getTable()
+		 * @see src.table.impl.TableImpl
+		 * @see src.table.impl.tablePackageImpl#getTable()
 		 * @generated
 		 */
 		EClass TABLE = eINSTANCE.getTable();
@@ -405,11 +405,11 @@ public interface TablePackage extends EPackage {
 		EReference TABLE__IDENT_COLUMN = eINSTANCE.getTable_IdentColumn();
 
 		/**
-		 * The meta object literal for the '{@link table.impl.ColumnImpl <em>Column</em>}' class.
+		 * The meta object literal for the '{@link src.table.impl.ColumnImpl <em>Column</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see table.impl.ColumnImpl
-		 * @see table.impl.TablePackageImpl#getColumn()
+		 * @see src.table.impl.ColumnImpl
+		 * @see src.table.impl.tablePackageImpl#getColumn()
 		 * @generated
 		 */
 		EClass COLUMN = eINSTANCE.getColumn();
@@ -455,15 +455,15 @@ public interface TablePackage extends EPackage {
 		EReference COLUMN__DERIVATE_FROM = eINSTANCE.getColumn_DerivateFrom();
 
 		/**
-		 * The meta object literal for the '{@link table.impl.IdentColumnImpl <em>Ident Column</em>}' class.
+		 * The meta object literal for the '{@link src.table.impl.IdentColumnImpl <em>Ident Column</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see table.impl.IdentColumnImpl
-		 * @see table.impl.TablePackageImpl#getIdentColumn()
+		 * @see src.table.impl.IdentColumnImpl
+		 * @see src.table.impl.tablePackageImpl#getIdentColumn()
 		 * @generated
 		 */
 		EClass IDENT_COLUMN = eINSTANCE.getIdentColumn();
 
 	}
 
-} //TablePackage
+} //tablePackage

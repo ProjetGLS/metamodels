@@ -1,6 +1,6 @@
 /**
  */
-package table;
+package src.table;
 
 
 /**
@@ -9,7 +9,7 @@ package table;
  * <!-- end-user-doc -->
  *
  *
- * @see table.TablePackage#getIdentColumn()
+ * @see src.table.tablePackage#getIdentColumn()
  * @model
  * @generated
  */

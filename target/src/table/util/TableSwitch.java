@@ -1,13 +1,13 @@
 /**
  */
-package table.util;
+package src.table.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import table.*;
+import src.table.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,17 +19,17 @@ import table.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see table.TablePackage
+ * @see src.table.tablePackage
  * @generated
  */
-public class TableSwitch<T> extends Switch<T> {
+public class tableSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static TablePackage modelPackage;
+	protected static tablePackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -37,9 +37,9 @@ public class TableSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TableSwitch() {
+	public tableSwitch() {
 		if (modelPackage == null) {
-			modelPackage = TablePackage.eINSTANCE;
+			modelPackage = tablePackage.eINSTANCE;
 		}
 	}
 
@@ -66,19 +66,19 @@ public class TableSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case TablePackage.TABLE: {
+			case tablePackage.TABLE: {
 				Table table = (Table)theEObject;
 				T result = caseTable(table);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TablePackage.COLUMN: {
+			case tablePackage.COLUMN: {
 				Column column = (Column)theEObject;
 				T result = caseColumn(column);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TablePackage.IDENT_COLUMN: {
+			case tablePackage.IDENT_COLUMN: {
 				IdentColumn identColumn = (IdentColumn)theEObject;
 				T result = caseIdentColumn(identColumn);
 				if (result == null) result = caseColumn(identColumn);
@@ -150,4 +150,4 @@ public class TableSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //TableSwitch
+} //tableSwitch

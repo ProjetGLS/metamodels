@@ -10,7 +10,7 @@
     <emf.Ecore2Java
       genModel="${project.model.path}/project.genmodel"
       modelProject="${project.target.path}"
-      modelProjectFragmentPath="src"
+      modelProjectFragmentPath="."
 
       generateModelProject="true"
       generateEditProject="false"
@@ -19,11 +19,13 @@
 
       validateModel="true"
 
-      reconcileGenModel="reload"
+      reconcileGenModel="overwrite"
     >
-      <arg line="-package http://www.example.org/${project.model.name}"/>
+      <arg line="-package http://www.example.org/script src script"/>
       <model file="${project.model.path}/script.ecore"/>
+      <arg line="-package http://www.example.org/algorithm src algorithm"/>
       <model file="${project.model.path}/algorithm.ecore"/>
+      <arg line="-package http://www.example.org/table src table"/>
       <model file="${project.model.path}/table.ecore"/>
     </emf.Ecore2Java>
   </target>

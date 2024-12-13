@@ -1,6 +1,6 @@
 /**
  */
-package script;
+package src.script;
 
 
 /**
@@ -9,7 +9,7 @@ package script;
  * <!-- end-user-doc -->
  *
  *
- * @see script.ScriptPackage#getInput()
+ * @see src.script.scriptPackage#getInput()
  * @model
  * @generated
  */

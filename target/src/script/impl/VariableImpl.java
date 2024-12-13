@@ -1,6 +1,6 @@
 /**
  */
-package script.impl;
+package src.script.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -9,8 +9,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import script.ScriptPackage;
-import script.Variable;
+import src.script.Variable;
+import src.script.scriptPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,8 +20,8 @@ import script.Variable;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link script.impl.VariableImpl#getName <em>Name</em>}</li>
- *   <li>{@link script.impl.VariableImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link src.script.impl.VariableImpl#getName <em>Name</em>}</li>
+ *   <li>{@link src.script.impl.VariableImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,7 +83,7 @@ public class VariableImpl extends EObjectImpl implements Variable {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ScriptPackage.Literals.VARIABLE;
+		return scriptPackage.Literals.VARIABLE;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class VariableImpl extends EObjectImpl implements Variable {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.VARIABLE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.VARIABLE__NAME, oldName, name));
 	}
 
 	/**
@@ -125,7 +125,7 @@ public class VariableImpl extends EObjectImpl implements Variable {
 		float oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.VARIABLE__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.VARIABLE__VALUE, oldValue, value));
 	}
 
 	/**
@@ -136,9 +136,9 @@ public class VariableImpl extends EObjectImpl implements Variable {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScriptPackage.VARIABLE__NAME:
+			case scriptPackage.VARIABLE__NAME:
 				return getName();
-			case ScriptPackage.VARIABLE__VALUE:
+			case scriptPackage.VARIABLE__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -152,10 +152,10 @@ public class VariableImpl extends EObjectImpl implements Variable {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScriptPackage.VARIABLE__NAME:
+			case scriptPackage.VARIABLE__NAME:
 				setName((String)newValue);
 				return;
-			case ScriptPackage.VARIABLE__VALUE:
+			case scriptPackage.VARIABLE__VALUE:
 				setValue((Float)newValue);
 				return;
 		}
@@ -170,10 +170,10 @@ public class VariableImpl extends EObjectImpl implements Variable {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.VARIABLE__NAME:
+			case scriptPackage.VARIABLE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case ScriptPackage.VARIABLE__VALUE:
+			case scriptPackage.VARIABLE__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -188,9 +188,9 @@ public class VariableImpl extends EObjectImpl implements Variable {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.VARIABLE__NAME:
+			case scriptPackage.VARIABLE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case ScriptPackage.VARIABLE__VALUE:
+			case scriptPackage.VARIABLE__VALUE:
 				return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

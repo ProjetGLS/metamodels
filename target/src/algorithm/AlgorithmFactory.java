@@ -1,6 +1,6 @@
 /**
  */
-package algorithm;
+package src.algorithm;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -9,17 +9,17 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see algorithm.AlgorithmPackage
+ * @see src.algorithm.algorithmPackage
  * @generated
  */
-public interface AlgorithmFactory extends EFactory {
+public interface algorithmFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	AlgorithmFactory eINSTANCE = algorithm.impl.AlgorithmFactoryImpl.init();
+	algorithmFactory eINSTANCE = src.algorithm.impl.algorithmFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Algorithm</em>'.
@@ -55,6 +55,6 @@ public interface AlgorithmFactory extends EFactory {
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
-	AlgorithmPackage getAlgorithmPackage();
+	algorithmPackage getalgorithmPackage();
 
-} //AlgorithmFactory
+} //algorithmFactory

@@ -1,6 +1,6 @@
 /**
  */
-package table.impl;
+package src.table.impl;
 
 import java.util.Collection;
 
@@ -18,10 +18,10 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import table.Column;
-import table.IdentColumn;
-import table.Table;
-import table.TablePackage;
+import src.table.Column;
+import src.table.IdentColumn;
+import src.table.Table;
+import src.table.tablePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,9 +31,9 @@ import table.TablePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link table.impl.TableImpl#getName <em>Name</em>}</li>
- *   <li>{@link table.impl.TableImpl#getColumn <em>Column</em>}</li>
- *   <li>{@link table.impl.TableImpl#getIdentColumn <em>Ident Column</em>}</li>
+ *   <li>{@link src.table.impl.TableImpl#getName <em>Name</em>}</li>
+ *   <li>{@link src.table.impl.TableImpl#getColumn <em>Column</em>}</li>
+ *   <li>{@link src.table.impl.TableImpl#getIdentColumn <em>Ident Column</em>}</li>
  * </ul>
  *
  * @generated
@@ -95,7 +95,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TablePackage.Literals.TABLE;
+		return tablePackage.Literals.TABLE;
 	}
 
 	/**
@@ -116,7 +116,7 @@ public class TableImpl extends EObjectImpl implements Table {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TablePackage.TABLE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, tablePackage.TABLE__NAME, oldName, name));
 	}
 
 	/**
@@ -126,7 +126,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	 */
 	public EList<Column> getColumn() {
 		if (column == null) {
-			column = new EObjectContainmentWithInverseEList<Column>(Column.class, this, TablePackage.TABLE__COLUMN, TablePackage.COLUMN__TABLE);
+			column = new EObjectContainmentWithInverseEList<Column>(Column.class, this, tablePackage.TABLE__COLUMN, tablePackage.COLUMN__TABLE);
 		}
 		return column;
 	}
@@ -142,7 +142,7 @@ public class TableImpl extends EObjectImpl implements Table {
 			identColumn = (IdentColumn)eResolveProxy(oldIdentColumn);
 			if (identColumn != oldIdentColumn) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TablePackage.TABLE__IDENT_COLUMN, oldIdentColumn, identColumn));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, tablePackage.TABLE__IDENT_COLUMN, oldIdentColumn, identColumn));
 			}
 		}
 		return identColumn;
@@ -166,7 +166,7 @@ public class TableImpl extends EObjectImpl implements Table {
 		IdentColumn oldIdentColumn = identColumn;
 		identColumn = newIdentColumn;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TablePackage.TABLE__IDENT_COLUMN, oldIdentColumn, identColumn));
+			eNotify(new ENotificationImpl(this, Notification.SET, tablePackage.TABLE__IDENT_COLUMN, oldIdentColumn, identColumn));
 	}
 
 	/**
@@ -178,7 +178,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TablePackage.TABLE__COLUMN:
+			case tablePackage.TABLE__COLUMN:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getColumn()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -192,7 +192,7 @@ public class TableImpl extends EObjectImpl implements Table {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TablePackage.TABLE__COLUMN:
+			case tablePackage.TABLE__COLUMN:
 				return ((InternalEList<?>)getColumn()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -206,11 +206,11 @@ public class TableImpl extends EObjectImpl implements Table {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TablePackage.TABLE__NAME:
+			case tablePackage.TABLE__NAME:
 				return getName();
-			case TablePackage.TABLE__COLUMN:
+			case tablePackage.TABLE__COLUMN:
 				return getColumn();
-			case TablePackage.TABLE__IDENT_COLUMN:
+			case tablePackage.TABLE__IDENT_COLUMN:
 				if (resolve) return getIdentColumn();
 				return basicGetIdentColumn();
 		}
@@ -226,14 +226,14 @@ public class TableImpl extends EObjectImpl implements Table {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TablePackage.TABLE__NAME:
+			case tablePackage.TABLE__NAME:
 				setName((String)newValue);
 				return;
-			case TablePackage.TABLE__COLUMN:
+			case tablePackage.TABLE__COLUMN:
 				getColumn().clear();
 				getColumn().addAll((Collection<? extends Column>)newValue);
 				return;
-			case TablePackage.TABLE__IDENT_COLUMN:
+			case tablePackage.TABLE__IDENT_COLUMN:
 				setIdentColumn((IdentColumn)newValue);
 				return;
 		}
@@ -248,13 +248,13 @@ public class TableImpl extends EObjectImpl implements Table {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TablePackage.TABLE__NAME:
+			case tablePackage.TABLE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case TablePackage.TABLE__COLUMN:
+			case tablePackage.TABLE__COLUMN:
 				getColumn().clear();
 				return;
-			case TablePackage.TABLE__IDENT_COLUMN:
+			case tablePackage.TABLE__IDENT_COLUMN:
 				setIdentColumn((IdentColumn)null);
 				return;
 		}
@@ -269,11 +269,11 @@ public class TableImpl extends EObjectImpl implements Table {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TablePackage.TABLE__NAME:
+			case tablePackage.TABLE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case TablePackage.TABLE__COLUMN:
+			case tablePackage.TABLE__COLUMN:
 				return column != null && !column.isEmpty();
-			case TablePackage.TABLE__IDENT_COLUMN:
+			case tablePackage.TABLE__IDENT_COLUMN:
 				return identColumn != null;
 		}
 		return super.eIsSet(featureID);

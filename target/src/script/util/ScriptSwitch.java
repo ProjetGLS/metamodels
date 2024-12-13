@@ -1,13 +1,13 @@
 /**
  */
-package script.util;
+package src.script.util;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import script.*;
+import src.script.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -19,17 +19,17 @@ import script.*;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see script.ScriptPackage
+ * @see src.script.scriptPackage
  * @generated
  */
-public class ScriptSwitch<T> extends Switch<T> {
+public class scriptSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static ScriptPackage modelPackage;
+	protected static scriptPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -37,9 +37,9 @@ public class ScriptSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ScriptSwitch() {
+	public scriptSwitch() {
 		if (modelPackage == null) {
-			modelPackage = ScriptPackage.eINSTANCE;
+			modelPackage = scriptPackage.eINSTANCE;
 		}
 	}
 
@@ -66,51 +66,51 @@ public class ScriptSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case ScriptPackage.SCRIPT: {
+			case scriptPackage.SCRIPT: {
 				Script script = (Script)theEObject;
 				T result = caseScript(script);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ScriptPackage.OPERATION: {
+			case scriptPackage.OPERATION: {
 				Operation operation = (Operation)theEObject;
 				T result = caseOperation(operation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ScriptPackage.INPUT: {
+			case scriptPackage.INPUT: {
 				Input input = (Input)theEObject;
 				T result = caseInput(input);
 				if (result == null) result = caseVariable(input);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ScriptPackage.OUTPUT: {
+			case scriptPackage.OUTPUT: {
 				Output output = (Output)theEObject;
 				T result = caseOutput(output);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ScriptPackage.VARIABLE: {
+			case scriptPackage.VARIABLE: {
 				Variable variable = (Variable)theEObject;
 				T result = caseVariable(variable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ScriptPackage.INTERNAL_INPUT: {
+			case scriptPackage.INTERNAL_INPUT: {
 				InternalInput internalInput = (InternalInput)theEObject;
 				T result = caseInternalInput(internalInput);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ScriptPackage.INTERNAL_OUTPUT: {
+			case scriptPackage.INTERNAL_OUTPUT: {
 				InternalOutput internalOutput = (InternalOutput)theEObject;
 				T result = caseInternalOutput(internalOutput);
 				if (result == null) result = caseVariable(internalOutput);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ScriptPackage.CONSTANT: {
+			case scriptPackage.CONSTANT: {
 				Constant constant = (Constant)theEObject;
 				T result = caseConstant(constant);
 				if (result == null) result = caseVariable(constant);
@@ -257,4 +257,4 @@ public class ScriptSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //ScriptSwitch
+} //scriptSwitch

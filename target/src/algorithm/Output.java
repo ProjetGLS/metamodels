@@ -1,10 +1,10 @@
 /**
  */
-package algorithm;
+package src.algorithm;
 
 import org.eclipse.emf.ecore.EObject;
 
-import table.Column;
+import src.table.Column;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,32 +15,32 @@ import table.Column;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link algorithm.Output#getColumn <em>Column</em>}</li>
- *   <li>{@link algorithm.Output#getAlgorithm <em>Algorithm</em>}</li>
- *   <li>{@link algorithm.Output#getScript <em>Script</em>}</li>
+ *   <li>{@link src.algorithm.Output#getColumn <em>Column</em>}</li>
+ *   <li>{@link src.algorithm.Output#getAlgorithm <em>Algorithm</em>}</li>
+ *   <li>{@link src.algorithm.Output#getScript <em>Script</em>}</li>
  * </ul>
  *
- * @see algorithm.AlgorithmPackage#getOutput()
+ * @see src.algorithm.algorithmPackage#getOutput()
  * @model
  * @generated
  */
 public interface Output extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Column</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link table.Column#getDerivateFrom <em>Derivate From</em>}'.
+	 * It is bidirectional and its opposite is '{@link src.table.Column#getDerivateFrom <em>Derivate From</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Column</em>' reference.
 	 * @see #setColumn(Column)
-	 * @see algorithm.AlgorithmPackage#getOutput_Column()
-	 * @see table.Column#getDerivateFrom
+	 * @see src.algorithm.algorithmPackage#getOutput_Column()
+	 * @see src.table.Column#getDerivateFrom
 	 * @model opposite="derivateFrom" required="true"
 	 * @generated
 	 */
 	Column getColumn();
 
 	/**
-	 * Sets the value of the '{@link algorithm.Output#getColumn <em>Column</em>}' reference.
+	 * Sets the value of the '{@link src.algorithm.Output#getColumn <em>Column</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Column</em>' reference.
@@ -51,20 +51,20 @@ public interface Output extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Algorithm</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link algorithm.Algorithm#getOutput <em>Output</em>}'.
+	 * It is bidirectional and its opposite is '{@link src.algorithm.Algorithm#getOutput <em>Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Algorithm</em>' container reference.
 	 * @see #setAlgorithm(Algorithm)
-	 * @see algorithm.AlgorithmPackage#getOutput_Algorithm()
-	 * @see algorithm.Algorithm#getOutput
+	 * @see src.algorithm.algorithmPackage#getOutput_Algorithm()
+	 * @see src.algorithm.Algorithm#getOutput
 	 * @model opposite="output" required="true" transient="false"
 	 * @generated
 	 */
 	Algorithm getAlgorithm();
 
 	/**
-	 * Sets the value of the '{@link algorithm.Output#getAlgorithm <em>Algorithm</em>}' container reference.
+	 * Sets the value of the '{@link src.algorithm.Output#getAlgorithm <em>Algorithm</em>}' container reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Algorithm</em>' container reference.
@@ -78,21 +78,21 @@ public interface Output extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Script</em>' reference.
-	 * @see #setScript(script.Output)
-	 * @see algorithm.AlgorithmPackage#getOutput_Script()
+	 * @see #setScript(src.script.Output)
+	 * @see src.algorithm.algorithmPackage#getOutput_Script()
 	 * @model required="true"
 	 * @generated
 	 */
-	script.Output getScript();
+	src.script.Output getScript();
 
 	/**
-	 * Sets the value of the '{@link algorithm.Output#getScript <em>Script</em>}' reference.
+	 * Sets the value of the '{@link src.algorithm.Output#getScript <em>Script</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Script</em>' reference.
 	 * @see #getScript()
 	 * @generated
 	 */
-	void setScript(script.Output value);
+	void setScript(src.script.Output value);
 
 } // Output

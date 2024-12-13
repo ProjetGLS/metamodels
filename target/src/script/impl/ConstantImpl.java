@@ -1,11 +1,11 @@
 /**
  */
-package script.impl;
+package src.script.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import script.Constant;
-import script.ScriptPackage;
+import src.script.Constant;
+import src.script.scriptPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class ConstantImpl extends VariableImpl implements Constant {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ScriptPackage.Literals.CONSTANT;
+		return scriptPackage.Literals.CONSTANT;
 	}
 
 } //ConstantImpl

@@ -1,11 +1,6 @@
 /**
  */
-package algorithm.impl;
-
-import algorithm.Algorithm;
-import algorithm.AlgorithmPackage;
-import algorithm.Input;
-import algorithm.Output;
+package src.algorithm.impl;
 
 import java.util.Collection;
 
@@ -23,6 +18,11 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import src.algorithm.Algorithm;
+import src.algorithm.Input;
+import src.algorithm.Output;
+import src.algorithm.algorithmPackage;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Algorithm</b></em>'.
@@ -31,9 +31,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link algorithm.impl.AlgorithmImpl#getName <em>Name</em>}</li>
- *   <li>{@link algorithm.impl.AlgorithmImpl#getInputs <em>Inputs</em>}</li>
- *   <li>{@link algorithm.impl.AlgorithmImpl#getOutput <em>Output</em>}</li>
+ *   <li>{@link src.algorithm.impl.AlgorithmImpl#getName <em>Name</em>}</li>
+ *   <li>{@link src.algorithm.impl.AlgorithmImpl#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link src.algorithm.impl.AlgorithmImpl#getOutput <em>Output</em>}</li>
  * </ul>
  *
  * @generated
@@ -95,7 +95,7 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return AlgorithmPackage.Literals.ALGORITHM;
+		return algorithmPackage.Literals.ALGORITHM;
 	}
 
 	/**
@@ -116,7 +116,7 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmPackage.ALGORITHM__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, algorithmPackage.ALGORITHM__NAME, oldName, name));
 	}
 
 	/**
@@ -126,7 +126,7 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 	 */
 	public EList<Input> getInputs() {
 		if (inputs == null) {
-			inputs = new EObjectContainmentWithInverseEList<Input>(Input.class, this, AlgorithmPackage.ALGORITHM__INPUTS, AlgorithmPackage.INPUT__ALGORITHM);
+			inputs = new EObjectContainmentWithInverseEList<Input>(Input.class, this, algorithmPackage.ALGORITHM__INPUTS, algorithmPackage.INPUT__ALGORITHM);
 		}
 		return inputs;
 	}
@@ -149,7 +149,7 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 		Output oldOutput = output;
 		output = newOutput;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AlgorithmPackage.ALGORITHM__OUTPUT, oldOutput, newOutput);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, algorithmPackage.ALGORITHM__OUTPUT, oldOutput, newOutput);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -164,14 +164,14 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 		if (newOutput != output) {
 			NotificationChain msgs = null;
 			if (output != null)
-				msgs = ((InternalEObject)output).eInverseRemove(this, AlgorithmPackage.OUTPUT__ALGORITHM, Output.class, msgs);
+				msgs = ((InternalEObject)output).eInverseRemove(this, algorithmPackage.OUTPUT__ALGORITHM, Output.class, msgs);
 			if (newOutput != null)
-				msgs = ((InternalEObject)newOutput).eInverseAdd(this, AlgorithmPackage.OUTPUT__ALGORITHM, Output.class, msgs);
+				msgs = ((InternalEObject)newOutput).eInverseAdd(this, algorithmPackage.OUTPUT__ALGORITHM, Output.class, msgs);
 			msgs = basicSetOutput(newOutput, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, AlgorithmPackage.ALGORITHM__OUTPUT, newOutput, newOutput));
+			eNotify(new ENotificationImpl(this, Notification.SET, algorithmPackage.ALGORITHM__OUTPUT, newOutput, newOutput));
 	}
 
 	/**
@@ -183,11 +183,11 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AlgorithmPackage.ALGORITHM__INPUTS:
+			case algorithmPackage.ALGORITHM__INPUTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getInputs()).basicAdd(otherEnd, msgs);
-			case AlgorithmPackage.ALGORITHM__OUTPUT:
+			case algorithmPackage.ALGORITHM__OUTPUT:
 				if (output != null)
-					msgs = ((InternalEObject)output).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AlgorithmPackage.ALGORITHM__OUTPUT, null, msgs);
+					msgs = ((InternalEObject)output).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - algorithmPackage.ALGORITHM__OUTPUT, null, msgs);
 				return basicSetOutput((Output)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -201,9 +201,9 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case AlgorithmPackage.ALGORITHM__INPUTS:
+			case algorithmPackage.ALGORITHM__INPUTS:
 				return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
-			case AlgorithmPackage.ALGORITHM__OUTPUT:
+			case algorithmPackage.ALGORITHM__OUTPUT:
 				return basicSetOutput(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -217,11 +217,11 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case AlgorithmPackage.ALGORITHM__NAME:
+			case algorithmPackage.ALGORITHM__NAME:
 				return getName();
-			case AlgorithmPackage.ALGORITHM__INPUTS:
+			case algorithmPackage.ALGORITHM__INPUTS:
 				return getInputs();
-			case AlgorithmPackage.ALGORITHM__OUTPUT:
+			case algorithmPackage.ALGORITHM__OUTPUT:
 				return getOutput();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -236,14 +236,14 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case AlgorithmPackage.ALGORITHM__NAME:
+			case algorithmPackage.ALGORITHM__NAME:
 				setName((String)newValue);
 				return;
-			case AlgorithmPackage.ALGORITHM__INPUTS:
+			case algorithmPackage.ALGORITHM__INPUTS:
 				getInputs().clear();
 				getInputs().addAll((Collection<? extends Input>)newValue);
 				return;
-			case AlgorithmPackage.ALGORITHM__OUTPUT:
+			case algorithmPackage.ALGORITHM__OUTPUT:
 				setOutput((Output)newValue);
 				return;
 		}
@@ -258,13 +258,13 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case AlgorithmPackage.ALGORITHM__NAME:
+			case algorithmPackage.ALGORITHM__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case AlgorithmPackage.ALGORITHM__INPUTS:
+			case algorithmPackage.ALGORITHM__INPUTS:
 				getInputs().clear();
 				return;
-			case AlgorithmPackage.ALGORITHM__OUTPUT:
+			case algorithmPackage.ALGORITHM__OUTPUT:
 				setOutput((Output)null);
 				return;
 		}
@@ -279,11 +279,11 @@ public class AlgorithmImpl extends EObjectImpl implements Algorithm {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case AlgorithmPackage.ALGORITHM__NAME:
+			case algorithmPackage.ALGORITHM__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case AlgorithmPackage.ALGORITHM__INPUTS:
+			case algorithmPackage.ALGORITHM__INPUTS:
 				return inputs != null && !inputs.isEmpty();
-			case AlgorithmPackage.ALGORITHM__OUTPUT:
+			case algorithmPackage.ALGORITHM__OUTPUT:
 				return output != null;
 		}
 		return super.eIsSet(featureID);

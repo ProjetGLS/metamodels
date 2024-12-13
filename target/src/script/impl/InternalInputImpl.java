@@ -1,6 +1,6 @@
 /**
  */
-package script.impl;
+package src.script.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -10,9 +10,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import script.InternalInput;
-import script.ScriptPackage;
-import script.Variable;
+import src.script.InternalInput;
+import src.script.Variable;
+import src.script.scriptPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +22,7 @@ import script.Variable;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link script.impl.InternalInputImpl#getVariable <em>Variable</em>}</li>
+ *   <li>{@link src.script.impl.InternalInputImpl#getVariable <em>Variable</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,7 +54,7 @@ public class InternalInputImpl extends EObjectImpl implements InternalInput {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ScriptPackage.Literals.INTERNAL_INPUT;
+		return scriptPackage.Literals.INTERNAL_INPUT;
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class InternalInputImpl extends EObjectImpl implements InternalInput {
 			variable = (Variable)eResolveProxy(oldVariable);
 			if (variable != oldVariable) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScriptPackage.INTERNAL_INPUT__VARIABLE, oldVariable, variable));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, scriptPackage.INTERNAL_INPUT__VARIABLE, oldVariable, variable));
 			}
 		}
 		return variable;
@@ -92,7 +92,7 @@ public class InternalInputImpl extends EObjectImpl implements InternalInput {
 		Variable oldVariable = variable;
 		variable = newVariable;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.INTERNAL_INPUT__VARIABLE, oldVariable, variable));
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.INTERNAL_INPUT__VARIABLE, oldVariable, variable));
 	}
 
 	/**
@@ -103,7 +103,7 @@ public class InternalInputImpl extends EObjectImpl implements InternalInput {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScriptPackage.INTERNAL_INPUT__VARIABLE:
+			case scriptPackage.INTERNAL_INPUT__VARIABLE:
 				if (resolve) return getVariable();
 				return basicGetVariable();
 		}
@@ -118,7 +118,7 @@ public class InternalInputImpl extends EObjectImpl implements InternalInput {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScriptPackage.INTERNAL_INPUT__VARIABLE:
+			case scriptPackage.INTERNAL_INPUT__VARIABLE:
 				setVariable((Variable)newValue);
 				return;
 		}
@@ -133,7 +133,7 @@ public class InternalInputImpl extends EObjectImpl implements InternalInput {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.INTERNAL_INPUT__VARIABLE:
+			case scriptPackage.INTERNAL_INPUT__VARIABLE:
 				setVariable((Variable)null);
 				return;
 		}
@@ -148,7 +148,7 @@ public class InternalInputImpl extends EObjectImpl implements InternalInput {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.INTERNAL_INPUT__VARIABLE:
+			case scriptPackage.INTERNAL_INPUT__VARIABLE:
 				return variable != null;
 		}
 		return super.eIsSet(featureID);

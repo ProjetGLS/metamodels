@@ -1,11 +1,11 @@
 /**
  */
-package script.impl;
+package src.script.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import script.Input;
-import script.ScriptPackage;
+import src.script.Input;
+import src.script.scriptPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class InputImpl extends VariableImpl implements Input {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ScriptPackage.Literals.INPUT;
+		return scriptPackage.Literals.INPUT;
 	}
 
 } //InputImpl

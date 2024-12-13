@@ -1,6 +1,6 @@
 /**
  */
-package table.impl;
+package src.table.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import table.*;
+import src.table.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,24 +18,24 @@ import table.*;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TableFactoryImpl extends EFactoryImpl implements TableFactory {
+public class tableFactoryImpl extends EFactoryImpl implements tableFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static TableFactory init() {
+	public static tableFactory init() {
 		try {
-			TableFactory theTableFactory = (TableFactory)EPackage.Registry.INSTANCE.getEFactory(TablePackage.eNS_URI);
-			if (theTableFactory != null) {
-				return theTableFactory;
+			tableFactory thetableFactory = (tableFactory)EPackage.Registry.INSTANCE.getEFactory(tablePackage.eNS_URI);
+			if (thetableFactory != null) {
+				return thetableFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new TableFactoryImpl();
+		return new tableFactoryImpl();
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class TableFactoryImpl extends EFactoryImpl implements TableFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TableFactoryImpl() {
+	public tableFactoryImpl() {
 		super();
 	}
 
@@ -56,9 +56,9 @@ public class TableFactoryImpl extends EFactoryImpl implements TableFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case TablePackage.TABLE: return createTable();
-			case TablePackage.COLUMN: return createColumn();
-			case TablePackage.IDENT_COLUMN: return createIdentColumn();
+			case tablePackage.TABLE: return createTable();
+			case tablePackage.COLUMN: return createColumn();
+			case tablePackage.IDENT_COLUMN: return createIdentColumn();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -99,8 +99,8 @@ public class TableFactoryImpl extends EFactoryImpl implements TableFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TablePackage getTablePackage() {
-		return (TablePackage)getEPackage();
+	public tablePackage gettablePackage() {
+		return (tablePackage)getEPackage();
 	}
 
 	/**
@@ -110,8 +110,8 @@ public class TableFactoryImpl extends EFactoryImpl implements TableFactory {
 	 * @generated
 	 */
 	@Deprecated
-	public static TablePackage getPackage() {
-		return TablePackage.eINSTANCE;
+	public static tablePackage getPackage() {
+		return tablePackage.eINSTANCE;
 	}
 
-} //TableFactoryImpl
+} //tableFactoryImpl

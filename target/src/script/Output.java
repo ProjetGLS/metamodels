@@ -1,6 +1,6 @@
 /**
  */
-package script;
+package src.script;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -13,10 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link script.Output#getInternalOutput <em>Internal Output</em>}</li>
+ *   <li>{@link src.script.Output#getInternalOutput <em>Internal Output</em>}</li>
  * </ul>
  *
- * @see script.ScriptPackage#getOutput()
+ * @see src.script.scriptPackage#getOutput()
  * @model
  * @generated
  */
@@ -27,14 +27,14 @@ public interface Output extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Internal Output</em>' reference.
 	 * @see #setInternalOutput(InternalOutput)
-	 * @see script.ScriptPackage#getOutput_InternalOutput()
+	 * @see src.script.scriptPackage#getOutput_InternalOutput()
 	 * @model required="true"
 	 * @generated
 	 */
 	InternalOutput getInternalOutput();
 
 	/**
-	 * Sets the value of the '{@link script.Output#getInternalOutput <em>Internal Output</em>}' reference.
+	 * Sets the value of the '{@link src.script.Output#getInternalOutput <em>Internal Output</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Internal Output</em>' reference.

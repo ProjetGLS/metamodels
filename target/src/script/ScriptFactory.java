@@ -1,6 +1,6 @@
 /**
  */
-package script;
+package src.script;
 
 import org.eclipse.emf.ecore.EFactory;
 
@@ -9,17 +9,17 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see script.ScriptPackage
+ * @see src.script.scriptPackage
  * @generated
  */
-public interface ScriptFactory extends EFactory {
+public interface scriptFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	ScriptFactory eINSTANCE = script.impl.ScriptFactoryImpl.init();
+	scriptFactory eINSTANCE = src.script.impl.scriptFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>Script</em>'.
@@ -100,6 +100,6 @@ public interface ScriptFactory extends EFactory {
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
-	ScriptPackage getScriptPackage();
+	scriptPackage getscriptPackage();
 
-} //ScriptFactory
+} //scriptFactory

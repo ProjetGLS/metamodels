@@ -1,6 +1,6 @@
 /**
  */
-package script.impl;
+package src.script.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -10,9 +10,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import script.InternalOutput;
-import script.Output;
-import script.ScriptPackage;
+import src.script.InternalOutput;
+import src.script.Output;
+import src.script.scriptPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +22,7 @@ import script.ScriptPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link script.impl.OutputImpl#getInternalOutput <em>Internal Output</em>}</li>
+ *   <li>{@link src.script.impl.OutputImpl#getInternalOutput <em>Internal Output</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,7 +54,7 @@ public class OutputImpl extends EObjectImpl implements Output {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ScriptPackage.Literals.OUTPUT;
+		return scriptPackage.Literals.OUTPUT;
 	}
 
 	/**
@@ -68,7 +68,7 @@ public class OutputImpl extends EObjectImpl implements Output {
 			internalOutput = (InternalOutput)eResolveProxy(oldInternalOutput);
 			if (internalOutput != oldInternalOutput) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ScriptPackage.OUTPUT__INTERNAL_OUTPUT, oldInternalOutput, internalOutput));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, scriptPackage.OUTPUT__INTERNAL_OUTPUT, oldInternalOutput, internalOutput));
 			}
 		}
 		return internalOutput;
@@ -92,7 +92,7 @@ public class OutputImpl extends EObjectImpl implements Output {
 		InternalOutput oldInternalOutput = internalOutput;
 		internalOutput = newInternalOutput;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.OUTPUT__INTERNAL_OUTPUT, oldInternalOutput, internalOutput));
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.OUTPUT__INTERNAL_OUTPUT, oldInternalOutput, internalOutput));
 	}
 
 	/**
@@ -103,7 +103,7 @@ public class OutputImpl extends EObjectImpl implements Output {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScriptPackage.OUTPUT__INTERNAL_OUTPUT:
+			case scriptPackage.OUTPUT__INTERNAL_OUTPUT:
 				if (resolve) return getInternalOutput();
 				return basicGetInternalOutput();
 		}
@@ -118,7 +118,7 @@ public class OutputImpl extends EObjectImpl implements Output {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScriptPackage.OUTPUT__INTERNAL_OUTPUT:
+			case scriptPackage.OUTPUT__INTERNAL_OUTPUT:
 				setInternalOutput((InternalOutput)newValue);
 				return;
 		}
@@ -133,7 +133,7 @@ public class OutputImpl extends EObjectImpl implements Output {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.OUTPUT__INTERNAL_OUTPUT:
+			case scriptPackage.OUTPUT__INTERNAL_OUTPUT:
 				setInternalOutput((InternalOutput)null);
 				return;
 		}
@@ -148,7 +148,7 @@ public class OutputImpl extends EObjectImpl implements Output {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.OUTPUT__INTERNAL_OUTPUT:
+			case scriptPackage.OUTPUT__INTERNAL_OUTPUT:
 				return internalOutput != null;
 		}
 		return super.eIsSet(featureID);

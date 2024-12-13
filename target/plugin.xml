@@ -10,21 +10,21 @@
       <!-- @generated project -->
       <package
             uri="http://www.example.org/script"
-            class="script.ScriptPackage"/>
+            class="src.script.scriptPackage"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated project -->
       <package
             uri="http://www.example.org/algorithm"
-            class="algorithm.AlgorithmPackage"/>
+            class="src.algorithm.algorithmPackage"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated project -->
       <package
             uri="http://www.example.org/table"
-            class="table.TablePackage"/>
+            class="src.table.tablePackage"/>
    </extension>
 
 </plugin>

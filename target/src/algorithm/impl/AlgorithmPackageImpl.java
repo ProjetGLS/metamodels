@@ -1,12 +1,6 @@
 /**
  */
-package algorithm.impl;
-
-import algorithm.Algorithm;
-import algorithm.AlgorithmFactory;
-import algorithm.AlgorithmPackage;
-import algorithm.Input;
-import algorithm.Output;
+package src.algorithm.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -15,13 +9,19 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import script.ScriptPackage;
+import src.algorithm.Algorithm;
+import src.algorithm.Input;
+import src.algorithm.Output;
+import src.algorithm.algorithmFactory;
+import src.algorithm.algorithmPackage;
 
-import script.impl.ScriptPackageImpl;
+import src.script.impl.scriptPackageImpl;
 
-import table.TablePackage;
+import src.script.scriptPackage;
 
-import table.impl.TablePackageImpl;
+import src.table.impl.tablePackageImpl;
+
+import src.table.tablePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +29,7 @@ import table.impl.TablePackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class AlgorithmPackageImpl extends EPackageImpl implements AlgorithmPackage {
+public class algorithmPackageImpl extends EPackageImpl implements algorithmPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -62,12 +62,12 @@ public class AlgorithmPackageImpl extends EPackageImpl implements AlgorithmPacka
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see algorithm.AlgorithmPackage#eNS_URI
+	 * @see src.algorithm.algorithmPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private AlgorithmPackageImpl() {
-		super(eNS_URI, AlgorithmFactory.eINSTANCE);
+	private algorithmPackageImpl() {
+		super(eNS_URI, algorithmFactory.eINSTANCE);
 	}
 	/**
 	 * <!-- begin-user-doc -->
@@ -79,7 +79,7 @@ public class AlgorithmPackageImpl extends EPackageImpl implements AlgorithmPacka
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link AlgorithmPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link algorithmPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -88,37 +88,37 @@ public class AlgorithmPackageImpl extends EPackageImpl implements AlgorithmPacka
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static AlgorithmPackage init() {
-		if (isInited) return (AlgorithmPackage)EPackage.Registry.INSTANCE.getEPackage(AlgorithmPackage.eNS_URI);
+	public static algorithmPackage init() {
+		if (isInited) return (algorithmPackage)EPackage.Registry.INSTANCE.getEPackage(algorithmPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredAlgorithmPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		AlgorithmPackageImpl theAlgorithmPackage = registeredAlgorithmPackage instanceof AlgorithmPackageImpl ? (AlgorithmPackageImpl)registeredAlgorithmPackage : new AlgorithmPackageImpl();
+		Object registeredalgorithmPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		algorithmPackageImpl thealgorithmPackage = registeredalgorithmPackage instanceof algorithmPackageImpl ? (algorithmPackageImpl)registeredalgorithmPackage : new algorithmPackageImpl();
 
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(ScriptPackage.eNS_URI);
-		ScriptPackageImpl theScriptPackage = (ScriptPackageImpl)(registeredPackage instanceof ScriptPackageImpl ? registeredPackage : ScriptPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TablePackage.eNS_URI);
-		TablePackageImpl theTablePackage = (TablePackageImpl)(registeredPackage instanceof TablePackageImpl ? registeredPackage : TablePackage.eINSTANCE);
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(scriptPackage.eNS_URI);
+		scriptPackageImpl thescriptPackage = (scriptPackageImpl)(registeredPackage instanceof scriptPackageImpl ? registeredPackage : scriptPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(tablePackage.eNS_URI);
+		tablePackageImpl thetablePackage = (tablePackageImpl)(registeredPackage instanceof tablePackageImpl ? registeredPackage : tablePackage.eINSTANCE);
 
 		// Create package meta-data objects
-		theAlgorithmPackage.createPackageContents();
-		theScriptPackage.createPackageContents();
-		theTablePackage.createPackageContents();
+		thealgorithmPackage.createPackageContents();
+		thescriptPackage.createPackageContents();
+		thetablePackage.createPackageContents();
 
 		// Initialize created meta-data
-		theAlgorithmPackage.initializePackageContents();
-		theScriptPackage.initializePackageContents();
-		theTablePackage.initializePackageContents();
+		thealgorithmPackage.initializePackageContents();
+		thescriptPackage.initializePackageContents();
+		thetablePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theAlgorithmPackage.freeze();
+		thealgorithmPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(AlgorithmPackage.eNS_URI, theAlgorithmPackage);
-		return theAlgorithmPackage;
+		EPackage.Registry.INSTANCE.put(algorithmPackage.eNS_URI, thealgorithmPackage);
+		return thealgorithmPackage;
 	}
 
 	/**
@@ -234,8 +234,8 @@ public class AlgorithmPackageImpl extends EPackageImpl implements AlgorithmPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public AlgorithmFactory getAlgorithmFactory() {
-		return (AlgorithmFactory)getEFactoryInstance();
+	public algorithmFactory getalgorithmFactory() {
+		return (algorithmFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -297,8 +297,8 @@ public class AlgorithmPackageImpl extends EPackageImpl implements AlgorithmPacka
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		TablePackage theTablePackage = (TablePackage)EPackage.Registry.INSTANCE.getEPackage(TablePackage.eNS_URI);
-		ScriptPackage theScriptPackage = (ScriptPackage)EPackage.Registry.INSTANCE.getEPackage(ScriptPackage.eNS_URI);
+		tablePackage thetablePackage = (tablePackage)EPackage.Registry.INSTANCE.getEPackage(tablePackage.eNS_URI);
+		scriptPackage thescriptPackage = (scriptPackage)EPackage.Registry.INSTANCE.getEPackage(scriptPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -313,17 +313,17 @@ public class AlgorithmPackageImpl extends EPackageImpl implements AlgorithmPacka
 		initEReference(getAlgorithm_Output(), this.getOutput(), this.getOutput_Algorithm(), "output", null, 1, 1, Algorithm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(inputEClass, Input.class, "Input", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getInput_Column(), theTablePackage.getColumn(), null, "column", null, 1, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInput_Column(), thetablePackage.getColumn(), null, "column", null, 1, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInput_Algorithm(), this.getAlgorithm(), this.getAlgorithm_Inputs(), "algorithm", null, 1, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInput_Script(), theScriptPackage.getInput(), null, "script", null, 1, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInput_Script(), thescriptPackage.getInput(), null, "script", null, 1, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(outputEClass, Output.class, "Output", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOutput_Column(), theTablePackage.getColumn(), theTablePackage.getColumn_DerivateFrom(), "column", null, 1, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOutput_Column(), thetablePackage.getColumn(), thetablePackage.getColumn_DerivateFrom(), "column", null, 1, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOutput_Algorithm(), this.getAlgorithm(), this.getAlgorithm_Output(), "algorithm", null, 1, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOutput_Script(), theScriptPackage.getOutput(), null, "script", null, 1, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOutput_Script(), thescriptPackage.getOutput(), null, "script", null, 1, 1, Output.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
 	}
 
-} //AlgorithmPackageImpl
+} //algorithmPackageImpl

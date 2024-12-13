@@ -1,6 +1,6 @@
 /**
  */
-package script;
+package src.script;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -15,24 +15,24 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link script.Script#getInputs <em>Inputs</em>}</li>
- *   <li>{@link script.Script#getOutput <em>Output</em>}</li>
- *   <li>{@link script.Script#getOperations <em>Operations</em>}</li>
- *   <li>{@link script.Script#getConstants <em>Constants</em>}</li>
+ *   <li>{@link src.script.Script#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link src.script.Script#getOutput <em>Output</em>}</li>
+ *   <li>{@link src.script.Script#getOperations <em>Operations</em>}</li>
+ *   <li>{@link src.script.Script#getConstants <em>Constants</em>}</li>
  * </ul>
  *
- * @see script.ScriptPackage#getScript()
+ * @see src.script.scriptPackage#getScript()
  * @model
  * @generated
  */
 public interface Script extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Inputs</b></em>' containment reference list.
-	 * The list contents are of type {@link script.Input}.
+	 * The list contents are of type {@link src.script.Input}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Inputs</em>' containment reference list.
-	 * @see script.ScriptPackage#getScript_Inputs()
+	 * @see src.script.scriptPackage#getScript_Inputs()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -44,14 +44,14 @@ public interface Script extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Output</em>' containment reference.
 	 * @see #setOutput(Output)
-	 * @see script.ScriptPackage#getScript_Output()
+	 * @see src.script.scriptPackage#getScript_Output()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Output getOutput();
 
 	/**
-	 * Sets the value of the '{@link script.Script#getOutput <em>Output</em>}' containment reference.
+	 * Sets the value of the '{@link src.script.Script#getOutput <em>Output</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Output</em>' containment reference.
@@ -62,11 +62,11 @@ public interface Script extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
-	 * The list contents are of type {@link script.Operation}.
+	 * The list contents are of type {@link src.script.Operation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Operations</em>' containment reference list.
-	 * @see script.ScriptPackage#getScript_Operations()
+	 * @see src.script.scriptPackage#getScript_Operations()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
@@ -74,11 +74,11 @@ public interface Script extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Constants</b></em>' containment reference list.
-	 * The list contents are of type {@link script.Constant}.
+	 * The list contents are of type {@link src.script.Constant}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Constants</em>' containment reference list.
-	 * @see script.ScriptPackage#getScript_Constants()
+	 * @see src.script.scriptPackage#getScript_Constants()
 	 * @model containment="true"
 	 * @generated
 	 */

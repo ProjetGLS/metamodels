@@ -1,6 +1,6 @@
 /**
  */
-package script.util;
+package src.script.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -9,24 +9,24 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import script.*;
+import src.script.*;
 
 /**
  * <!-- begin-user-doc -->
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see script.ScriptPackage
+ * @see src.script.scriptPackage
  * @generated
  */
-public class ScriptAdapterFactory extends AdapterFactoryImpl {
+public class scriptAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static ScriptPackage modelPackage;
+	protected static scriptPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -34,9 +34,9 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ScriptAdapterFactory() {
+	public scriptAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = ScriptPackage.eINSTANCE;
+			modelPackage = scriptPackage.eINSTANCE;
 		}
 	}
 
@@ -65,8 +65,8 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ScriptSwitch<Adapter> modelSwitch =
-		new ScriptSwitch<Adapter>() {
+	protected scriptSwitch<Adapter> modelSwitch =
+		new scriptSwitch<Adapter>() {
 			@Override
 			public Adapter caseScript(Script object) {
 				return createScriptAdapter();
@@ -120,13 +120,13 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link script.Script <em>Script</em>}'.
+	 * Creates a new adapter for an object of class '{@link src.script.Script <em>Script</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see script.Script
+	 * @see src.script.Script
 	 * @generated
 	 */
 	public Adapter createScriptAdapter() {
@@ -134,13 +134,13 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link script.Operation <em>Operation</em>}'.
+	 * Creates a new adapter for an object of class '{@link src.script.Operation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see script.Operation
+	 * @see src.script.Operation
 	 * @generated
 	 */
 	public Adapter createOperationAdapter() {
@@ -148,13 +148,13 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link script.Input <em>Input</em>}'.
+	 * Creates a new adapter for an object of class '{@link src.script.Input <em>Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see script.Input
+	 * @see src.script.Input
 	 * @generated
 	 */
 	public Adapter createInputAdapter() {
@@ -162,13 +162,13 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link script.Output <em>Output</em>}'.
+	 * Creates a new adapter for an object of class '{@link src.script.Output <em>Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see script.Output
+	 * @see src.script.Output
 	 * @generated
 	 */
 	public Adapter createOutputAdapter() {
@@ -176,13 +176,13 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link script.Variable <em>Variable</em>}'.
+	 * Creates a new adapter for an object of class '{@link src.script.Variable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see script.Variable
+	 * @see src.script.Variable
 	 * @generated
 	 */
 	public Adapter createVariableAdapter() {
@@ -190,13 +190,13 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link script.InternalInput <em>Internal Input</em>}'.
+	 * Creates a new adapter for an object of class '{@link src.script.InternalInput <em>Internal Input</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see script.InternalInput
+	 * @see src.script.InternalInput
 	 * @generated
 	 */
 	public Adapter createInternalInputAdapter() {
@@ -204,13 +204,13 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link script.InternalOutput <em>Internal Output</em>}'.
+	 * Creates a new adapter for an object of class '{@link src.script.InternalOutput <em>Internal Output</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see script.InternalOutput
+	 * @see src.script.InternalOutput
 	 * @generated
 	 */
 	public Adapter createInternalOutputAdapter() {
@@ -218,13 +218,13 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link script.Constant <em>Constant</em>}'.
+	 * Creates a new adapter for an object of class '{@link src.script.Constant <em>Constant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see script.Constant
+	 * @see src.script.Constant
 	 * @generated
 	 */
 	public Adapter createConstantAdapter() {
@@ -243,4 +243,4 @@ public class ScriptAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //ScriptAdapterFactory
+} //scriptAdapterFactory

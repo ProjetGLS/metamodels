@@ -1,11 +1,11 @@
 /**
  */
-package table.impl;
+package src.table.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import table.IdentColumn;
-import table.TablePackage;
+import src.table.IdentColumn;
+import src.table.tablePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ public class IdentColumnImpl extends ColumnImpl implements IdentColumn {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TablePackage.Literals.IDENT_COLUMN;
+		return tablePackage.Literals.IDENT_COLUMN;
 	}
 
 } //IdentColumnImpl

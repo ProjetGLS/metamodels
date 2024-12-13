@@ -3,10 +3,12 @@
     Generate Java Code from Ecore model.
   </description>
   <target name='generateCode' description='description'>
-    <emf.Ecore2Java genModel='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/models/project.genmodel' modelProject='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/target' modelProjectFragmentPath='src' generateModelProject='true' generateEditProject='false' generateEditorProject='false' generateTestsProject='false' validateModel='true' reconcileGenModel='reload'>
-      <arg line='-package http://www.example.org/table'/>
+    <emf.Ecore2Java genModel='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/models/project.genmodel' modelProject='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/target' modelProjectFragmentPath='.' generateModelProject='true' generateEditProject='false' generateEditorProject='false' generateTestsProject='false' validateModel='true' reconcileGenModel='overwrite'>
+      <arg line='-package http://www.example.org/script src script'/>
       <model file='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/models/script.ecore'/>
+      <arg line='-package http://www.example.org/algorithm src algorithm'/>
       <model file='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/models/algorithm.ecore'/>
+      <arg line='-package http://www.example.org/table src table'/>
       <model file='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/models/table.ecore'/>
     </emf.Ecore2Java>
   </target>

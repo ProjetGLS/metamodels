@@ -1,6 +1,6 @@
 /**
  */
-package script.impl;
+package src.script.impl;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -10,7 +10,7 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import script.*;
+import src.script.*;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,24 +18,24 @@ import script.*;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
+public class scriptFactoryImpl extends EFactoryImpl implements scriptFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static ScriptFactory init() {
+	public static scriptFactory init() {
 		try {
-			ScriptFactory theScriptFactory = (ScriptFactory)EPackage.Registry.INSTANCE.getEFactory(ScriptPackage.eNS_URI);
-			if (theScriptFactory != null) {
-				return theScriptFactory;
+			scriptFactory thescriptFactory = (scriptFactory)EPackage.Registry.INSTANCE.getEFactory(scriptPackage.eNS_URI);
+			if (thescriptFactory != null) {
+				return thescriptFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new ScriptFactoryImpl();
+		return new scriptFactoryImpl();
 	}
 
 	/**
@@ -44,7 +44,7 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ScriptFactoryImpl() {
+	public scriptFactoryImpl() {
 		super();
 	}
 
@@ -56,14 +56,14 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case ScriptPackage.SCRIPT: return createScript();
-			case ScriptPackage.OPERATION: return createOperation();
-			case ScriptPackage.INPUT: return createInput();
-			case ScriptPackage.OUTPUT: return createOutput();
-			case ScriptPackage.VARIABLE: return createVariable();
-			case ScriptPackage.INTERNAL_INPUT: return createInternalInput();
-			case ScriptPackage.INTERNAL_OUTPUT: return createInternalOutput();
-			case ScriptPackage.CONSTANT: return createConstant();
+			case scriptPackage.SCRIPT: return createScript();
+			case scriptPackage.OPERATION: return createOperation();
+			case scriptPackage.INPUT: return createInput();
+			case scriptPackage.OUTPUT: return createOutput();
+			case scriptPackage.VARIABLE: return createVariable();
+			case scriptPackage.INTERNAL_INPUT: return createInternalInput();
+			case scriptPackage.INTERNAL_OUTPUT: return createInternalOutput();
+			case scriptPackage.CONSTANT: return createConstant();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -154,8 +154,8 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ScriptPackage getScriptPackage() {
-		return (ScriptPackage)getEPackage();
+	public scriptPackage getscriptPackage() {
+		return (scriptPackage)getEPackage();
 	}
 
 	/**
@@ -165,8 +165,8 @@ public class ScriptFactoryImpl extends EFactoryImpl implements ScriptFactory {
 	 * @generated
 	 */
 	@Deprecated
-	public static ScriptPackage getPackage() {
-		return ScriptPackage.eINSTANCE;
+	public static scriptPackage getPackage() {
+		return scriptPackage.eINSTANCE;
 	}
 
-} //ScriptFactoryImpl
+} //scriptFactoryImpl

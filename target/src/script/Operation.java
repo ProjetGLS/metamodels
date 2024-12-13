@@ -1,6 +1,6 @@
 /**
  */
-package script;
+package src.script;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -15,14 +15,14 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link script.Operation#getName <em>Name</em>}</li>
- *   <li>{@link script.Operation#getArity <em>Arity</em>}</li>
- *   <li>{@link script.Operation#isInfix <em>Infix</em>}</li>
- *   <li>{@link script.Operation#getInputs <em>Inputs</em>}</li>
- *   <li>{@link script.Operation#getOutput <em>Output</em>}</li>
+ *   <li>{@link src.script.Operation#getName <em>Name</em>}</li>
+ *   <li>{@link src.script.Operation#getArity <em>Arity</em>}</li>
+ *   <li>{@link src.script.Operation#isInfix <em>Infix</em>}</li>
+ *   <li>{@link src.script.Operation#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link src.script.Operation#getOutput <em>Output</em>}</li>
  * </ul>
  *
- * @see script.ScriptPackage#getOperation()
+ * @see src.script.scriptPackage#getOperation()
  * @model
  * @generated
  */
@@ -33,14 +33,14 @@ public interface Operation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see script.ScriptPackage#getOperation_Name()
+	 * @see src.script.scriptPackage#getOperation_Name()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link script.Operation#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link src.script.Operation#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -55,14 +55,14 @@ public interface Operation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Arity</em>' attribute.
 	 * @see #setArity(int)
-	 * @see script.ScriptPackage#getOperation_Arity()
+	 * @see src.script.scriptPackage#getOperation_Arity()
 	 * @model required="true"
 	 * @generated
 	 */
 	int getArity();
 
 	/**
-	 * Sets the value of the '{@link script.Operation#getArity <em>Arity</em>}' attribute.
+	 * Sets the value of the '{@link src.script.Operation#getArity <em>Arity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Arity</em>' attribute.
@@ -77,14 +77,14 @@ public interface Operation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Infix</em>' attribute.
 	 * @see #setInfix(boolean)
-	 * @see script.ScriptPackage#getOperation_Infix()
+	 * @see src.script.scriptPackage#getOperation_Infix()
 	 * @model required="true"
 	 * @generated
 	 */
 	boolean isInfix();
 
 	/**
-	 * Sets the value of the '{@link script.Operation#isInfix <em>Infix</em>}' attribute.
+	 * Sets the value of the '{@link src.script.Operation#isInfix <em>Infix</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Infix</em>' attribute.
@@ -95,11 +95,11 @@ public interface Operation extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Inputs</b></em>' containment reference list.
-	 * The list contents are of type {@link script.InternalInput}.
+	 * The list contents are of type {@link src.script.InternalInput}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Inputs</em>' containment reference list.
-	 * @see script.ScriptPackage#getOperation_Inputs()
+	 * @see src.script.scriptPackage#getOperation_Inputs()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
@@ -111,14 +111,14 @@ public interface Operation extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Output</em>' containment reference.
 	 * @see #setOutput(InternalOutput)
-	 * @see script.ScriptPackage#getOperation_Output()
+	 * @see src.script.scriptPackage#getOperation_Output()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	InternalOutput getOutput();
 
 	/**
-	 * Sets the value of the '{@link script.Operation#getOutput <em>Output</em>}' containment reference.
+	 * Sets the value of the '{@link src.script.Operation#getOutput <em>Output</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Output</em>' containment reference.

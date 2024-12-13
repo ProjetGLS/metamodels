@@ -1,6 +1,6 @@
 /**
  */
-package script.impl;
+package src.script.impl;
 
 import java.util.Collection;
 
@@ -18,12 +18,12 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import script.Constant;
-import script.Input;
-import script.Operation;
-import script.Output;
-import script.Script;
-import script.ScriptPackage;
+import src.script.Constant;
+import src.script.Input;
+import src.script.Operation;
+import src.script.Output;
+import src.script.Script;
+import src.script.scriptPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,10 +33,10 @@ import script.ScriptPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link script.impl.ScriptImpl#getInputs <em>Inputs</em>}</li>
- *   <li>{@link script.impl.ScriptImpl#getOutput <em>Output</em>}</li>
- *   <li>{@link script.impl.ScriptImpl#getOperations <em>Operations</em>}</li>
- *   <li>{@link script.impl.ScriptImpl#getConstants <em>Constants</em>}</li>
+ *   <li>{@link src.script.impl.ScriptImpl#getInputs <em>Inputs</em>}</li>
+ *   <li>{@link src.script.impl.ScriptImpl#getOutput <em>Output</em>}</li>
+ *   <li>{@link src.script.impl.ScriptImpl#getOperations <em>Operations</em>}</li>
+ *   <li>{@link src.script.impl.ScriptImpl#getConstants <em>Constants</em>}</li>
  * </ul>
  *
  * @generated
@@ -98,7 +98,7 @@ public class ScriptImpl extends EObjectImpl implements Script {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ScriptPackage.Literals.SCRIPT;
+		return scriptPackage.Literals.SCRIPT;
 	}
 
 	/**
@@ -108,7 +108,7 @@ public class ScriptImpl extends EObjectImpl implements Script {
 	 */
 	public EList<Input> getInputs() {
 		if (inputs == null) {
-			inputs = new EObjectContainmentEList<Input>(Input.class, this, ScriptPackage.SCRIPT__INPUTS);
+			inputs = new EObjectContainmentEList<Input>(Input.class, this, scriptPackage.SCRIPT__INPUTS);
 		}
 		return inputs;
 	}
@@ -131,7 +131,7 @@ public class ScriptImpl extends EObjectImpl implements Script {
 		Output oldOutput = output;
 		output = newOutput;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ScriptPackage.SCRIPT__OUTPUT, oldOutput, newOutput);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, scriptPackage.SCRIPT__OUTPUT, oldOutput, newOutput);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -146,14 +146,14 @@ public class ScriptImpl extends EObjectImpl implements Script {
 		if (newOutput != output) {
 			NotificationChain msgs = null;
 			if (output != null)
-				msgs = ((InternalEObject)output).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - ScriptPackage.SCRIPT__OUTPUT, null, msgs);
+				msgs = ((InternalEObject)output).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - scriptPackage.SCRIPT__OUTPUT, null, msgs);
 			if (newOutput != null)
-				msgs = ((InternalEObject)newOutput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - ScriptPackage.SCRIPT__OUTPUT, null, msgs);
+				msgs = ((InternalEObject)newOutput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - scriptPackage.SCRIPT__OUTPUT, null, msgs);
 			msgs = basicSetOutput(newOutput, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ScriptPackage.SCRIPT__OUTPUT, newOutput, newOutput));
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.SCRIPT__OUTPUT, newOutput, newOutput));
 	}
 
 	/**
@@ -163,7 +163,7 @@ public class ScriptImpl extends EObjectImpl implements Script {
 	 */
 	public EList<Operation> getOperations() {
 		if (operations == null) {
-			operations = new EObjectContainmentEList<Operation>(Operation.class, this, ScriptPackage.SCRIPT__OPERATIONS);
+			operations = new EObjectContainmentEList<Operation>(Operation.class, this, scriptPackage.SCRIPT__OPERATIONS);
 		}
 		return operations;
 	}
@@ -175,7 +175,7 @@ public class ScriptImpl extends EObjectImpl implements Script {
 	 */
 	public EList<Constant> getConstants() {
 		if (constants == null) {
-			constants = new EObjectContainmentEList<Constant>(Constant.class, this, ScriptPackage.SCRIPT__CONSTANTS);
+			constants = new EObjectContainmentEList<Constant>(Constant.class, this, scriptPackage.SCRIPT__CONSTANTS);
 		}
 		return constants;
 	}
@@ -188,13 +188,13 @@ public class ScriptImpl extends EObjectImpl implements Script {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ScriptPackage.SCRIPT__INPUTS:
+			case scriptPackage.SCRIPT__INPUTS:
 				return ((InternalEList<?>)getInputs()).basicRemove(otherEnd, msgs);
-			case ScriptPackage.SCRIPT__OUTPUT:
+			case scriptPackage.SCRIPT__OUTPUT:
 				return basicSetOutput(null, msgs);
-			case ScriptPackage.SCRIPT__OPERATIONS:
+			case scriptPackage.SCRIPT__OPERATIONS:
 				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
-			case ScriptPackage.SCRIPT__CONSTANTS:
+			case scriptPackage.SCRIPT__CONSTANTS:
 				return ((InternalEList<?>)getConstants()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -208,13 +208,13 @@ public class ScriptImpl extends EObjectImpl implements Script {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ScriptPackage.SCRIPT__INPUTS:
+			case scriptPackage.SCRIPT__INPUTS:
 				return getInputs();
-			case ScriptPackage.SCRIPT__OUTPUT:
+			case scriptPackage.SCRIPT__OUTPUT:
 				return getOutput();
-			case ScriptPackage.SCRIPT__OPERATIONS:
+			case scriptPackage.SCRIPT__OPERATIONS:
 				return getOperations();
-			case ScriptPackage.SCRIPT__CONSTANTS:
+			case scriptPackage.SCRIPT__CONSTANTS:
 				return getConstants();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -229,18 +229,18 @@ public class ScriptImpl extends EObjectImpl implements Script {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ScriptPackage.SCRIPT__INPUTS:
+			case scriptPackage.SCRIPT__INPUTS:
 				getInputs().clear();
 				getInputs().addAll((Collection<? extends Input>)newValue);
 				return;
-			case ScriptPackage.SCRIPT__OUTPUT:
+			case scriptPackage.SCRIPT__OUTPUT:
 				setOutput((Output)newValue);
 				return;
-			case ScriptPackage.SCRIPT__OPERATIONS:
+			case scriptPackage.SCRIPT__OPERATIONS:
 				getOperations().clear();
 				getOperations().addAll((Collection<? extends Operation>)newValue);
 				return;
-			case ScriptPackage.SCRIPT__CONSTANTS:
+			case scriptPackage.SCRIPT__CONSTANTS:
 				getConstants().clear();
 				getConstants().addAll((Collection<? extends Constant>)newValue);
 				return;
@@ -256,16 +256,16 @@ public class ScriptImpl extends EObjectImpl implements Script {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.SCRIPT__INPUTS:
+			case scriptPackage.SCRIPT__INPUTS:
 				getInputs().clear();
 				return;
-			case ScriptPackage.SCRIPT__OUTPUT:
+			case scriptPackage.SCRIPT__OUTPUT:
 				setOutput((Output)null);
 				return;
-			case ScriptPackage.SCRIPT__OPERATIONS:
+			case scriptPackage.SCRIPT__OPERATIONS:
 				getOperations().clear();
 				return;
-			case ScriptPackage.SCRIPT__CONSTANTS:
+			case scriptPackage.SCRIPT__CONSTANTS:
 				getConstants().clear();
 				return;
 		}
@@ -280,13 +280,13 @@ public class ScriptImpl extends EObjectImpl implements Script {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ScriptPackage.SCRIPT__INPUTS:
+			case scriptPackage.SCRIPT__INPUTS:
 				return inputs != null && !inputs.isEmpty();
-			case ScriptPackage.SCRIPT__OUTPUT:
+			case scriptPackage.SCRIPT__OUTPUT:
 				return output != null;
-			case ScriptPackage.SCRIPT__OPERATIONS:
+			case scriptPackage.SCRIPT__OPERATIONS:
 				return operations != null && !operations.isEmpty();
-			case ScriptPackage.SCRIPT__CONSTANTS:
+			case scriptPackage.SCRIPT__CONSTANTS:
 				return constants != null && !constants.isEmpty();
 		}
 		return super.eIsSet(featureID);
