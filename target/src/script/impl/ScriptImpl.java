@@ -37,6 +37,7 @@ import src.script.scriptPackage;
  *   <li>{@link src.script.impl.ScriptImpl#getOutput <em>Output</em>}</li>
  *   <li>{@link src.script.impl.ScriptImpl#getOperations <em>Operations</em>}</li>
  *   <li>{@link src.script.impl.ScriptImpl#getConstants <em>Constants</em>}</li>
+ *   <li>{@link src.script.impl.ScriptImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,6 +82,26 @@ public class ScriptImpl extends EObjectImpl implements Script {
 	 * @ordered
 	 */
 	protected EList<Constant> constants;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -185,6 +206,27 @@ public class ScriptImpl extends EObjectImpl implements Script {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.SCRIPT__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -216,6 +258,8 @@ public class ScriptImpl extends EObjectImpl implements Script {
 				return getOperations();
 			case scriptPackage.SCRIPT__CONSTANTS:
 				return getConstants();
+			case scriptPackage.SCRIPT__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -244,6 +288,9 @@ public class ScriptImpl extends EObjectImpl implements Script {
 				getConstants().clear();
 				getConstants().addAll((Collection<? extends Constant>)newValue);
 				return;
+			case scriptPackage.SCRIPT__NAME:
+				setName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -268,6 +315,9 @@ public class ScriptImpl extends EObjectImpl implements Script {
 			case scriptPackage.SCRIPT__CONSTANTS:
 				getConstants().clear();
 				return;
+			case scriptPackage.SCRIPT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -288,8 +338,26 @@ public class ScriptImpl extends EObjectImpl implements Script {
 				return operations != null && !operations.isEmpty();
 			case scriptPackage.SCRIPT__CONSTANTS:
 				return constants != null && !constants.isEmpty();
+			case scriptPackage.SCRIPT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ScriptImpl

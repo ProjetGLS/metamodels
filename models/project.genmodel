@@ -13,6 +13,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//Script/output"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//Script/operations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference script.ecore#//Script/constants"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Script/name"/>
     </genClasses>
     <genClasses ecoreClass="script.ecore#//Operation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute script.ecore#//Operation/name"/>
@@ -32,7 +33,9 @@
     <genClasses ecoreClass="script.ecore#//InternalInput">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference script.ecore#//InternalInput/variable"/>
     </genClasses>
-    <genClasses ecoreClass="script.ecore#//InternalOutput"/>
+    <genClasses ecoreClass="script.ecore#//InternalOutput">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference script.ecore#//InternalOutput/operation"/>
+    </genClasses>
     <genClasses ecoreClass="script.ecore#//Constant"/>
   </genPackages>
   <genPackages prefix="algorithm" basePackage="src" disposableProviderFactory="true"

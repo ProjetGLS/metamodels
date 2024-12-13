@@ -211,6 +211,15 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getScript_Name() {
+		return (EAttribute)scriptEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getOperation() {
 		return operationEClass;
 	}
@@ -346,6 +355,15 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getInternalOutput_Operation() {
+		return (EReference)internalOutputEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConstant() {
 		return constantEClass;
 	}
@@ -383,6 +401,7 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 		createEReference(scriptEClass, SCRIPT__OUTPUT);
 		createEReference(scriptEClass, SCRIPT__OPERATIONS);
 		createEReference(scriptEClass, SCRIPT__CONSTANTS);
+		createEAttribute(scriptEClass, SCRIPT__NAME);
 
 		operationEClass = createEClass(OPERATION);
 		createEAttribute(operationEClass, OPERATION__NAME);
@@ -404,6 +423,7 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 		createEReference(internalInputEClass, INTERNAL_INPUT__VARIABLE);
 
 		internalOutputEClass = createEClass(INTERNAL_OUTPUT);
+		createEReference(internalOutputEClass, INTERNAL_OUTPUT__OPERATION);
 
 		constantEClass = createEClass(CONSTANT);
 	}
@@ -446,13 +466,14 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 		initEReference(getScript_Output(), this.getOutput(), null, "output", null, 1, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScript_Operations(), this.getOperation(), null, "operations", null, 1, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getScript_Constants(), this.getConstant(), null, "constants", null, 0, -1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getScript_Name(), ecorePackage.getEString(), "name", null, 1, 1, Script.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOperation_Name(), ecorePackage.getEString(), "name", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperation_Arity(), ecorePackage.getEInt(), "arity", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getOperation_Infix(), ecorePackage.getEBoolean(), "infix", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOperation_Inputs(), this.getInternalInput(), null, "inputs", null, 1, -1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getOperation_Output(), this.getInternalOutput(), null, "output", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOperation_Output(), this.getInternalOutput(), this.getInternalOutput_Operation(), "output", null, 1, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(inputEClass, Input.class, "Input", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -467,6 +488,7 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 		initEReference(getInternalInput_Variable(), this.getVariable(), null, "variable", null, 1, 1, InternalInput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(internalOutputEClass, InternalOutput.class, "InternalOutput", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getInternalOutput_Operation(), this.getOperation(), this.getOperation_Output(), "operation", null, 1, 1, InternalOutput.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constantEClass, Constant.class, "Constant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
