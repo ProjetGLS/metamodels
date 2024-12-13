@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script:Script
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:script="http://www.example.org/script"
+    xsi:schemaLocation="http://www.example.org/script ../script.ecore">
+  <inputs name="a"/>
+  <inputs name="b"/>
+  <output internalOutput="//@operations.0/@output"/>
+  <operations
+      name="max"
+      arity="2">
+    <inputs
+        variable="//@inputs.0"/>
+    <inputs
+        variable="//@inputs.1"/>
+    <output
+        name="max(a,b)"/>
+  </operations>
+  <operations
+      name="-"
+      arity="1">
+    <inputs
+        variable="//@operations.0/@output"/>
+    <output
+        name="-max(a,b)"/>
+  </operations>
+  <operations
+      name="+"
+      arity="2"
+      infix="true">
+    <inputs
+        variable="//@operations.1/@output"/>
+    <inputs
+        variable="//@constants.0"/>
+    <output
+        name="-max(a,b)+c"/>
+  </operations>
+  <constants
+      name="c"/>
+</script:Script>
