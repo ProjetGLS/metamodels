@@ -13,6 +13,8 @@ import src.algorithm.algorithmPackage;
 
 import src.algorithm.impl.algorithmPackageImpl;
 
+import src.library.impl.libraryPackageImpl;
+import src.library.libraryPackage;
 import src.script.Constant;
 import src.script.Input;
 import src.script.InternalInput;
@@ -142,16 +144,20 @@ public class scriptPackageImpl extends EPackageImpl implements scriptPackage {
 		algorithmPackageImpl thealgorithmPackage = (algorithmPackageImpl)(registeredPackage instanceof algorithmPackageImpl ? registeredPackage : algorithmPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(tablePackage.eNS_URI);
 		tablePackageImpl thetablePackage = (tablePackageImpl)(registeredPackage instanceof tablePackageImpl ? registeredPackage : tablePackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(libraryPackage.eNS_URI);
+		libraryPackageImpl thelibraryPackage = (libraryPackageImpl)(registeredPackage instanceof libraryPackageImpl ? registeredPackage : libraryPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		thescriptPackage.createPackageContents();
 		thealgorithmPackage.createPackageContents();
 		thetablePackage.createPackageContents();
+		thelibraryPackage.createPackageContents();
 
 		// Initialize created meta-data
 		thescriptPackage.initializePackageContents();
 		thealgorithmPackage.initializePackageContents();
 		thetablePackage.initializePackageContents();
+		thelibraryPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		thescriptPackage.freeze();

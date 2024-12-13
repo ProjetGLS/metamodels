@@ -27,4 +27,11 @@
             class="src.table.tablePackage"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated project -->
+      <package
+            uri="http://www.example.org/library"
+            class="src.library.libraryPackage"/>
+   </extension>
+
 </plugin>
