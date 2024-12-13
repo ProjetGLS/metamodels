@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import src.script.InternalInput;
 import src.script.Operation;
 import src.script.Output;
+import src.script.Script;
 import src.script.util.scriptSwitch;
 
 
@@ -31,13 +32,23 @@ public class ScriptValidator extends scriptSwitch<Boolean> {
 	public ValidationResult validate(Resource resource) {
 		this.result = new ValidationResult();
 		
-		//for (EObject object : resource.getContents()) {
-		//	this.doSwitch(object);
-		//}
+		for (EObject object : resource.getContents()) {
+			System.out.println("Visiting " + object.getClass().getSimpleName());
+			this.doSwitch(object);
+		}
 		
 		return this.result;
 	}
 	
+	@Override
+	public Boolean caseScript(Script object) {
+		for (Operation op : object.getOperations()) {
+			this.doSwitch(op);
+		}
+		this.doSwitch(object.getOutput());
+		return null;
+	}
+
 	/**
 	 * Méthode appelée lorsque l'objet visité est une Opération.
 	 * @param object élément visité
@@ -51,11 +62,11 @@ public class ScriptValidator extends scriptSwitch<Boolean> {
 		EList<InternalInput> operands = object.getInputs();
 
 		this.result.recordIfFailed(
-				object.getArity() != operands.size(),
+				object.getArity() == operands.size(),
 				object,
 				"L'operation " + object.getName() + " n'a pas le bon nombre d'operandes");
 		
-		this.result.recordIfFailed(!(object.isInfix() && object.getArity() == 2),
+		this.result.recordIfFailed(!(object.isInfix() && object.getArity() != 2),
 				object,
 				"Une operation d'arité différente de 2 ne peux être infixe");
 	
