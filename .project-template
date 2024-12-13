@@ -5,7 +5,7 @@
  - @brief   Template for the .project file of a metamodel project
 -->
 <projectDescription>
-	<name>${project.model.name}</name>
+	<name>project</name>
 	<comment></comment>
 	<projects>
 	</projects>

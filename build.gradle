@@ -7,6 +7,8 @@
 import org.gradle.api.tasks.options.Option;
 import groovy.text.XmlTemplateEngine;
 
+apply plugin: 'eclipse'
+
 class EMFCodeGenTask extends DefaultTask {
     @InputDirectory
     final DirectoryProperty inputDir = project.objects.directoryProperty();
@@ -36,36 +38,36 @@ class EMFCodeGenTask extends DefaultTask {
         // Generate the `model` folder into /target
         project.exec {
             workingDir "."
-            commandLine "mkdir", "-p", "target/" + model
+            commandLine "mkdir", "-p", "target/"
         }
 
         project.exec {
             workingDir "."
-            commandLine "touch", "target/" + model + "/.project"
+            commandLine "touch", "target/.project"
         }
 
         project.exec {
             workingDir "."
-            commandLine "touch", "target/" + model + "/build.xml"
+            commandLine "touch", "target/build.xml"
         }
 
         def binding = [
             project: [
                 model: [
                     name: model,
-                    path: project.file("models/" + model).getPath()
+                    path: project.file("models/").getPath()
                 ],
                 target: [
-                    path: project.file("target/" + model).getPath()
+                    path: project.file("target/").getPath()
                 ]
             ]
         ]
 
         // Generate the .project file into /target/${model}
-        project.file("target/" + model + "/.project").text = new XmlTemplateEngine().createTemplate(project.file(".project-template").text).make(binding).toString()
+        project.file("target/.project").text = new XmlTemplateEngine().createTemplate(project.file(".project-template").text).make(binding).toString()
 
         // Generate the build.xml file into /target/${model}
-        project.file("target/" + model + "/build.xml").text = new XmlTemplateEngine().createTemplate(project.file("template-build.xml").text).make(binding).toString()
+        project.file("target/build.xml").text = new XmlTemplateEngine().createTemplate(project.file("template-build.xml").text).make(binding).toString()
 
         // Generate the java code from the ecore model
         project.exec {
@@ -74,13 +76,32 @@ class EMFCodeGenTask extends DefaultTask {
                 "-noSplash",
                 "-data", project.file("..").getPath(),
                 "-application", "org.eclipse.ant.core.antRunner",
-                "-buildfile", project.file("target/" + model + "/build.xml").getPath()
+                "-buildfile", project.file("target/build.xml").getPath()
         }
     }
 }
 
-java {
-    sourceSets.main.java.srcDirs = [ "src/" ]
+repositories {
+    maven { url "https://plugins.gradle.org/m2/" }
+    mavenCentral()
+    gradlePluginPortal()
+}
+
+dependencies {
+    implementation 'org.eclipse.emf:org.eclipse.emf.common:2.21.0'
+    implementation 'org.eclipse.emf:org.eclipse.emf.ecore:2.21.0'
+    //implementation 'org.eclipse.emf:org.eclipse.emf.ecore.xmi:2.21.0'
+}
+
+sourceSets {
+    main {
+        java {
+            // Ajoutez les dossiers générés au classpath
+            srcDirs += [
+                "target"
+            ]
+        }
+    }
 }
 
 tasks.register("dummy", DefaultTask) {
