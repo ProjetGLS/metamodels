@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="library" nsURI="http://www.example.org/library" nsPrefix="library">
+  <eClassifiers xsi:type="ecore:EClass" name="Library">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="algorithm" upperBound="-1"
+        eType="ecore:EClass algorithm.ecore#//Algorithm"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" upperBound="-1" eType="#//ColumnData"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalData" upperBound="-1"
+        eType="#//ExternalData"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Value">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" lowerBound="1" eType="#//ColumnData"
+        eOpposite="#//ColumnData/values"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="column" lowerBound="1"
+        eType="ecore:EClass table.ecore#//Column"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IdentValue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="data" lowerBound="1" eType="#//ColumnData"
+        eOpposite="#//ColumnData/identValues"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="identColumn" lowerBound="1"
+        eType="ecore:EClass table.ecore#//IdentColumn"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ColumnData">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="constraints" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="identValues" lowerBound="1"
+        upperBound="-1" eType="#//IdentValue" containment="true" eOpposite="#//IdentValue/data"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="values" upperBound="-1"
+        eType="#//Value" containment="true" eOpposite="#//Value/data"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExternalData"/>
+</ecore:EPackage>

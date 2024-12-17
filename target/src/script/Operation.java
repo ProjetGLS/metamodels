@@ -107,12 +107,14 @@ public interface Operation extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Output</b></em>' containment reference.
+	 * It is bidirectional and its opposite is '{@link src.script.InternalOutput#getOperation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Output</em>' containment reference.
 	 * @see #setOutput(InternalOutput)
 	 * @see src.script.scriptPackage#getOperation_Output()
-	 * @model containment="true" required="true"
+	 * @see src.script.InternalOutput#getOperation
+	 * @model opposite="operation" containment="true" required="true"
 	 * @generated
 	 */
 	InternalOutput getOutput();

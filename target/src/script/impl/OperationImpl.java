@@ -248,14 +248,30 @@ public class OperationImpl extends EObjectImpl implements Operation {
 		if (newOutput != output) {
 			NotificationChain msgs = null;
 			if (output != null)
-				msgs = ((InternalEObject)output).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - scriptPackage.OPERATION__OUTPUT, null, msgs);
+				msgs = ((InternalEObject)output).eInverseRemove(this, scriptPackage.INTERNAL_OUTPUT__OPERATION, InternalOutput.class, msgs);
 			if (newOutput != null)
-				msgs = ((InternalEObject)newOutput).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - scriptPackage.OPERATION__OUTPUT, null, msgs);
+				msgs = ((InternalEObject)newOutput).eInverseAdd(this, scriptPackage.INTERNAL_OUTPUT__OPERATION, InternalOutput.class, msgs);
 			msgs = basicSetOutput(newOutput, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, scriptPackage.OPERATION__OUTPUT, newOutput, newOutput));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case scriptPackage.OPERATION__OUTPUT:
+				if (output != null)
+					msgs = ((InternalEObject)output).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - scriptPackage.OPERATION__OUTPUT, null, msgs);
+				return basicSetOutput((InternalOutput)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

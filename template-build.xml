@@ -27,6 +27,8 @@
       <model file="${project.model.path}/algorithm.ecore"/>
       <arg line="-package http://www.example.org/table src table"/>
       <model file="${project.model.path}/table.ecore"/>
+      <arg line="-package http://www.example.org/library src library"/>
+      <model file="${project.model.path}/library.ecore"/>
     </emf.Ecore2Java>
   </target>
 </project>

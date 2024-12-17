@@ -10,6 +10,8 @@
       <model file='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/models/algorithm.ecore'/>
       <arg line='-package http://www.example.org/table src table'/>
       <model file='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/models/table.ecore'/>
+      <arg line='-package http://www.example.org/library src library'/>
+      <model file='/Users/theobessel/Documents/N7/Informatique/2A/IDM/projet/metamodels/models/library.ecore'/>
     </emf.Ecore2Java>
   </target>
 </project>

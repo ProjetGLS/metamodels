@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link src.script.Script#getOutput <em>Output</em>}</li>
  *   <li>{@link src.script.Script#getOperations <em>Operations</em>}</li>
  *   <li>{@link src.script.Script#getConstants <em>Constants</em>}</li>
+ *   <li>{@link src.script.Script#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see src.script.scriptPackage#getScript()
@@ -83,5 +84,27 @@ public interface Script extends EObject {
 	 * @generated
 	 */
 	EList<Constant> getConstants();
+
+	/**
+	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Name</em>' attribute.
+	 * @see #setName(String)
+	 * @see src.script.scriptPackage#getScript_Name()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getName();
+
+	/**
+	 * Sets the value of the '{@link src.script.Script#getName <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * @see #getName()
+	 * @generated
+	 */
+	void setName(String value);
 
 } // Script

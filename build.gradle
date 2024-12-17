@@ -104,12 +104,25 @@ sourceSets {
     }
 }
 
-mainClassName = "src.script.valid.ValidateScript"
-
 tasks.register("dummy", DefaultTask) {
     println "Metamodels dummy task !"
 }
 
 tasks.register("generate", EMFCodeGenTask) {
     println "Metamodels generate task !"
+}
+
+task(validateScript, dependsOn: 'classes', type: JavaExec) {
+   main = "src.script.valid.ValidateScript"
+   classpath = sourceSets.main.runtimeClasspath
+}
+
+task(validateAlgorithm, dependsOn: 'classes', type: JavaExec) {
+   main = "src.algorithm.valid.ValidateAlgorithm"
+   classpath = sourceSets.main.runtimeClasspath
+}
+
+task(validateTable, dependsOn: 'classes', type: JavaExec) {
+   main = "src.table.valid.ValidateTable"
+   classpath = sourceSets.main.runtimeClasspath
 }
