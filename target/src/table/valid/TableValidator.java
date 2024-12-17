@@ -1,27 +1,32 @@
 package src.script.valid;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 
-import src.algorithm.Algorithm;
-import src.algorithm.Input;
-import src.algorithm.Output;
-import src.algorithm.util.algorithmSwitch;
+import src.table.Table;
 import src.script.Operation;
+import src.table.Column;
+import src.table.IdentColumn;
+import src.table.util.tableSwitch;
 
 
-public class AlgorithmValidator extends algorithmSwitch<Boolean> {
+public class TableValidator extends tableSwitch<Boolean> {
 	/**
 	 * Résultat de la validation (état interne réinitialisé à chaque nouvelle validation).
 	 */
 	private ValidationResult result = null;
 	private static final String IDENTREGEX = "^[A-Za-z][A-Za-z0-9_]*$";
-	
 	/**
 	 * Construire un validateur
 	 */
-	public AlgorithmValidator() {}
+	public TableValidator() {}
 	
 	/**
 	 * Lancer la validation et compiler les résultats dans un ValidationResult.
@@ -42,30 +47,43 @@ public class AlgorithmValidator extends algorithmSwitch<Boolean> {
 	}
 	
 	@Override
-	public Boolean caseInput(Input object) {
-		// TODO
-		return null;
-	}
+	public Boolean caseTable(Table object) {
+		this.result.recordIfFailed((object.getName() != null) && (object.getName().matches(IDENTREGEX)) ,
+			object,
+		 	"Le nom de table \""+object.getName()+"\" est incorrect.");
+		
+		// Pas d'UID en dupliqué
+		List<String> list = ((List<Column>) object.getColumn()).stream().map(Column::getUid).collect(Collectors.toList());
+		Set<String> set = new HashSet<String>(list);
 
-	@Override
-	public Boolean caseAlgorithm(Algorithm object) {
-		// Contraintes sur Algorithm
-			this.result.recordIfFailed((object.getName() != null) && (object.getName().matches(IDENTREGEX)),
-					object,
-					"Le nom d'algorithme \""+object.getName()+"\" est incorrect.");
+		this.result.recordIfFailed(set.size() == list.size() ,
+			object,
+		 	"La table "+object.getName()+" a des colonnes qui ont des UIDs en commun.");
 
-		for (Operation op : object.getInputs()) {
+		for (Operation op : object.getColumn()) {
 			this.doSwitch(op);
 		}
-		this.doSwitch(object.getOutput());
+		this.doSwitch(object.getIdentColumn());
+		
 		return null;
 	}
-	
+
 	@Override
-	public Boolean caseOutput(Output object) {
-		
-		// A PRIORI RIEN
-		
+	public Boolean caseColumn(Column object) {
+		// Toutes les UIDs sont différentes : mis en place dans caseTable()
+
+		// Pas de référence en boucle direct
+		if (object.getReferences() != null) {
+			this.result.recordIfFailed(object.getUid() != object.getReferences().getUid(),
+			object,
+			"La colonne \""+object.getUid()+"\" se référence elle-même.");
+		}
+		return null;
+	}
+
+	@Override
+	public Boolean caseIdentColumn(IdentColumn object) {
+		// Rien, à priori
 		return null;
 	}
 

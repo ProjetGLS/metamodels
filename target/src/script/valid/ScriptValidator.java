@@ -16,6 +16,7 @@ public class ScriptValidator extends scriptSwitch<Boolean> {
 	 * Résultat de la validation (état interne réinitialisé à chaque nouvelle validation).
 	 */
 	private ValidationResult result = null;
+	private static final String IDENTREGEX = "^[A-Za-z][A-Za-z0-9_]*$";
 	
 	/**
 	 * Construire un validateur
@@ -42,6 +43,12 @@ public class ScriptValidator extends scriptSwitch<Boolean> {
 	
 	@Override
 	public Boolean caseScript(Script object) {
+
+		// Nom correct
+		this.result.recordIfFailed((object.getName() != null) && (object.getName().matches(IDENTREGEX)),
+			object,
+			"Le nom de script \""+object.getName()+"\" est incorrect.");
+		
 		for (Operation op : object.getOperations()) {
 			this.doSwitch(op);
 		}

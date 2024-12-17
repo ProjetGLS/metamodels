@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import src.algorithm.algorithmPackage;
+import src.library.libraryPackage;
 
 /**
  * Réalise la validation de modèles conformes à un script à l'aide du validateur et
@@ -22,7 +22,7 @@ import src.algorithm.algorithmPackage;
  * @version 0.1
  */
 
-public class ValidateAlgorithm {
+public class ValidateLibrary {
 	
 	/**
 	 * Afficher une lsite d'erreur avec un préfixe.
@@ -50,9 +50,11 @@ public class ValidateAlgorithm {
 	 * @param resultat résultat de la validation calculé auparavant
 	 */
 	private static void afficherResultat(ValidationResult resultat) {
-		afficherErreurs("- Algorithm", resultat.getRecordedErrorsFor(algorithmPackage.ALGORITHM));
-		afficherErreurs("- Input", resultat.getRecordedErrorsFor(algorithmPackage.INPUT));
-		afficherErreurs("- Output", resultat.getRecordedErrorsFor(algorithmPackage.OUTPUT));
+		afficherErreurs("- Library", resultat.getRecordedErrorsFor(libraryPackage.LIBRARY));
+		afficherErreurs("- ColumnData", resultat.getRecordedErrorsFor(libraryPackage.COLUMN_DATA));
+		afficherErreurs("- ExternalData", resultat.getRecordedErrorsFor(libraryPackage.EXTERNAL_DATA));
+		afficherErreurs("- Value", resultat.getRecordedErrorsFor(libraryPackage.VALUE));
+		afficherErreurs("- IdentValue", resultat.getRecordedErrorsFor(libraryPackage.IDENT_VALUE));
 	}
 
 	public static void main(String... args) {
@@ -61,7 +63,7 @@ public class ValidateAlgorithm {
 		// Bien sûr, on n'utilise pas directement packageInstance, d'où le warning "unused" qui
 		// est supprimé avec l'annotation.
 		@SuppressWarnings("unused")
-		scriptPackage packageInstance = scriptPackage.eINSTANCE;
+		libraryPackage packageInstance = libraryPackage.eINSTANCE;
 		
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
@@ -69,7 +71,7 @@ public class ValidateAlgorithm {
 		
 		ResourceSet resSet = new ResourceSetImpl();
 		
-		AlgorithmValidator validator = new AlgorithmValidator();
+		LibraryValidator validator = new LibraryValidator();
 
 		for (String model : args) {
 			URI modelURI = URI.createURI(model);

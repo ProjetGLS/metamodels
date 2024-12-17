@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import src.algorithm.algorithmPackage;
+import src.table.tablePackage;
 
 /**
  * Réalise la validation de modèles conformes à un script à l'aide du validateur et
@@ -22,7 +22,7 @@ import src.algorithm.algorithmPackage;
  * @version 0.1
  */
 
-public class ValidateAlgorithm {
+public class ValidateTable {
 	
 	/**
 	 * Afficher une lsite d'erreur avec un préfixe.
@@ -50,9 +50,9 @@ public class ValidateAlgorithm {
 	 * @param resultat résultat de la validation calculé auparavant
 	 */
 	private static void afficherResultat(ValidationResult resultat) {
-		afficherErreurs("- Algorithm", resultat.getRecordedErrorsFor(algorithmPackage.ALGORITHM));
-		afficherErreurs("- Input", resultat.getRecordedErrorsFor(algorithmPackage.INPUT));
-		afficherErreurs("- Output", resultat.getRecordedErrorsFor(algorithmPackage.OUTPUT));
+		afficherErreurs("- Table", resultat.getRecordedErrorsFor(tablePackage.TABLE));
+		afficherErreurs("- Column", resultat.getRecordedErrorsFor(tablePackage.COLUMN));
+		afficherErreurs("- IdentColumn", resultat.getRecordedErrorsFor(tablePackage.IDENT_COLUMN));
 	}
 
 	public static void main(String... args) {
@@ -61,7 +61,7 @@ public class ValidateAlgorithm {
 		// Bien sûr, on n'utilise pas directement packageInstance, d'où le warning "unused" qui
 		// est supprimé avec l'annotation.
 		@SuppressWarnings("unused")
-		scriptPackage packageInstance = scriptPackage.eINSTANCE;
+		tablePackage packageInstance = tablePackage.eINSTANCE;
 		
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
@@ -69,7 +69,7 @@ public class ValidateAlgorithm {
 		
 		ResourceSet resSet = new ResourceSetImpl();
 		
-		AlgorithmValidator validator = new AlgorithmValidator();
+		TableValidator validator = new TableValidator();
 
 		for (String model : args) {
 			URI modelURI = URI.createURI(model);

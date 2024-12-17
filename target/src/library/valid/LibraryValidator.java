@@ -1,27 +1,33 @@
 package src.script.valid;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 
-import src.algorithm.Algorithm;
-import src.algorithm.Input;
-import src.algorithm.Output;
-import src.algorithm.util.algorithmSwitch;
-import src.script.Operation;
+import src.library.Library;
+import src.library.ColumnData;
+import src.library.ExternalData;
+import src.library.Value;
+import src.library.IdentValue;
+import src.library.util.librarySwitch;
 
 
-public class AlgorithmValidator extends algorithmSwitch<Boolean> {
+public class LibraryValidator extends librarySwitch<Boolean> {
 	/**
 	 * Résultat de la validation (état interne réinitialisé à chaque nouvelle validation).
 	 */
 	private ValidationResult result = null;
 	private static final String IDENTREGEX = "^[A-Za-z][A-Za-z0-9_]*$";
-	
 	/**
 	 * Construire un validateur
 	 */
-	public AlgorithmValidator() {}
+	public LibraryValidator() {}
 	
 	/**
 	 * Lancer la validation et compiler les résultats dans un ValidationResult.
@@ -42,30 +48,37 @@ public class AlgorithmValidator extends algorithmSwitch<Boolean> {
 	}
 	
 	@Override
-	public Boolean caseInput(Input object) {
-		// TODO
+	public Boolean caseLibrary(Library object) {
+		
+		// Nom correct
+		this.result.recordIfFailed((object.getName() != null) && (object.getName().matches(IDENTREGEX)),
+			object,
+			"Le nom de librairie \""+object.getName()+"\" est incorrect.");
+
 		return null;
 	}
 
 	@Override
-	public Boolean caseAlgorithm(Algorithm object) {
-		// Contraintes sur Algorithm
-			this.result.recordIfFailed((object.getName() != null) && (object.getName().matches(IDENTREGEX)),
-					object,
-					"Le nom d'algorithme \""+object.getName()+"\" est incorrect.");
+	public Boolean caseColumnData(ColumnData object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-		for (Operation op : object.getInputs()) {
-			this.doSwitch(op);
-		}
-		this.doSwitch(object.getOutput());
+	@Override
+	public Boolean caseExternalData(ExternalData object) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 	
 	@Override
-	public Boolean caseOutput(Output object) {
-		
-		// A PRIORI RIEN
-		
+	public Boolean caseValue(Value object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean caseIdentValue(IdentValue object) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
