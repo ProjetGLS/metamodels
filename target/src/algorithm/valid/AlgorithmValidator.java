@@ -4,14 +4,14 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 
-import src.script.InternalInput;
+import src.algorithm.Algorithm;
+import src.algorithm.Input;
+import src.algorithm.Output;
+import src.algorithm.util.algorithmSwitch;
 import src.script.Operation;
-import src.script.Output;
-import src.script.Script;
-import src.script.util.scriptSwitch;
 
 
-public class ScriptValidator extends scriptSwitch<Boolean> {
+public class AlgorithmValidator extends algorithmSwitch<Boolean> {
 	/**
 	 * Résultat de la validation (état interne réinitialisé à chaque nouvelle validation).
 	 */
@@ -21,7 +21,7 @@ public class ScriptValidator extends scriptSwitch<Boolean> {
 	/**
 	 * Construire un validateur
 	 */
-	public ScriptValidator() {}
+	public AlgorithmValidator() {}
 	
 	/**
 	 * Lancer la validation et compiler les résultats dans un ValidationResult.
@@ -42,58 +42,33 @@ public class ScriptValidator extends scriptSwitch<Boolean> {
 	}
 	
 	@Override
-	public Boolean caseScript(Script object) {
-
-		// Nom correct
-		this.result.recordIfFailed((object.getName() != null) && (object.getName().matches(IDENTREGEX)),
-			object,
-			"Le nom de script \""+object.getName()+"\" est incorrect.");
-		
-		for (Operation op : object.getOperations()) {
-			this.doSwitch(op);
-		}
-		this.doSwitch(object.getOutput());
+	public Boolean caseInput(Input object) {
+		// TODO
 		return null;
 	}
 
-	/**
-	 * Méthode appelée lorsque l'objet visité est une Opération.
-	 * @param object élément visité
-	 * @return résultat de validation (null ici, ce qui permet de poursuivre la visite
-	 * vers les classes parentes, le cas échéant)
-	 */
 	@Override
-	public Boolean caseOperation(Operation object) {
-		// Contraintes sur Operations
-		// Verification du nombre d'operandes
-		EList<InternalInput> operands = object.getInputs();
+	public Boolean caseAlgorithm(Algorithm object) {
+		// Contraintes sur Algorithm
+			this.result.recordIfFailed((object.getName() != null) && (object.getName().matches(IDENTREGEX)),
+					object,
+					"Le nom d'algorithme \""+object.getName()+"\" est incorrect.");
 
-		this.result.recordIfFailed(
-				object.getArity() == operands.size(),
-				object,
-				"L'operation " + object.getName() + " n'a pas le bon nombre d'operandes");
-		
-		this.result.recordIfFailed(!(object.isInfix() && object.getArity() != 2),
-				object,
-				"Une operation d'arité différente de 2 ne peux être infixe");
-	
-		this.result.recordIfFailed(!operands.stream().anyMatch(op -> op.getVariable().equals(object.getOutput())),
-				object,
-				"L'operation a comme entree sa sortie");
-		
+		for (Operation op : object.getInputs()) {
+			this.doSwitch(op);
+		}
+		this.doSwitch(object.getOutput());
 		return null;
 	}
 	
 	@Override
 	public Boolean caseOutput(Output object) {
 		
-		this.result.recordIfFailed(object.getInternalOutput() != null,
-				object,
-				"La sortie doit necessairement etre reliée");
+		// A PRIORI RIEN
 		
 		return null;
 	}
-	
+
 	/**
 	 * Cas par défaut, lorsque l'objet visité ne correspond pas à un des autres cas.
 	 * Cette méthode est aussi appelée lorsqu'une méthode renvoie null (comme une sorte de

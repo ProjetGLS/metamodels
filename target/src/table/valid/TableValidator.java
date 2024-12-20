@@ -1,27 +1,32 @@
 package src.script.valid;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 
-import src.script.InternalInput;
+import src.table.Table;
 import src.script.Operation;
-import src.script.Output;
-import src.script.Script;
-import src.script.util.scriptSwitch;
+import src.table.Column;
+import src.table.IdentColumn;
+import src.table.util.tableSwitch;
 
 
-public class ScriptValidator extends scriptSwitch<Boolean> {
+public class TableValidator extends tableSwitch<Boolean> {
 	/**
 	 * Résultat de la validation (état interne réinitialisé à chaque nouvelle validation).
 	 */
 	private ValidationResult result = null;
 	private static final String IDENTREGEX = "^[A-Za-z][A-Za-z0-9_]*$";
-	
 	/**
 	 * Construire un validateur
 	 */
-	public ScriptValidator() {}
+	public TableValidator() {}
 	
 	/**
 	 * Lancer la validation et compiler les résultats dans un ValidationResult.
@@ -42,58 +47,46 @@ public class ScriptValidator extends scriptSwitch<Boolean> {
 	}
 	
 	@Override
-	public Boolean caseScript(Script object) {
-
-		// Nom correct
-		this.result.recordIfFailed((object.getName() != null) && (object.getName().matches(IDENTREGEX)),
+	public Boolean caseTable(Table object) {
+		this.result.recordIfFailed((object.getName() != null) && (object.getName().matches(IDENTREGEX)) ,
 			object,
-			"Le nom de script \""+object.getName()+"\" est incorrect.");
+		 	"Le nom de table \""+object.getName()+"\" est incorrect.");
 		
-		for (Operation op : object.getOperations()) {
+		// Pas d'UID en dupliqué
+		List<String> list = ((List<Column>) object.getColumn()).stream().map(Column::getUid).collect(Collectors.toList());
+		Set<String> set = new HashSet<String>(list);
+
+		this.result.recordIfFailed(set.size() == list.size() ,
+			object,
+		 	"La table "+object.getName()+" a des colonnes qui ont des UIDs en commun.");
+
+		for (Operation op : object.getColumn()) {
 			this.doSwitch(op);
 		}
-		this.doSwitch(object.getOutput());
+		this.doSwitch(object.getIdentColumn());
+		
 		return null;
 	}
 
-	/**
-	 * Méthode appelée lorsque l'objet visité est une Opération.
-	 * @param object élément visité
-	 * @return résultat de validation (null ici, ce qui permet de poursuivre la visite
-	 * vers les classes parentes, le cas échéant)
-	 */
 	@Override
-	public Boolean caseOperation(Operation object) {
-		// Contraintes sur Operations
-		// Verification du nombre d'operandes
-		EList<InternalInput> operands = object.getInputs();
+	public Boolean caseColumn(Column object) {
+		// Toutes les UIDs sont différentes : mis en place dans caseTable()
 
-		this.result.recordIfFailed(
-				object.getArity() == operands.size(),
-				object,
-				"L'operation " + object.getName() + " n'a pas le bon nombre d'operandes");
-		
-		this.result.recordIfFailed(!(object.isInfix() && object.getArity() != 2),
-				object,
-				"Une operation d'arité différente de 2 ne peux être infixe");
-	
-		this.result.recordIfFailed(!operands.stream().anyMatch(op -> op.getVariable().equals(object.getOutput())),
-				object,
-				"L'operation a comme entree sa sortie");
-		
+		// Pas de référence en boucle direct
+		if (object.getReferences() != null) {
+			this.result.recordIfFailed(object.getUid() != object.getReferences().getUid(),
+			object,
+			"La colonne \""+object.getUid()+"\" se référence elle-même.");
+		}
 		return null;
 	}
-	
+
 	@Override
-	public Boolean caseOutput(Output object) {
-		
-		this.result.recordIfFailed(object.getInternalOutput() != null,
-				object,
-				"La sortie doit necessairement etre reliée");
-		
+	public Boolean caseIdentColumn(IdentColumn object) {
+		// Rien, à priori
 		return null;
 	}
-	
+
 	/**
 	 * Cas par défaut, lorsque l'objet visité ne correspond pas à un des autres cas.
 	 * Cette méthode est aussi appelée lorsqu'une méthode renvoie null (comme une sorte de

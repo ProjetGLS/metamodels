@@ -1,27 +1,33 @@
 package src.script.valid;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 
-import src.script.InternalInput;
-import src.script.Operation;
-import src.script.Output;
-import src.script.Script;
-import src.script.util.scriptSwitch;
+import src.library.Library;
+import src.library.ColumnData;
+import src.library.ExternalData;
+import src.library.Value;
+import src.library.IdentValue;
+import src.library.util.librarySwitch;
 
 
-public class ScriptValidator extends scriptSwitch<Boolean> {
+public class LibraryValidator extends librarySwitch<Boolean> {
 	/**
 	 * Résultat de la validation (état interne réinitialisé à chaque nouvelle validation).
 	 */
 	private ValidationResult result = null;
 	private static final String IDENTREGEX = "^[A-Za-z][A-Za-z0-9_]*$";
-	
 	/**
 	 * Construire un validateur
 	 */
-	public ScriptValidator() {}
+	public LibraryValidator() {}
 	
 	/**
 	 * Lancer la validation et compiler les résultats dans un ValidationResult.
@@ -42,58 +48,40 @@ public class ScriptValidator extends scriptSwitch<Boolean> {
 	}
 	
 	@Override
-	public Boolean caseScript(Script object) {
-
+	public Boolean caseLibrary(Library object) {
+		
 		// Nom correct
 		this.result.recordIfFailed((object.getName() != null) && (object.getName().matches(IDENTREGEX)),
 			object,
-			"Le nom de script \""+object.getName()+"\" est incorrect.");
-		
-		for (Operation op : object.getOperations()) {
-			this.doSwitch(op);
-		}
-		this.doSwitch(object.getOutput());
+			"Le nom de librairie \""+object.getName()+"\" est incorrect.");
+
 		return null;
 	}
 
-	/**
-	 * Méthode appelée lorsque l'objet visité est une Opération.
-	 * @param object élément visité
-	 * @return résultat de validation (null ici, ce qui permet de poursuivre la visite
-	 * vers les classes parentes, le cas échéant)
-	 */
 	@Override
-	public Boolean caseOperation(Operation object) {
-		// Contraintes sur Operations
-		// Verification du nombre d'operandes
-		EList<InternalInput> operands = object.getInputs();
+	public Boolean caseColumnData(ColumnData object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-		this.result.recordIfFailed(
-				object.getArity() == operands.size(),
-				object,
-				"L'operation " + object.getName() + " n'a pas le bon nombre d'operandes");
-		
-		this.result.recordIfFailed(!(object.isInfix() && object.getArity() != 2),
-				object,
-				"Une operation d'arité différente de 2 ne peux être infixe");
-	
-		this.result.recordIfFailed(!operands.stream().anyMatch(op -> op.getVariable().equals(object.getOutput())),
-				object,
-				"L'operation a comme entree sa sortie");
-		
+	@Override
+	public Boolean caseExternalData(ExternalData object) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 	
 	@Override
-	public Boolean caseOutput(Output object) {
-		
-		this.result.recordIfFailed(object.getInternalOutput() != null,
-				object,
-				"La sortie doit necessairement etre reliée");
-		
+	public Boolean caseValue(Value object) {
+		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
+	@Override
+	public Boolean caseIdentValue(IdentValue object) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	/**
 	 * Cas par défaut, lorsque l'objet visité ne correspond pas à un des autres cas.
 	 * Cette méthode est aussi appelée lorsqu'une méthode renvoie null (comme une sorte de
