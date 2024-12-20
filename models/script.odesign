@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="script" version="12.0.0.2017041100">
+  <ownedViewpoints name="ScriptViewpoint" modelFileExtension="script">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="ScriptDiagram" domainClass="script::Script" enablePopupBars="true">
+      <metamodel href="../../idm/script.ecore#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="op" domainClass="script::Operation">
+          <borderedNodeMappings name="in" semanticCandidatesExpression="feature:eAllContents" semanticElements="feature:eContainer" synchronizationLock="true" domainClass="script::InternalInput">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:null" hideLabelByDefault="true" sizeComputationExpression="2" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="out" semanticCandidatesExpression="feature:eAllContents" synchronizationLock="true" domainClass="script::InternalOutput">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:null" hideLabelByDefault="true" sizeComputationExpression="2" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>WEST</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" sizeComputationExpression="8" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="cst" domainClass="script::Constant">
+          <borderedNodeMappings name="cstbn" semanticCandidatesExpression="aql:self" domainClass="script::Constant">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:null" sizeComputationExpression="2" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" sizeComputationExpression="4" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_yellow']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="input" domainClass="script::Input">
+          <borderedNodeMappings name="inputbn" semanticCandidatesExpression="aql:self" domainClass="script::Input">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:null" sizeComputationExpression="2" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>WEST</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" sizeComputationExpression="4" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="output" domainClass="script::Output">
+          <borderedNodeMappings name="outputbn" semanticCandidatesExpression="aql:self" domainClass="script::Output">
+            <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="aql:null" sizeComputationExpression="2" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </borderedNodeMappings>
+          <style xsi:type="style:SquareDescription" labelSize="12" showIcon="false" labelExpression="output" sizeComputationExpression="4" labelPosition="node" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_red']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="links" label="links" sourceMapping="//@ownedViewpoints[name='ScriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='op']/@borderedNodeMappings[name='in']" targetMapping="//@ownedViewpoints[name='ScriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='cst']/@borderedNodeMappings[name='cstbn'] //@ownedViewpoints[name='ScriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='op']/@borderedNodeMappings[name='out'] //@ownedViewpoints[name='ScriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='input']/@borderedNodeMappings[name='inputbn']" targetFinderExpression="feature:variable">
+          <style sourceArrow="InputArrow" targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="outputLink" sourceMapping="//@ownedViewpoints[name='ScriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='output']/@borderedNodeMappings[name='outputbn']" targetMapping="//@ownedViewpoints[name='ScriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='op']/@borderedNodeMappings[name='out']" targetFinderExpression="feature:internalOutput">
+          <style sourceArrow="InputArrow" targetArrow="NoDecoration" sizeComputationExpression="2" routingStyle="manhattan">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="12">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="ToolSection">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="OpCreation" nodeMappings="//@ownedViewpoints[name='ScriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='op'] //@ownedViewpoints[name='ScriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='op']/@borderedNodeMappings[name='in']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="script::Operation" referenceName="operations"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="InCreation" nodeMappings="//@ownedViewpoints[name='ScriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='input']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="script::Input" referenceName="inputs"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="OutCreation" nodeMappings="//@ownedViewpoints[name='ScriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='output']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="script::Output" referenceName="output"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="OpInCreation" nodeMappings="//@ownedViewpoints[name='ScriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='op']/@borderedNodeMappings[name='in']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.eContainer()/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="script::InternalInput" referenceName="inputs"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="OpOutCreation" nodeMappings="//@ownedViewpoints[name='ScriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='op']/@borderedNodeMappings[name='out']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[self.eContainer()/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="script::InternalOutput" referenceName="output"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="LinkCreation" edgeMappings="//@ownedViewpoints[name='ScriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='links']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="variable" valueExpression="aql:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="OutLinkCreation" edgeMappings="//@ownedViewpoints[name='ScriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@edgeMappings[name='outputLink']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="internalOutput" valueExpression="aql:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CstCreation" nodeMappings="//@ownedViewpoints[name='ScriptViewpoint']/@ownedRepresentations[name='ScriptDiagram']/@defaultLayer/@nodeMappings[name='cst']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[container/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="script::Constant" referenceName="constants"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="idm.design.Services"/>
+  </ownedViewpoints>
+</description:Group>
+
